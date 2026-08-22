@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+@theme {
+  /* Retained accent colors - bright retro colors pop well on navy */
+  --color-retroYellow: #fcd34d;
+  --color-retroPink: #ff70a6;
+  --color-retroBlue: #70d6ff;
+  --color-retroGreen: #38b000;
+
+  /* Updated dark background navy color */
+  --color-retroBg: #1e2538;
+
+  --border-3: 3px;
+
+  /* Adjusted brutalist shadows to pure black or bright contrast pop */
+  --shadow-brutal-sm: 2px 2px 0px 0px #000000;
+  --shadow-brutal: 4px 4px 0px 0px #000000;
+  --shadow-brutal-lg: 7px 7px 0px 0px #000000;
+
+  --animation-bounce-slow: bounce-slow 4s infinite ease-in-out;
+  --animation-float-sideways: float-sideways 6s infinite linear;
+
+  @keyframes bounce-slow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes float-sideways {
+    0% {
+      transform: translateX(-10px) rotate(-12deg);
+    }
+    50% {
+      transform: translateX(10px) rotate(-12deg);
+    }
+    100% {
+      transform: translateX(-10px) rotate(-12deg);
+    }
+  }
+}
+
+/* Updated graph paper grid for dark navy background */
+.bg-paper-grid {
+  background-color: #1e2538;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Interactive Neo-Brutalist hover translation */
+.btn-pop {
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+.btn-pop:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px 0px #000000;
+}
+.btn-pop:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+
+@keyframes stampLand {
+  0% {
+    transform: scale(3) rotate(-12deg);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(0.9) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes charmDropSwing {
+  0% {
+    transform: translateY(-20px) scale(0) rotate(-20deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(4px) scale(1.1) rotate(10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-2px) scale(0.95) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes robotPeek {
+  0% {
+    transform: translateY(100%);
+  }
+  15% {
+    transform: translateY(0%);
+  }
+  85% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@layer utilities {
+  .hover-brutal-lift {
+    transition:
+      transform 0.15s cubic-bezier(0.2, 0, 0, 1),
+      box-shadow 0.15s cubic-bezier(0.2, 0, 0, 1);
+  }
+  .hover-brutal-lift:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0px 0px #000000;
+  }
+  .hover-brutal-lift:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px #000000;
+  }
+
+  .hover-sticker-wobble {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .hover-sticker-wobble:hover {
+    transform: scale(1.1) rotate(-4deg);
+  }
+
+  .animate-stamp {
+    animation: stampLand 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: 200%;
+    animation: marquee 14s linear infinite;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .group:hover .animate-charm-swing {
+    animation: charmDropSwing 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+      forwards;
+  }
+
+  .animate-robot-peek {
+    animation: robotPeek 6s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+  }
+}
+html,
+body {
+  min-height: 100vh;
+  background-color: #1e2538;
+}
+
+@keyframes borderRun {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Animated Running Border Overlay
+   ---------------------------------
+   Previously this cycled through a fixed 5-color rainbow gradient on every
+   card. Now it reads a single color from the --border-accent custom
+   property that each card sets inline (see ACCENT_HEX in Team.jsx), so
+   every card gets its OWN solid hover-border color that matches its badge,
+   instead of the same rainbow everywhere.
+
+   The "running" motion is now a single-hue comet: a bright band of
+   --border-accent flanked by transparency, sweeping around the border via
+   background-position. Falls back to retroYellow if a card doesn't set
+   the variable. */
+.running-border-hover {
+  position: relative;
+  --border-accent: var(--color-retroYellow);
+}
+
+.running-border-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px; /* Border thickness */
+  background: linear-gradient(
+    115deg,
+    transparent 15%,
+    var(--border-accent) 50%,
+    transparent 85%
+  );
+  background-size: 300% 300%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Activate animated outline strictly on card hover */
+.group:hover .running-border-hover::before {
+  opacity: 1;
+  animation: borderRun 1.8s linear infinite;
+}
