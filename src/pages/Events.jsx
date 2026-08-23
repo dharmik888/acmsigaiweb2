@@ -6,11 +6,11 @@ import { SectionHeader } from "../components/ui/SectionHeader";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const TYPE_COLORS = {
-  Event: "bg-retroPink",
+  Event: "bg-retroOrange",
   Workshop: "bg-retroBlue",
   Seminar: "bg-retroYellow",
   Competition: "bg-retroGreen",
-  "Industrial Visit": "bg-retroPink",
+  "Industrial Visit": "bg-retroOrange",
   "Expert Talk": "bg-retroBlue",
   Other: "bg-retroYellow",
 };
@@ -119,7 +119,7 @@ function EventCard({ event, index, isActive }) {
   const exitOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
   const exitScale = useTransform(scrollYProgress, [0, 1], [1, 0.96]);
 
-  const cardColor = TYPE_COLORS[event.type] || "bg-retroPink";
+  const cardColor = TYPE_COLORS[event.type] || "bg-retroOrange";
 
   return (
     <motion.div
@@ -327,7 +327,7 @@ export default function Events() {
 
           const dist = Math.sqrt(
             Math.pow(cardCenterY - centerY, 2) +
-              Math.pow(cardCenterX - centerX, 2),
+            Math.pow(cardCenterX - centerX, 2),
           );
 
           if (dist < minDistance) {
@@ -356,11 +356,11 @@ export default function Events() {
   return (
     <div className="space-y-16 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
       <section>
-        {/* Uniform SectionHeader */}
         <SectionHeader
           badgeText="OUR JOURNEY"
           title="THINGS WE'VE DONE."
           subtitle="A collection of events, workshops, seminars and experiences from ACM SIGAI."
+          color="bg-retroOrange"
         />
 
         {/* Semester Tabs */}
@@ -368,17 +368,16 @@ export default function Events() {
           <span className="font-mono text-[11px] text-black/40 uppercase tracking-wider mr-1">Semester</span>
           {[
             { id: "ALL", label: "All" },
-            { id: "ODD",  label: "Odd Semester", sub: "Jun – Nov" },
+            { id: "ODD", label: "Odd Semester", sub: "Jun – Nov" },
             { id: "EVEN", label: "Even Semester", sub: "Dec – May" },
           ].map((s) => (
             <button
               key={s.id}
               onClick={() => { setSemester(s.id); setActiveCardId(null); }}
-              className={`flex items-center gap-1.5 px-4 py-1.5 font-bold text-xs uppercase border-[1.5px] border-black rounded-lg transition-all ${
-                semester === s.id
+              className={`flex items-center gap-1.5 px-4 py-1.5 font-bold text-xs uppercase border-[1.5px] border-black rounded-lg transition-all ${semester === s.id
                   ? "bg-retroYellow text-black shadow-none translate-y-[1px] translate-x-[1px]"
                   : "bg-white text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-slate-50"
-              }`}
+                }`}
             >
               {s.label}
               {s.sub && (
@@ -395,11 +394,10 @@ export default function Events() {
               <button
                 key={cat}
                 onClick={() => { setFilter(cat); setActiveCardId(null); }}
-                className={`px-4 py-1.5 font-bold text-xs uppercase border-[1.5px] border-black rounded-lg transition-all ${
-                  filter === cat
+                className={`px-4 py-1.5 font-bold text-xs uppercase border-[1.5px] border-black rounded-lg transition-all ${filter === cat
                     ? "bg-retroBlue text-black shadow-none translate-y-[1px] translate-x-[1px]"
                     : "bg-white text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-slate-50"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -434,11 +432,10 @@ export default function Events() {
                   {/* Timeline Marker Node for YEAR */}
                   <div className="absolute top-2 -left-[36px] md:-left-[44px] lg:-left-[60px] z-10 flex items-center justify-center w-6 h-6">
                     <motion.div
-                      className={`rounded-full transition-all duration-300 ${
-                        isActiveYear
+                      className={`rounded-full transition-all duration-300 ${isActiveYear
                           ? "w-4 h-4 border-[2.5px] border-black bg-retroYellow shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                           : "w-2.5 h-2.5 border-[2px] border-black/30 bg-white"
-                      }`}
+                        }`}
                       animate={{ scale: isActiveYear ? 1.2 : 1 }}
                     />
                   </div>
@@ -465,11 +462,10 @@ export default function Events() {
                           {/* Timeline Marker Node for MONTH */}
                           <div className="absolute top-1.5 -left-[36px] md:-left-[44px] lg:-left-[60px] z-10 flex items-center justify-center w-6 h-6">
                             <motion.div
-                              className={`rounded-full transition-all duration-300 ${
-                                isActiveMonth
-                                  ? "w-2.5 h-2.5 border-[2px] border-black bg-retroPink shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)] scale-125"
+                              className={`rounded-full transition-all duration-300 ${isActiveMonth
+                                  ? "w-2.5 h-2.5 border-[2px] border-black bg-retroOrange shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)] scale-125"
                                   : "w-1.5 h-1.5 border-[1.5px] border-black/30 bg-white"
-                              }`}
+                                }`}
                             />
                           </div>
 
@@ -483,11 +479,10 @@ export default function Events() {
                               transition={{ duration: 0.3 }}
                             >
                               <div
-                                className={`text-[11px] font-bold px-3 py-1 border-[1.5px] border-black rounded-md uppercase tracking-widest transition-all duration-300 ${
-                                  isActiveMonth
+                                className={`text-[11px] font-bold px-3 py-1 border-[1.5px] border-black rounded-md uppercase tracking-widest transition-all duration-300 ${isActiveMonth
                                     ? "bg-white text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] -rotate-1"
                                     : "bg-transparent text-black/40 border-black/20 shadow-none"
-                                }`}
+                                  }`}
                               >
                                 {month}
                               </div>

@@ -4,11 +4,11 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { eventsData } from "../data/eventsData";
 
 const TYPE_COLORS = {
-  Event: "bg-retroPink",
+  Event: "bg-retroOrange",
   Workshop: "bg-retroBlue",
   Seminar: "bg-retroYellow",
   Competition: "bg-retroGreen",
-  "Industrial Visit": "bg-retroPink",
+  "Industrial Visit": "bg-retroOrange",
   "Expert Talk": "bg-retroBlue",
   Other: "bg-retroYellow",
 };
@@ -42,7 +42,7 @@ export default function EventDetails() {
     );
   }
 
-  const headerBg = TYPE_COLORS[event.type] || "bg-retroPink";
+  const headerBg = TYPE_COLORS[event.type] || "bg-retroOrange";
 
   return (
     <div className="max-w-5xl mx-auto space-y-10 pb-20 pt-4">

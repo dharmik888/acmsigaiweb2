@@ -88,7 +88,7 @@ const CodeIconPlaceholder = ({ className }) => (
 const ButtonPink = ({ children, to }) => (
   <Link
     to={to}
-    className="bg-retroPink text-black font-black uppercase text-sm px-6 py-3 border-2 border-black rounded-full shadow-brutal-sm hover:-translate-y-1 hover:shadow-brutal transition-all flex items-center gap-2"
+    className="bg-retroOrange text-black font-black uppercase text-sm px-6 py-3 border-2 border-black rounded-full shadow-brutal-sm hover:-translate-y-1 hover:shadow-brutal transition-all flex items-center gap-2"
   >
     {children} <span className="font-bold">&gt;</span>
   </Link>
@@ -131,6 +131,7 @@ export default function Home() {
         <SectionHeader
           title="OUR OBJECTIVES"
           withSpeedLines={true}
+          color="bg-retroYellow"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-20 mt-10 max-w-4xl mx-auto">

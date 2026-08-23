@@ -28,16 +28,7 @@ export default function FloatingBottomNav({ isVisible }) {
       }`}
     >
       <nav className="flex items-center gap-2 bg-white border-3 border-black px-4 py-2 rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-        {/* LOGO: Redirects to Landing Page */}
-        <Link
-          to="/"
-          className="w-9 h-9 bg-retroPink border-2 border-black rounded-xl flex items-center justify-center font-black text-black text-xs hover:bg-retroYellow transition-colors mr-1"
-          title="Go to Home"
-        >
-          SIG
-        </Link>
 
-        <div className="h-6 w-[2px] bg-black/20 mx-1" />
 
         {/* NAVIGATION ICONS */}
         <div className="flex items-center gap-1.5">

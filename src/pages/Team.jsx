@@ -300,7 +300,7 @@ const JuniorCoreCard = ({ member }) => {
           <span>{member.position}</span>
         </span>
 
-        <h4 className="text-base font-extrabold text-white tracking-tight group-hover:text-retroPink transition-colors duration-300">
+        <h4 className="text-base font-extrabold text-white tracking-tight group-hover:text-retroOrange transition-colors duration-300">
           {member.name}
         </h4>
 
@@ -343,7 +343,7 @@ export default function Team() {
   });
 
   return (
-    <div className="bg-paper-grid min-h-screen text-white font-sans overflow-x-hidden selection:bg-retroPink selection:text-black">
+    <div className="bg-paper-grid min-h-screen text-white font-sans overflow-x-hidden selection:bg-retroOrange selection:text-black">
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10 relative">
         <section className="relative mb-8 lg:mb-10">
           <div className="relative z-10 flex flex-col items-center text-center">
@@ -352,6 +352,7 @@ export default function Team() {
                 title="MEET THE TEAM"
                 subtitle="The minds shaping TCET ACM SIGAI."
                 badgeText="PEOPLE"
+                color="bg-retroBlue"
               />
 
               <div className="section-divider-row flex items-center justify-center gap-3 w-full">
@@ -407,11 +408,10 @@ export default function Team() {
               <button
                 key={btn.id}
                 onClick={() => setActiveFilter(btn.id)}
-                className={`btn-pop px-3 py-1.5 border-2 border-white shadow-[3px_3px_0px_0px_rgba(255,255,255,0.15)] transition-all ${
-                  activeFilter === btn.id
+                className={`btn-pop px-3 py-1.5 border-2 border-white shadow-[3px_3px_0px_0px_rgba(255,255,255,0.15)] transition-all ${activeFilter === btn.id
                     ? "bg-retroYellow text-black font-extrabold"
                     : "bg-[#1b2333] text-white hover:bg-white hover:text-black"
-                }`}
+                  }`}
               >
                 {btn.label}
               </button>

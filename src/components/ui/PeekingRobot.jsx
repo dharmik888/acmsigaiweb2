@@ -131,7 +131,7 @@ export const PeekingRobot = () => {
               e.stopPropagation();
               setCurrentPrompt((prev) => (prev + 1) % PROMPTS.length);
             }}
-            className="flex items-center gap-1 text-[10px] font-black uppercase px-2.5 py-1 bg-white border-2 border-black rounded-lg shadow-brutal hover:bg-retroPink active:translate-y-0.5 transition-transform"
+            className="flex items-center gap-1 text-[10px] font-black uppercase px-2.5 py-1 bg-white border-2 border-black rounded-lg shadow-brutal hover:bg-retroOrange active:translate-y-0.5 transition-transform"
           >
             <FaRotate className="w-2.5 h-2.5" /> Next Info
           </button>
@@ -148,7 +148,7 @@ export const PeekingRobot = () => {
         <div className="relative flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
           {/* Spring Antenna */}
           <div className="absolute -top-5 flex flex-col items-center z-10">
-            <div className="w-3.5 h-3.5 bg-retroPink border-2 border-black rounded-full shadow-brutal animate-pulse" />
+            <div className="w-3.5 h-3.5 bg-retroOrange border-2 border-black rounded-full shadow-brutal animate-pulse" />
             <div className="w-1 h-2.5 bg-black" />
           </div>
 
@@ -161,7 +161,7 @@ export const PeekingRobot = () => {
               <div className="w-3.5 h-3.5 bg-retroYellow rounded-full border border-black flex items-center justify-center group-hover:scale-125 transition-transform">
                 <div className="w-1 h-1 bg-black rounded-full translate-x-0.5 -translate-y-0.5" />
               </div>
-              <div className="w-1 h-1 bg-retroPink rounded-full opacity-80" />
+              <div className="w-1 h-1 bg-retroOrange rounded-full opacity-80" />
               <div className="w-3.5 h-3.5 bg-retroYellow rounded-full border border-black flex items-center justify-center group-hover:scale-125 transition-transform">
                 <div className="w-1 h-1 bg-black rounded-full translate-x-0.5 -translate-y-0.5" />
               </div>

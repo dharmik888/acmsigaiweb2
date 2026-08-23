@@ -10,22 +10,12 @@ import Publications from "./pages/Publications";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Preloader from "./components/ui/Preloader";
-import FloatingBottomNav from "./components/ui/FloatingBottomNav";
-import StickerTicker from "./components/ui/StickerTicker";
+
 import "./index.css";
 
 function AppContent() {
-  const [showBottomNav, setShowBottomNav] = useState(false);
   const [preloaderDone, setPreloaderDone] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowBottomNav(window.scrollY > 100);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handlePreloaderComplete = () => {
     setPreloaderDone(true);
@@ -35,8 +25,8 @@ function AppContent() {
   return (
     <>
       {!preloaderDone && <Preloader onComplete={handlePreloaderComplete} />}
-      <div className="min-h-screen bg-paper-grid text-black font-sans selection:bg-retroYellow transition-colors duration-300">
-        <StickerTicker />
+      <div className="min-h-screen bg-paper-grid text-themeText bg-themeBg font-sans selection:bg-retroYellow transition-colors duration-300">
+
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <Navbar />
           <Routes>
@@ -50,7 +40,6 @@ function AppContent() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
-        <FloatingBottomNav isVisible={showBottomNav} />
       </div>
     </>
   );

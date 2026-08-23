@@ -9,7 +9,7 @@ export const Button = ({
   // Color presets matching your theme
   const bgColors = {
     yellow: "bg-retroYellow hover:bg-yellow-300",
-    pink: "bg-retroPink hover:bg-pink-300",
+    pink: "bg-retroOrange hover:bg-pink-300",
     blue: "bg-retroBlue hover:bg-sky-300",
     green: "bg-retroGreen hover:bg-green-400",
     white: "bg-white hover:bg-gray-100",

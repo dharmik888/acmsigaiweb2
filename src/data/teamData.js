@@ -6,7 +6,7 @@ import mrsPranjaliImg from "../assets/mrs_pranjali_sankhe.jpg.jpeg";
 // handed to the CSS custom property that drives the running border.
 export const ACCENT_HEX = {
   "bg-retroYellow": "#fcd34d",
-  "bg-retroPink": "#ff70a6",
+  "bg-retroOrange": "#ff70a6",
   "bg-retroBlue": "#70d6ff",
   "bg-retroGreen": "#38b000",
 };
@@ -64,7 +64,7 @@ export const coreTeam = [
   {
     name: "Aditya Pandey",
     position: "Secretary",
-    accent: "bg-retroPink",
+    accent: "bg-retroOrange",
     badgeTag: "SEC",
     bio: "Handling official communications, administrative documentation, and managing overall SIGAI workflow.",
     linkedin: "#",
@@ -96,7 +96,7 @@ export const coreTeam = [
   {
     name: "Sanjana Dubey",
     position: "Creative Head",
-    accent: "bg-retroPink",
+    accent: "bg-retroOrange",
     badgeTag: "CREATIVE",
     bio: "Crafting neo-brutalist visual identities, event graphics, UI/UX layouts, and editorial media assets.",
     linkedin: "#",
@@ -147,7 +147,7 @@ export const juniorCoreTeam = [
   {
     name: "Jeni Shah",
     position: "Inhouse Head",
-    accent: "bg-retroPink",
+    accent: "bg-retroOrange",
     tag: "INHOUSE",
     bio: "Coordinating internal team dynamics, managing venue logistics, and ensuring seamless event operations.",
     linkedin: "#",
@@ -156,7 +156,7 @@ export const juniorCoreTeam = [
   {
     name: "Vaishnavi Nayak",
     position: "JT Secretary",
-    accent: "bg-retroPink",
+    accent: "bg-retroOrange",
     tag: "SEC",
     bio: "Supporting administrative scheduling, documentation, and internal team syncs.",
     linkedin: "#",

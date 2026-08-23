@@ -16,7 +16,7 @@ const STICKERS = [
   {
     id: 3,
     text: "NEURAL NETWORKS & LATE NIGHT READS",
-    bg: "bg-retroPink",
+    bg: "bg-retroOrange",
     textColor: "text-black",
   },
   {

@@ -6,11 +6,15 @@ import {
   FaUsers,
   FaNewspaper,
   FaBookOpen,
+  FaSun,
+  FaMoon,
 } from "react-icons/fa6";
 import logo from "../../assets/sigai-logo.png";
+import { useTheme } from "../../context/ThemeContext";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,11 +30,11 @@ export function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "HOME", path: "/", icon: FaHouse },
-    { name: "EVENTS", path: "/events", icon: FaCalendarDays },
-    { name: "TEAM", path: "/team", icon: FaUsers },
-    { name: "BLOGS", path: "/blogs", icon: FaNewspaper },
-    { name: "PUBLICATIONS", path: "/publications", icon: FaBookOpen },
+    { name: "HOME", path: "/", icon: FaHouse, color: "bg-retroYellow" },
+    { name: "EVENTS", path: "/events", icon: FaCalendarDays, color: "bg-retroOrange" },
+    { name: "TEAM", path: "/team", icon: FaUsers, color: "bg-retroBlue" },
+    { name: "BLOGS", path: "/blogs", icon: FaNewspaper, color: "bg-retroGreen" },
+    { name: "PUBLICATIONS", path: "/publications", icon: FaBookOpen, color: "bg-retroPurple" },
   ];
 
   return (
@@ -66,16 +70,23 @@ export function Navbar() {
                 to={item.path}
                 end={item.path === "/"}
                 className={({ isActive }) =>
-                  `px-4 py-1.5 rounded-xl font-bold text-xs sm:text-sm tracking-wide border-2 border-black transition-all ${
+                  `px-4 py-1.5 rounded-xl font-bold text-xs sm:text-sm tracking-wide border-2 border-themeBorder transition-all ${
                     isActive
-                      ? "bg-[#ffdb58] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-                      : "bg-white text-black hover:bg-gray-100 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
+                      ? `${item.color} text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`
+                      : "bg-themeCard text-themeText hover:bg-gray-100 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
                   }`
                 }
               >
                 {item.name}
               </NavLink>
             ))}
+            <button
+              onClick={toggleTheme}
+              className="p-2 ml-2 rounded-xl font-bold border-2 border-themeBorder transition-all bg-themeCard text-themeText hover:bg-gray-100 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
+              title="Toggle Theme"
+            >
+              {theme === "dark" ? <FaSun className="w-4 h-4" /> : <FaMoon className="w-4 h-4" />}
+            </button>
           </div>
         </nav>
       </header>
@@ -100,10 +111,10 @@ export function Navbar() {
                   end={item.path === "/"}
                   title={item.name}
                   className={({ isActive }) =>
-                    `p-2.5 rounded-xl border-2 border-black transition-colors flex items-center justify-center ${
+                    `p-2.5 rounded-xl border-2 border-themeBorder transition-colors flex items-center justify-center ${
                       isActive
-                        ? "bg-[#ffdb58] text-black font-bold"
-                        : "bg-white text-black hover:bg-gray-100"
+                        ? `${item.color} text-black font-bold`
+                        : "bg-themeCard text-themeText hover:bg-gray-100"
                     }`
                   }
                 >
@@ -111,6 +122,13 @@ export function Navbar() {
                 </NavLink>
               );
             })}
+            <button
+              onClick={toggleTheme}
+              className="p-2.5 mt-2 rounded-xl border-2 border-themeBorder transition-colors flex items-center justify-center bg-themeCard text-themeText hover:bg-gray-100"
+              title="Toggle Theme"
+            >
+              {theme === "dark" ? <FaSun className="w-4 h-4" /> : <FaMoon className="w-4 h-4" />}
+            </button>
           </div>
         </nav>
       </div>

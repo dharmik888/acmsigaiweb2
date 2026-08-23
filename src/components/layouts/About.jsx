@@ -207,7 +207,7 @@ export default function About() {
 
         {/* Innovate */}
         <div className="bg-white border-3 border-black rounded-xl p-4 flex items-start gap-4 relative overflow-hidden">
-          <div className="bg-retroPink border-2 border-black p-3 rounded-lg flex-shrink-0">
+          <div className="bg-retroOrange border-2 border-black p-3 rounded-lg flex-shrink-0">
             <ChartIcon />
           </div>
           <div>
@@ -250,7 +250,7 @@ export default function About() {
 
         {/* Parent Body */}
         <div className="bg-white border-3 border-black rounded-xl p-5 flex flex-col items-start">
-          <span className="bg-retroPink text-black font-black text-xs px-3 py-1 border-2 border-black rounded-full uppercase tracking-wider mb-4 shadow-brutal-sm">
+          <span className="bg-retroOrange text-black font-black text-xs px-3 py-1 border-2 border-black rounded-full uppercase tracking-wider mb-4 shadow-brutal-sm">
             OUR PARENT BODY
           </span>
           <div className="flex items-center gap-3 w-full">

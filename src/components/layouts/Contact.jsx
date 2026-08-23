@@ -123,7 +123,7 @@ export default function Contact() {
                 href="https://www.instagram.com/tcet_acm.sigai?igsh=aHI0aXh4emQ4dmNp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-retroPink text-black font-black text-sm px-4 py-2 border-2 border-black rounded-full shadow-brutal-sm hover:-translate-y-1 hover:shadow-brutal transition-all"
+                className="flex items-center gap-2 bg-retroOrange text-black font-black text-sm px-4 py-2 border-2 border-black rounded-full shadow-brutal-sm hover:-translate-y-1 hover:shadow-brutal transition-all"
               >
                 <svg
                   width="14"

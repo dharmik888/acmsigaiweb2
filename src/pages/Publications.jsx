@@ -76,6 +76,7 @@ export default function Publications() {
         title="PUBLICATIONS & TEJAS"
         subtitle="Explore our flagship technical magazines, AI research, and student-written editions."
         badgeText="MAGAZINES"
+        color="bg-retroPurple"
       />
 
       {/* Grid of Magazines */}
@@ -92,7 +93,7 @@ export default function Publications() {
             mag.latest === "yes"
               ? "bg-retroYellow"
               : index % 2 === 0
-                ? "bg-retroPink"
+                ? "bg-retroOrange"
                 : "bg-retroBlue";
 
           return (

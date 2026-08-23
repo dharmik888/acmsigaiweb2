@@ -25,7 +25,7 @@ const CATEGORIES = [
     name: "DEEP LEARNING",
     count: "09 articles",
     Icon: FaBrain,
-    bg: "bg-retroPink",
+    bg: "bg-retroOrange",
   },
   {
     name: "LLMS & AGENTS",
@@ -43,7 +43,7 @@ const CATEGORIES = [
 
 const CATEGORY_COLORS = {
   "Machine Learning": "bg-retroYellow text-black",
-  "Deep Learning": "bg-retroPink text-black",
+  "Deep Learning": "bg-retroOrange text-black",
   "LLMs & Agents": "bg-retroBlue text-black",
   "Computer Vision": "bg-retroGreen text-black",
   Research: "bg-black text-white",
@@ -178,6 +178,7 @@ export default function Blogs() {
           badgeText="OUR INSIGHTS"
           title="THOUGHTS & ARTICLES."
           subtitle="Deep dives, technical write-ups, and stories curated by the ACM SIGAI team."
+          color="bg-retroGreen"
         />
       </section>
 
@@ -210,7 +211,7 @@ export default function Blogs() {
                 </span>
               </div>
 
-              <h2 className="text-xl sm:text-3xl font-black uppercase tracking-tight text-black mb-2 hover:text-retroPink cursor-pointer transition-colors">
+              <h2 className="text-xl sm:text-3xl font-black uppercase tracking-tight text-black mb-2 hover:text-retroOrange cursor-pointer transition-colors">
                 {activeHeroBlog.title}
               </h2>
 
@@ -224,7 +225,7 @@ export default function Blogs() {
                 By {activeHeroBlog.author}
               </span>
 
-              <button className="px-3.5 py-1.5 bg-black text-white text-xs font-black uppercase rounded-lg border-2 border-black shadow-none hover:shadow-brutal hover:bg-retroPink hover:text-black transition-all flex items-center gap-2">
+              <button className="px-3.5 py-1.5 bg-black text-white text-xs font-black uppercase rounded-lg border-2 border-black shadow-none hover:shadow-brutal hover:bg-retroOrange hover:text-black transition-all flex items-center gap-2">
                 Read Article <FaArrowRight />
               </button>
             </div>
@@ -244,14 +245,14 @@ export default function Blogs() {
             <div className="absolute bottom-3 right-3 flex gap-1.5">
               <button
                 onClick={prevSlide}
-                className="p-1.5 bg-white text-black border-2 border-black rounded-lg shadow-none hover:shadow-brutal hover:bg-retroPink transition-all"
+                className="p-1.5 bg-white text-black border-2 border-black rounded-lg shadow-none hover:shadow-brutal hover:bg-retroOrange transition-all"
                 aria-label="Previous Slide"
               >
                 <FaChevronLeft className="w-3 h-3" />
               </button>
               <button
                 onClick={nextSlide}
-                className="p-1.5 bg-white text-black border-2 border-black rounded-lg shadow-none hover:shadow-brutal hover:bg-retroPink transition-all"
+                className="p-1.5 bg-white text-black border-2 border-black rounded-lg shadow-none hover:shadow-brutal hover:bg-retroOrange transition-all"
                 aria-label="Next Slide"
               >
                 <FaChevronRight className="w-3 h-3" />
@@ -279,7 +280,7 @@ export default function Blogs() {
       {/* 4. SIDE NOTE (EDITORIAL HEADER & CATEGORY NAVIGATION BELOW HERO) */}
       <header className="border-3 border-black bg-white rounded-2xl overflow-hidden shadow-none hover:shadow-brutal transition-shadow duration-200">
         <div className="grid grid-cols-1 md:grid-cols-12 border-b-3 border-black">
-          <div className="md:col-span-4 bg-retroPink p-5 border-b-3 md:border-b-0 md:border-r-3 border-black flex flex-col justify-between">
+          <div className="md:col-span-4 bg-retroOrange p-5 border-b-3 md:border-b-0 md:border-r-3 border-black flex flex-col justify-between">
             <div>
               <span className="font-black text-xs uppercase tracking-widest bg-black text-[#faf7f2] px-2 py-0.5 rounded">
                 ACM SIGAI Blogs
@@ -335,7 +336,7 @@ export default function Blogs() {
             <FaPenNib className="text-black" /> Have an article idea? Publish
             your own research
           </span>
-          <button className="w-full sm:w-auto px-4 py-1 bg-black text-[#faf7f2] text-xs font-black uppercase rounded-lg border-2 border-black shadow-none hover:shadow-brutal hover:bg-retroPink hover:text-black transition-all active:translate-y-0.5">
+          <button className="w-full sm:w-auto px-4 py-1 bg-black text-[#faf7f2] text-xs font-black uppercase rounded-lg border-2 border-black shadow-none hover:shadow-brutal hover:bg-retroOrange hover:text-black transition-all active:translate-y-0.5">
             Start Writing
           </button>
         </div>
@@ -358,7 +359,7 @@ export default function Blogs() {
           {selectedCategory !== "ALL" && (
             <button
               onClick={() => setSelectedCategory("ALL")}
-              className="px-3 py-1.5 text-[11px] font-black uppercase bg-retroPink text-black border-2 border-black rounded-lg shadow-none hover:shadow-brutal hover:scale-105 transition-all"
+              className="px-3 py-1.5 text-[11px] font-black uppercase bg-retroOrange text-black border-2 border-black rounded-lg shadow-none hover:shadow-brutal hover:scale-105 transition-all"
             >
               Clear Filter ✕
             </button>
@@ -401,7 +402,7 @@ export default function Blogs() {
                 setSelectedCategory("ALL");
                 setSearchQuery("");
               }}
-              className="mt-2 px-3 py-1 bg-retroYellow text-black font-black text-xs uppercase rounded-lg border-2 border-black shadow-none hover:shadow-brutal hover:bg-retroPink transition-all"
+              className="mt-2 px-3 py-1 bg-retroYellow text-black font-black text-xs uppercase rounded-lg border-2 border-black shadow-none hover:shadow-brutal hover:bg-retroOrange transition-all"
             >
               Reset Filters
             </button>
@@ -436,7 +437,7 @@ export default function Blogs() {
                   </div>
 
                   <div className="p-4">
-                    <h3 className="font-black text-sm uppercase leading-tight text-black group-hover:text-retroPink transition-colors mb-1.5">
+                    <h3 className="font-black text-sm uppercase leading-tight text-black group-hover:text-retroOrange transition-colors mb-1.5">
                       {blog.title}
                     </h3>
                     <p className="text-xs font-bold text-black/70 uppercase line-clamp-2">
@@ -470,7 +471,7 @@ export default function Blogs() {
           </div>
 
           <div className="md:col-span-4 flex flex-col items-start md:items-end justify-center">
-            <button className="w-full sm:w-auto px-5 py-2.5 bg-black text-white font-black text-xs uppercase rounded-xl border-2 border-black shadow-none hover:shadow-brutal hover:bg-retroPink hover:text-black transition-all active:translate-y-0.5 flex items-center gap-2">
+            <button className="w-full sm:w-auto px-5 py-2.5 bg-black text-white font-black text-xs uppercase rounded-xl border-2 border-black shadow-none hover:shadow-brutal hover:bg-retroOrange hover:text-black transition-all active:translate-y-0.5 flex items-center gap-2">
               <FaPenNib /> Write for Side Note
             </button>
           </div>

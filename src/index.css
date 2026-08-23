@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
 @theme {
+  /* Theme Variables for Light/Dark Mode */
+  --color-themeBg: var(--theme-bg);
+  --color-themeText: var(--theme-text);
+  --color-themeCard: var(--theme-card);
+  --color-themeBorder: var(--theme-border);
+
   /* Retained accent colors - bright retro colors pop well on navy */
   --color-retroYellow: #fcd34d;
-  --color-retroPink: #ff70a6;
+  --color-retroOrange: #ff5722;
   --color-retroBlue: #70d6ff;
   --color-retroGreen: #38b000;
 
@@ -13,9 +19,9 @@
   --border-3: 3px;
 
   /* Adjusted brutalist shadows to pure black or bright contrast pop */
-  --shadow-brutal-sm: 2px 2px 0px 0px #000000;
-  --shadow-brutal: 4px 4px 0px 0px #000000;
-  --shadow-brutal-lg: 7px 7px 0px 0px #000000;
+  --shadow-brutal-sm: 0px 0px 0px 0px transparent;
+  --shadow-brutal: 0px 0px 0px 0px transparent;
+  --shadow-brutal-lg: 0px 0px 0px 0px transparent;
 
   --animation-bounce-slow: bounce-slow 4s infinite ease-in-out;
   --animation-float-sideways: float-sideways 6s infinite linear;
@@ -42,12 +48,12 @@
   }
 }
 
-/* Updated graph paper grid for dark navy background */
+/* Updated graph paper grid for theme background */
 .bg-paper-grid {
-  background-color: #1e2538;
+  background-color: var(--theme-bg);
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, rgba(128, 128, 128, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 128, 128, 0.15) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -59,11 +65,11 @@
 }
 .btn-pop:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 7px 7px 0px 0px #000000;
+  box-shadow: 0px 0px 0px 0px transparent;
 }
 .btn-pop:active {
   transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px 0px #000000;
+  box-shadow: 0px 0px 0px 0px transparent;
 }
 
 @keyframes stampLand {
@@ -130,11 +136,11 @@
   }
   .hover-brutal-lift:hover {
     transform: translate(-4px, -4px);
-    box-shadow: 8px 8px 0px 0px #000000;
+    box-shadow: 0px 0px 0px 0px transparent;
   }
   .hover-brutal-lift:active {
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px 0px #000000;
+    box-shadow: 0px 0px 0px 0px transparent;
   }
 
   .hover-sticker-wobble {
@@ -169,7 +175,8 @@
 html,
 body {
   min-height: 100vh;
-  background-color: #1e2538;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
 }
 
 @keyframes borderRun {
@@ -224,4 +231,18 @@ body {
 .group:hover .running-border-hover::before {
   opacity: 1;
   animation: borderRun 1.8s linear infinite;
+}
+
+:root {
+  --theme-bg: #FAF7F2;
+  --theme-text: #000000;
+  --theme-card: #FFFFFF;
+  --theme-border: #000000;
+}
+
+.dark {
+  --theme-bg: #1e2538;
+  --theme-text: #f9fafb;
+  --theme-card: #2a3040;
+  --theme-border: #4b5563;
 }
