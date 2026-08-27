@@ -51,7 +51,7 @@ export const CustomCursor = () => {
       {/* Target Radar Rings (SVGs Inspired) */}
       <div
         className={`absolute -left-6 -top-6 w-12 h-12 rounded-full border-2 border-black bg-retroYellow/30 transition-transform duration-150 ease-out flex items-center justify-center ${
-          isHovered ? "scale-150 bg-retroOrange/50 rotate-45" : "scale-100"
+          isHovered ? "scale-150 bg-retroPink/50 rotate-45" : "scale-100"
         } ${isClicked ? "scale-75" : ""}`}
       >
         {/* Radar Rays Graphic */}
@@ -65,7 +65,7 @@ export const CustomCursor = () => {
         viewBox="0 0 24 24"
         fill="currentColor"
         className={`relative -left-1 -top-1 drop-shadow-[2px_2px_0px_rgba(0,0,0,1)] transition-transform duration-75 ${
-          isHovered ? "scale-110 fill-retroOrange" : "fill-retroYellow"
+          isHovered ? "scale-110 fill-retroPink" : "fill-retroYellow"
         }`}
       >
         <path

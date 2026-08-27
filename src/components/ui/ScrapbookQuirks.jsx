@@ -38,7 +38,7 @@ export const PhotoTape = ({ className = "-top-3 left-4 -rotate-6" }) => (
 // Circular Retro Rubber Stamp Badge
 export const RubberStamp = ({
   text = "VERIFIED",
-  color = "bg-retroOrange",
+  color = "bg-retroPink",
   className = "",
 }) => (
   <div

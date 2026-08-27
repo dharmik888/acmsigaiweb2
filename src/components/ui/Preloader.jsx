@@ -1,88 +1,122 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
+import "./Preloader.css";
+import sigaiLogo from "../../assets/sigai-logo.png";
 
 export default function Preloader({ onComplete }) {
-  const [count, setCount] = useState(0);
-  const [exiting, setExiting] = useState(false);
-  const rafRef = useRef(null);
-  const startRef = useRef(null);
-  const DURATION = 2200; // ms for counter to reach 100
+  const [progress, setProgress] = useState(0);
+  const [logoVisible, setLogoVisible] = useState(false);
+  const [exit, setExit] = useState(false);
 
   useEffect(() => {
-    // Inject font if it doesn't exist
-    if (!document.getElementById("preloader-font")) {
-      const link = document.createElement("link");
-      link.id = "preloader-font";
-      link.href = "https://fonts.googleapis.com/css2?family=Pacifico&display=swap";
-      link.rel = "stylesheet";
-      document.head.appendChild(link);
-    }
+    const duration = 2800;
+    const start = performance.now();
 
-    const animate = (timestamp) => {
-      if (!startRef.current) startRef.current = timestamp;
-      const elapsed = timestamp - startRef.current;
-      const progress = Math.min(elapsed / DURATION, 1);
-      // ease-out-cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.floor(eased * 100);
-      setCount(current);
+    const animate = (time) => {
+      const elapsed = time - start;
+      const percentage = Math.min(elapsed / duration, 1);
 
-      if (progress < 1) {
-        rafRef.current = requestAnimationFrame(animate);
+      const eased = 1 - Math.pow(1 - percentage, 3);
+
+      setProgress(Math.floor(eased * 100));
+
+      // Start opening the center around 28%
+      if (percentage > 0.28) {
+        setLogoVisible(true);
+      }
+
+      if (percentage < 1) {
+        requestAnimationFrame(animate);
       } else {
-        // Start exit after brief pause
         setTimeout(() => {
-          setExiting(true);
+          setExit(true);
+
           setTimeout(() => {
             onComplete?.();
-          }, 800);
-        }, 400);
+          }, 700);
+        }, 300);
       }
     };
 
-    rafRef.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(rafRef.current);
+    requestAnimationFrame(animate);
   }, [onComplete]);
 
   return (
-    <div
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] bg-retroBg"
-      style={{
-        transform: exiting ? "translateY(-100%)" : "translateY(0)",
-      }}
-    >
-      <div className="absolute inset-0 bg-paper-grid pointer-events-none opacity-50" />
+    <div className={`preloader ${exit ? "preloader--exit" : ""}`}>
+      {/* =========================================
+          TECHNICAL BACKGROUND
+          ========================================= */}
 
-      <div className="flex flex-col items-center relative -top-10 z-10">
-        {/* Logo text - Script font but in theme colors */}
-        <h1
-          className="text-black mb-16"
-          style={{
-            fontFamily: "'Pacifico', cursive",
-            fontSize: "clamp(5rem, 15vw, 10rem)",
-            fontWeight: 400,
-            lineHeight: 1,
-          }}
-        >
-          Sigai
-        </h1>
+      <div className="preloader-grid" />
 
-        {/* Counter */}
-        <div
-          className="text-black font-black tracking-widest text-3xl mb-6"
-          style={{ letterSpacing: "0.1em" }}
-        >
-          {count} %
-        </div>
+      <div className="preloader-traces">
+        <span className="trace trace-1" />
+        <span className="trace trace-2" />
+        <span className="trace trace-3" />
+        <span className="trace trace-4" />
+      </div>
 
-        {/* Loading Bar */}
-        <div className="w-64 h-6 bg-white relative overflow-hidden rounded-full">
+      {/* =========================================
+          MAIN CONTENT
+          ========================================= */}
+
+      <div className="preloader-content">
+        {/* =========================================
+            BRAND
+            ========================================= */}
+
+        <div className="preloader-brand">
+          <div className="brand-word brand-left">TCET</div>
+
           <div
-            className="absolute top-0 left-0 h-full bg-retroOrange transition-none"
-            style={{ width: `${count}%` }}
-          />
+            className={`brand-logo-slot ${
+              logoVisible ? "brand-logo-slot--visible" : ""
+            }`}
+          >
+            <div className="brand-logo">
+              <img src={sigaiLogo} alt="ACM SIGAI" />
+            </div>
+          </div>
+
+          <div className="brand-word brand-right">ACM SIGAI</div>
         </div>
+
+        {/* =========================================
+            PROGRESS
+            ========================================= */}
+
+        <div className="loader-status">
+          <div className="loader-number">
+            <span>{progress}</span>
+            <span className="loader-percent">%</span>
+          </div>
+
+          <div className="loader-track">
+            <div
+              className="loader-progress"
+              style={{
+                width: `${progress}%`,
+              }}
+            />
+          </div>
+
+          <div className="loader-label">
+            <span>SYSTEM INITIALIZATION</span>
+            <span>TCET / ACM / SIGAI</span>
+          </div>
+        </div>
+      </div>
+
+      {/* =========================================
+          CORNER INFORMATION
+          ========================================= */}
+
+      <div className="preloader-corner preloader-corner--tl">
+        TCET ACM SIGAI
+      </div>
+
+      <div className="preloader-corner preloader-corner--br">
+        AI SYSTEM / 01
       </div>
     </div>
   );
 }
-

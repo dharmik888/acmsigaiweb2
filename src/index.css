@@ -1,59 +1,70 @@
 @import "tailwindcss";
 
 @theme {
-  /* Theme Variables for Light/Dark Mode */
-  --color-themeBg: var(--theme-bg);
-  --color-themeText: var(--theme-text);
-  --color-themeCard: var(--theme-card);
-  --color-themeBorder: var(--theme-border);
+  /* Base neutrals — surfaces, text, structure */
+  --color-retroWhite: #ffffff;
+  --color-retroBlack: #0a0a0a;
+  --color-retroNavy: #0D47A1;
+  /* Darkest Blue (Color 4) */
+  --color-retroSky: #D4F6FF;
+  /* Light Blue (Color 2) */
+  --color-retroGrey: #eef1f4;
+  --color-retroGreySlate: #64748b;
+  --color-retroGreyDark: #1e293b;
 
-  /* Retained accent colors - bright retro colors pop well on navy */
-  --color-retroYellow: #fcd34d;
-  --color-retroOrange: #ff5722;
-  --color-retroBlue: #70d6ff;
-  --color-retroGreen: #38b000;
+  /* Accent / pop — replaced yellow with citrus lime & warm orange/gold */
+  --color-retroOrange: #2196F3;
+  /* Medium Blue (Color 3) */
+  --color-retroLime: #90CAF9;
+  /* Light Blue (Color 2) */
+  --color-retroCitrus: #E3F2FD;
+  /* Lightest Blue (Color 1) */
 
-  /* Updated dark background navy color */
-  --color-retroBg: #1e2538;
+  --color-retroBg: #ffffff;
+  --color-retroBgAlt: #eef1f4;
 
   --border-3: 3px;
 
-  /* Adjusted brutalist shadows to pure black or bright contrast pop */
-  --shadow-brutal-sm: 0px 0px 0px 0px transparent;
-  --shadow-brutal: 0px 0px 0px 0px transparent;
-  --shadow-brutal-lg: 0px 0px 0px 0px transparent;
+  --shadow-brutal-sm: 2px 2px 0px 0px #000000;
+  --shadow-brutal: 4px 4px 0px 0px #000000;
+  --shadow-brutal-lg: 7px 7px 0px 0px #000000;
 
   --animation-bounce-slow: bounce-slow 4s infinite ease-in-out;
   --animation-float-sideways: float-sideways 6s infinite linear;
 
   @keyframes bounce-slow {
+
     0%,
     100% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-10px);
     }
   }
+
   @keyframes float-sideways {
     0% {
       transform: translateX(-10px) rotate(-12deg);
     }
+
     50% {
       transform: translateX(10px) rotate(-12deg);
     }
+
     100% {
       transform: translateX(-10px) rotate(-12deg);
     }
   }
 }
 
-/* Updated graph paper grid for theme background */
+/* Light Mode graph paper grid */
 .bg-paper-grid {
-  background-color: var(--theme-bg);
+  background-color: #ffffff;
   background-image:
-    linear-gradient(to right, rgba(128, 128, 128, 0.15) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(128, 128, 128, 0.15) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -63,13 +74,15 @@
     transform 0.12s ease,
     box-shadow 0.12s ease;
 }
+
 .btn-pop:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 0px 0px 0px 0px transparent;
+  box-shadow: 7px 7px 0px 0px #000000;
 }
+
 .btn-pop:active {
   transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px 0px transparent;
+  box-shadow: 0px 0px 0px 0px #000000;
 }
 
 @keyframes stampLand {
@@ -77,10 +90,12 @@
     transform: scale(3) rotate(-12deg);
     opacity: 0;
   }
+
   70% {
     transform: scale(0.9) rotate(2deg);
     opacity: 1;
   }
+
   100% {
     transform: scale(1) rotate(0deg);
   }
@@ -90,6 +105,7 @@
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -100,13 +116,16 @@
     transform: translateY(-20px) scale(0) rotate(-20deg);
     opacity: 0;
   }
+
   60% {
     transform: translateY(4px) scale(1.1) rotate(10deg);
     opacity: 1;
   }
+
   80% {
     transform: translateY(-2px) scale(0.95) rotate(-5deg);
   }
+
   100% {
     transform: translateY(0) scale(1) rotate(0deg);
     opacity: 1;
@@ -117,14 +136,30 @@
   0% {
     transform: translateY(100%);
   }
+
   15% {
     transform: translateY(0%);
   }
+
   85% {
     transform: translateY(0%);
   }
+
   100% {
     transform: translateY(100%);
+  }
+}
+
+/* Headline lines drop-and-settle in on page load */
+@keyframes lineIn {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) rotate(-1.5deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
   }
 }
 
@@ -134,18 +169,21 @@
       transform 0.15s cubic-bezier(0.2, 0, 0, 1),
       box-shadow 0.15s cubic-bezier(0.2, 0, 0, 1);
   }
+
   .hover-brutal-lift:hover {
     transform: translate(-4px, -4px);
-    box-shadow: 0px 0px 0px 0px transparent;
+    box-shadow: 8px 8px 0px 0px #000000;
   }
+
   .hover-brutal-lift:active {
     transform: translate(2px, 2px);
-    box-shadow: 0px 0px 0px 0px transparent;
+    box-shadow: 2px 2px 0px 0px #000000;
   }
 
   .hover-sticker-wobble {
     transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
+
   .hover-sticker-wobble:hover {
     transform: scale(1.1) rotate(-4deg);
   }
@@ -159,63 +197,71 @@
     width: 200%;
     animation: marquee 14s linear infinite;
   }
+
   .animate-marquee:hover {
     animation-play-state: paused;
   }
 
   .group:hover .animate-charm-swing {
-    animation: charmDropSwing 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
-      forwards;
+    animation: charmDropSwing 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   }
 
   .animate-robot-peek {
     animation: robotPeek 6s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
   }
+
+  .animate-line-in {
+    animation: lineIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
 }
+
+/* Scroll-triggered reveal observer */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 html,
 body {
   min-height: 100vh;
-  background-color: var(--theme-bg);
-  color: var(--theme-text);
+  overflow-x: hidden;
+  background-color: #0D47A1;
+  color: #ffffff;
 }
 
 @keyframes borderRun {
   0% {
     background-position: 0% 50%;
   }
+
   100% {
     background-position: 200% 50%;
   }
 }
 
-/* Animated Running Border Overlay
-   ---------------------------------
-   Previously this cycled through a fixed 5-color rainbow gradient on every
-   card. Now it reads a single color from the --border-accent custom
-   property that each card sets inline (see ACCENT_HEX in Team.jsx), so
-   every card gets its OWN solid hover-border color that matches its badge,
-   instead of the same rainbow everywhere.
-
-   The "running" motion is now a single-hue comet: a bright band of
-   --border-accent flanked by transparency, sweeping around the border via
-   background-position. Falls back to retroYellow if a card doesn't set
-   the variable. */
+/* Animated Running Border Overlay */
 .running-border-hover {
   position: relative;
-  --border-accent: var(--color-retroYellow);
+  --border-accent: var(--color-retroLime);
 }
 
 .running-border-hover::before {
   content: "";
   position: absolute;
   inset: 0;
-  padding: 3px; /* Border thickness */
-  background: linear-gradient(
-    115deg,
-    transparent 15%,
-    var(--border-accent) 50%,
-    transparent 85%
-  );
+  padding: 3px;
+  background: linear-gradient(115deg,
+      transparent 15%,
+      var(--border-accent) 50%,
+      transparent 85%);
   background-size: 300% 300%;
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -227,22 +273,161 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* Activate animated outline strictly on card hover */
 .group:hover .running-border-hover::before {
   opacity: 1;
   animation: borderRun 1.8s linear infinite;
 }
 
-:root {
-  --theme-bg: #FAF7F2;
-  --theme-text: #000000;
-  --theme-card: #FFFFFF;
-  --theme-border: #000000;
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .animate-line-in,
+  .animate-marquee,
+  .animate-bounce-slow,
+  .animate-float-sideways,
+  .animate-robot-peek,
+  .animate-stamp {
+    animation: none !important;
+  }
 }
 
-.dark {
-  --theme-bg: #1e2538;
-  --theme-text: #f9fafb;
-  --theme-card: #2a3040;
-  --theme-border: #4b5563;
+@layer utilities {
+  .btn-brutal-press {
+    box-shadow: 4px 4px 0px 0px #000000;
+    transition:
+      transform 0.12s cubic-bezier(0.2, 0, 0, 1),
+      box-shadow 0.12s cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  .btn-brutal-press:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px #000000;
+  }
+
+  .btn-brutal-press:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px 0px #000000;
+  }
+
+  .hover-sticker-pop {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .hover-sticker-pop:hover {
+    transform: scale(1.12) rotate(-5deg);
+  }
+
+  .animate-spin-slow {
+    animation: spin 12s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes splash-out {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.2) rotate(0deg);
+  }
+
+  70% {
+    opacity: 1;
+    transform: var(--splash-target) scale(1.15);
+  }
+
+  100% {
+    opacity: 1;
+    transform: var(--splash-target) scale(1);
+  }
+}
+
+@keyframes splash-in {
+  0% {
+    opacity: 1;
+    transform: var(--splash-target) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.2) rotate(0deg);
+  }
+}
+
+.splash-active {
+  animation: splash-out 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.splash-inactive {
+  animation: splash-in 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Subtle circuit-board texture for the hero card */
+.bg-hero-circuit {
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.09) 1.5px, transparent 1.5px),
+    repeating-linear-gradient(90deg,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 48px),
+    repeating-linear-gradient(0deg,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 48px);
+  background-size:
+    24px 24px,
+    48px 48px,
+    48px 48px;
+}
+
+.running-border-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  background: linear-gradient(115deg,
+      transparent 15%,
+      var(--color-retroOrange) 35%,
+      var(--color-retroLime) 65%,
+      transparent 85%);
+  background-size: 300% 300%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide browser scrollbar entirely while keeping scroll functionality */
+html,
+body {
+  overflow-x: hidden;
+
+  /* For Chrome, Safari, and Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* For IE, Edge, and Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

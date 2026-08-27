@@ -1,45 +1,61 @@
+// src/data/teamData.js
+
+// Default Fallback
 import defaultPlaceholderImg from "../assets/placeholder-user.png";
+
+// Faculty Images
 import drShiwaniImg from "../assets/dr_shiwani_gupta.jpg.jpeg";
 import mrsPranjaliImg from "../assets/mrs_pranjali_sankhe.jpg.jpeg";
 
-// Maps each accent/badge Tailwind class to its real hex value so it can be
-// handed to the CSS custom property that drives the running border.
-export const ACCENT_HEX = {
-  "bg-retroYellow": "#fcd34d",
-  "bg-retroOrange": "#ff70a6",
-  "bg-retroBlue": "#70d6ff",
-  "bg-retroGreen": "#38b000",
-};
+// Core Team Images
+import pranavImg from "../assets/Pranav.jpg";
+import vipulImg from "../assets/Vipul.jpg";
+import adityaImg from "../assets/Aditya.jpg";
+import mahekImg from "../assets/MahekChaplot.jpg";
+import riyaImg from "../assets/Riya.png";
+import sanjanaImg from "../assets/sanjana.jpg";
+import sitanshuImg from "../assets/Sitanshu.jpg";
+import pranjalImg from "../assets/Pranjal.jpg";
+import harshiniImg from "../assets/harshini.jpg";
+import shubhamImg from "../assets/Shubham.jpg";
 
-// Resolves the profile image for a member: use their imported photo if one
-// was provided, otherwise fall back to the shared default placeholder.
-export function getMemberImage(member) {
-  return member.img || defaultPlaceholderImg;
-}
+// Junior Core Team Images
+import vaishnaviImg from "../assets/Vaishnavi.jpg";
+import preetImg from "../assets/Preet.jpg";
+import anamikaImg from "../assets/anamika.jpg";
+import yashImg from "../assets/yash.jpg";
+import jeniImg from "../assets/JENI.jpg";
+import siddhiImg from "../assets/siddhi.jpg";
+
+/*
+  Accent system — pulled straight from index.css's @theme tokens:
+  retroOrange, retroLime, retroCitrus, retroSky (retroNavy skipped as a fill
+  since it's too dark for black text). Each member stores BOTH the literal
+  bg-* and border-* class names (not built dynamically) so Tailwind's
+  content scanner can actually find and generate them.
+*/
 
 export const facultyMembers = [
   {
-    id: "shiwani",
-    label: "Faculty Sponsor",
+    id: "dr-shiwani-gupta",
     name: "Dr. Shiwani Gupta",
-    position: "HOD of Department",
-    badgeBg: "bg-retroYellow",
-    tag: "FACULTY_01",
-    description:
-      "Leading the Department of Computer Engineering with a vision for cutting-edge AI research, innovation, and empowering students to pioneer advancements in Machine Learning and Intelligent Systems.",
-    linkedin: "https://www.linkedin.com/in/dr-shiwani-gupta-9b731a53/",
+    position: "Faculty Sponsor",
+    badgeTag: "FACULTY SPONSOR",
+    accent: "bg-retroOrange",
+    accentBorder: "border-retroOrange",
+    bio: "Guiding TCET ACM SIGAI with vision, fostering research initiatives, and mentoring student cohorts in AI/ML advancements.",
+    linkedin: "https://www.linkedin.com/in/dr-shiwani-gupta-28405018/",
     img: drShiwaniImg,
   },
   {
-    id: "pranjali",
-    label: "Faculty In-Charge",
-    name: "Pranjali Sankhe",
+    id: "mrs-pranjali-sankhe",
+    name: "Mrs. Pranjali Sankhe",
     position: "Assistant Professor",
-    badgeBg: "bg-retroBlue",
-    tag: "FACULTY_02",
-    description:
-      "Guiding TCET ACM SIGAI with dedication, mentoring student cohorts in AI/ML project development, technical symposiums, and fostering research-driven academic excellence.",
-    linkedin: "https://www.linkedin.com/in/pranjali-sankhe-5421aa160/",
+    badgeTag: "FACULTY IN-CHARGE",
+    accent: "bg-retroSky",
+    accentBorder: "border-retroSky",
+    bio: "Supporting student project development, technical symposiums, and promoting academic excellence across domain activities.",
+    linkedin: "https://www.linkedin.com/in/pranjali-sankhe-955613134/",
     img: mrsPranjaliImg,
   },
 ];
@@ -48,82 +64,112 @@ export const coreTeam = [
   {
     name: "Pranav Vishwakarma",
     position: "Chairperson",
-    accent: "bg-retroYellow",
+    accent: "bg-retroOrange",
+    accentBorder: "border-retroOrange",
     badgeTag: "CORE",
-    bio: "Directing ACM SIGAI operations, fostering research culture, and establishing strategic industry-academic initiatives.",
-    linkedin: "https://www.linkedin.com/in/pranav-vishwakarma25/",
+    bio: "Leading overall chapter operations, aligning team initiatives, and building strategic tech opportunities for students.",
+    linkedin: "https://www.linkedin.com/in/pranav-vishwakarma/",
+    github: "https://github.com/",
+    img: pranavImg,
   },
   {
     name: "Vipul Choudhari",
     position: "Vice Chairperson",
-    accent: "bg-retroBlue",
+    accent: "bg-retroLime",
+    accentBorder: "border-retroLime",
     badgeTag: "CORE",
-    bio: "Managing chapter logistics, cross-departmental coordination, and driving student engagement in AI projects.",
-    linkedin: "#",
+    bio: "Overseeing internal team execution, program workflows, and driving high-impact technical initiatives across teams.",
+    linkedin: "https://www.linkedin.com/in/vipul-choudhari/",
+    github: "https://github.com/",
+    img: vipulImg,
   },
   {
     name: "Aditya Pandey",
     position: "Secretary",
-    accent: "bg-retroOrange",
-    badgeTag: "SEC",
-    bio: "Handling official communications, administrative documentation, and managing overall SIGAI workflow.",
-    linkedin: "#",
+    accent: "bg-retroCitrus",
+    accentBorder: "border-retroCitrus",
+    badgeTag: "CORE",
+    bio: "Managing chapter documentation, operational communication, and cross-team execution rhythm.",
+    linkedin: "https://www.linkedin.com/in/aditya-pandey/",
+    github: "https://github.com/",
+    img: adityaImg,
   },
   {
     name: "Mahek Chaplot",
     position: "Treasurer",
-    accent: "bg-retroGreen",
+    accent: "bg-retroSky",
+    accentBorder: "border-retroSky",
     badgeTag: "CORE",
-    bio: "Overseeing financial planning, resource management, and budgeting for events, hackathons, and research projects.",
-    linkedin: "#",
+    bio: "Handling financial planning, event budgeting, resource allocation, and overall chapter accounts transparently.",
+    linkedin: "https://www.linkedin.com/in/mahek-chaplot/",
+    github: "https://github.com/",
+    img: mahekImg,
   },
   {
     name: "Riya Yadav",
     position: "Event Manager",
-    accent: "bg-retroYellow",
-    badgeTag: "EVENTS",
-    bio: "Designing and executing flagship tech summits, ML workshops, hackathons, and interactive AI coding sprees.",
-    linkedin: "#",
-  },
-  {
-    name: "Harshini Mishal",
-    position: "Technical Head",
-    accent: "bg-retroBlue",
-    badgeTag: "TECH",
-    bio: "Architecting technical roadmaps, curating coding bootcamps, and leading AI/ML project implementations.",
-    linkedin: "#",
+    accent: "bg-retroOrange",
+    accentBorder: "border-retroOrange",
+    badgeTag: "CORE",
+    bio: "Designing, scheduling, and executing engaging technical workshops, hackathons, and speaker sessions.",
+    linkedin: "https://www.linkedin.com/in/riya-yadav/",
+    github: "https://github.com/",
+    img: riyaImg,
   },
   {
     name: "Sanjana Dubey",
     position: "Creative Head",
-    accent: "bg-retroOrange",
-    badgeTag: "CREATIVE",
-    bio: "Crafting neo-brutalist visual identities, event graphics, UI/UX layouts, and editorial media assets.",
-    linkedin: "#",
+    accent: "bg-retroLime",
+    accentBorder: "border-retroLime",
+    badgeTag: "CORE",
+    bio: "Leading visual identity, design guidelines, UI/UX aesthetics, and creative branding across event campaigns.",
+    linkedin: "https://www.linkedin.com/in/sanjana-dubey/",
+    github: "https://github.com/",
+    img: sanjanaImg,
   },
   {
     name: "Sitanshu Gupta",
     position: "PR Head",
-    accent: "bg-retroGreen",
-    badgeTag: "PUBLIC RELATIONS",
-    bio: "Directing public relations, managing media campaigns, and strengthening SIGAI's community footprint.",
-    linkedin: "#",
+    accent: "bg-retroCitrus",
+    accentBorder: "border-retroCitrus",
+    badgeTag: "CORE",
+    bio: "Driving public relations, social media outreach, and community engagement to expand the chapter footprint.",
+    linkedin: "https://www.linkedin.com/in/sitanshu-gupta/",
+    github: "https://github.com/",
+    img: sitanshuImg,
   },
   {
     name: "Pranjal Sawant",
-    position: "Spons",
-    accent: "bg-retroYellow",
-    badgeTag: "SPONSORSHIP",
-    bio: "Building industry alliances, securing corporate sponsorships, and expanding partner opportunities for SIGAI.",
-    linkedin: "#",
+    position: "Spons Head",
+    accent: "bg-retroSky",
+    accentBorder: "border-retroSky",
+    badgeTag: "CORE",
+    bio: "Establishing strategic industry sponsorships, corporate outreach, and venue/event funding partnerships.",
+    linkedin: "https://www.linkedin.com/in/pranjal-sawant/",
+    github: "https://github.com/",
+    img: pranjalImg,
+  },
+  {
+    name: "Harshini Mishal",
+    position: "Technical Head",
+    accent: "bg-retroOrange",
+    accentBorder: "border-retroOrange",
+    badgeTag: "CORE",
+    bio: "Architecting technical projects, code labs, machine learning research, and overseeing technical workshops.",
+    linkedin: "https://www.linkedin.com/in/harshini-mishal/",
+    github: "https://github.com/",
+    img: harshiniImg,
   },
   {
     name: "Shubham Prajapati",
-    position: "TECH",
-    accent: "bg-retroBlue",
-    badgeTag: "WEBMASTER",
-    bio: "Engineering web infrastructure, building interactive platforms, and maintaining digital assets.",
-    linkedin: "#",
+    position: "Webmaster",
+    accent: "bg-retroLime",
+    accentBorder: "border-retroLime",
+    badgeTag: "CORE",
+    bio: "Developing and maintaining web systems, project portals, and front-end architectures for the chapter.",
+    linkedin: "https://www.linkedin.com/in/shubham-prajapati/",
+    github: "https://github.com/",
+    img: shubhamImg,
   },
 ];
 
@@ -131,51 +177,71 @@ export const juniorCoreTeam = [
   {
     name: "Anamika Yadav",
     position: "JT Creative Head",
-    accent: "bg-retroGreen",
-    tag: "CREATIVE",
-    bio: "Designing promotional posters, editorial banners, and social media branding.",
-    linkedin: "#",
+    accent: "bg-retroCitrus",
+    accentBorder: "border-retroCitrus",
+    badgeTag: "JT CORE",
+    bio: "Supporting graphic design asset creation, poster layouts, and social media collateral.",
+    linkedin: "https://www.linkedin.com/in/anamika-yadav/",
+    github: "https://github.com/",
+    img: anamikaImg,
   },
   {
     name: "Siddhi Pandey",
     position: "JT Technical Head",
-    accent: "bg-retroBlue",
-    tag: "TECH",
-    bio: "Assisting technical workshops, repository management, and ML algorithm prototypes.",
-    linkedin: "#",
+    accent: "bg-retroSky",
+    accentBorder: "border-retroSky",
+    badgeTag: "JT CORE",
+    bio: "Assisting in technical content curation, coding challenges, and web feature updates.",
+    linkedin: "https://www.linkedin.com/in/siddhi-pandey/",
+    github: "https://github.com/",
+    img: siddhiImg,
   },
-  {
-    name: "Jeni Shah",
-    position: "Inhouse Head",
-    accent: "bg-retroOrange",
-    tag: "INHOUSE",
-    bio: "Coordinating internal team dynamics, managing venue logistics, and ensuring seamless event operations.",
-    linkedin: "#",
-  },
-
   {
     name: "Vaishnavi Nayak",
     position: "JT Secretary",
     accent: "bg-retroOrange",
-    tag: "SEC",
-    bio: "Supporting administrative scheduling, documentation, and internal team syncs.",
-    linkedin: "#",
+    accentBorder: "border-retroOrange",
+    badgeTag: "JT CORE",
+    bio: "Assisting in chapter records, administrative scheduling, and inter-team operational coordination.",
+    linkedin: "https://www.linkedin.com/in/vaishnavi-nayak/",
+    github: "https://github.com/",
+    img: vaishnaviImg,
+  },
+  {
+    name: "Preet Kothari",
+    position: "JT Event Manager",
+    accent: "bg-retroLime",
+    accentBorder: "border-retroLime",
+    badgeTag: "JT CORE",
+    bio: "Assisting in venue management, event logistics, timeline monitoring, and delegate support.",
+    linkedin: "https://www.linkedin.com/in/preet-kothari/",
+    github: "https://github.com/",
+    img: preetImg,
   },
   {
     name: "Yash Oza",
     position: "JT PR & Spons Head",
-    accent: "bg-retroYellow",
-    tag: "PR & SPONS",
-    bio: "Assisting sponsorship deck curation, public outreach, and partner networking.",
-    linkedin: "#",
+    accent: "bg-retroCitrus",
+    accentBorder: "border-retroCitrus",
+    badgeTag: "JT CORE",
+    bio: "Helping manage sponsor leads, brand communications, and promotional campaigns across campuses.",
+    linkedin: "https://www.linkedin.com/in/yash-oza/",
+    github: "https://github.com/",
+    img: yashImg,
   },
-
   {
-    name: "Preet Kothari",
-    position: "JT Event Manager",
-    accent: "bg-retroBlue",
-    tag: "EVENTS",
-    bio: "Assisting in venue management, participant coordination, and event execution.",
-    linkedin: "#",
+    name: "Jeni Shah",
+    position: "Inhouse Head",
+    accent: "bg-retroSky",
+    accentBorder: "border-retroSky",
+    badgeTag: "JT CORE",
+    bio: "Coordinating internal team communications, session execution, and internal operations smooth flow.",
+    linkedin: "https://www.linkedin.com/in/jeni-shah/",
+    github: "https://github.com/",
+    img: jeniImg,
   },
 ];
+
+export function getMemberImage(member) {
+  return member.img || defaultPlaceholderImg;
+}

@@ -15,7 +15,7 @@ import {
 } from "react-icons/fa6";
 import { HiSparkles, HiDocumentText } from "react-icons/hi2";
 
-export const BlogCharm = ({ type = "book", color = "bg-retroOrange" }) => {
+export const BlogCharm = ({ type = "book", color = "#f8fafc" }) => {
   const renderIcon = () => {
     const iconClass = "w-4 h-4 text-black shrink-0";
 

@@ -1,0 +1,1105 @@
+/* =========================================================
+   MORPH INTRO
+   Premium AI / System Boot Sequence
+   ========================================================= */
+
+.morph-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  overflow: hidden;
+
+  background: #080d18;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.morph-bg {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(99, 102, 241, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(34, 211, 238, 0.045),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(168, 85, 247, 0.045),
+      transparent 25%
+    ),
+    #080d18;
+}
+
+/* =========================================================
+   TECH GRID
+   ========================================================= */
+
+.morph-grid {
+  position: absolute;
+  inset: -100px;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+
+  background-size: 42px 42px;
+
+  transform: perspective(900px) rotateX(7deg) scale(1.12);
+
+  animation: gridDrift 18s linear infinite;
+}
+
+@keyframes gridDrift {
+  from {
+    transform: perspective(900px) rotateX(7deg) scale(1.12) translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: perspective(900px) rotateX(7deg) scale(1.12)
+      translate3d(-42px, -42px, 0);
+  }
+}
+
+/* =========================================================
+   VIGNETTE
+   ========================================================= */
+
+.morph-vignette {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.18) 65%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+/* =========================================================
+   SCANNING BEAMS
+   ========================================================= */
+
+.morph-scan {
+  position: absolute;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.035),
+    transparent
+  );
+}
+
+.morph-scan--horizontal {
+  width: 100%;
+  height: 1px;
+
+  top: -10%;
+
+  animation: horizontalScan 7s linear infinite;
+}
+
+.morph-scan--vertical {
+  width: 1px;
+  height: 100%;
+
+  left: 25%;
+
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(112, 214, 255, 0.08),
+    transparent
+  );
+
+  animation: verticalScan 9s linear infinite;
+}
+
+@keyframes horizontalScan {
+  0% {
+    top: -5%;
+  }
+
+  100% {
+    top: 105%;
+  }
+}
+
+@keyframes verticalScan {
+  0% {
+    left: -5%;
+  }
+
+  100% {
+    left: 105%;
+  }
+}
+
+/* =========================================================
+   CIRCUIT NETWORK
+   ========================================================= */
+
+.circuit-network {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.circuit {
+  position: absolute;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(112, 214, 255, 0.2),
+    rgba(112, 214, 255, 0.5),
+    transparent
+  );
+
+  opacity: 0.7;
+}
+
+/* Individual circuit paths */
+
+.circuit-a {
+  width: 38%;
+  top: 27%;
+  left: -4%;
+  transform: rotate(0deg);
+}
+
+.circuit-b {
+  width: 27%;
+  top: 37%;
+  right: -3%;
+  transform: rotate(0deg);
+}
+
+.circuit-c {
+  width: 32%;
+  top: 70%;
+  left: 2%;
+  transform: rotate(0deg);
+}
+
+.circuit-d {
+  width: 30%;
+  top: 76%;
+  right: -2%;
+}
+
+.circuit-e {
+  width: 18%;
+  top: 17%;
+  left: 48%;
+}
+
+.circuit-f {
+  width: 22%;
+  top: 61%;
+  left: 39%;
+}
+
+.circuit-g {
+  width: 14%;
+  top: 46%;
+  left: -2%;
+}
+
+.circuit-h {
+  width: 16%;
+  top: 51%;
+  right: -2%;
+}
+
+/* Circuit endpoints */
+
+.circuit::before,
+.circuit::after {
+  content: "";
+
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border: 1px solid rgba(112, 214, 255, 0.65);
+
+  border-radius: 50%;
+
+  box-shadow: 0 0 8px rgba(112, 214, 255, 0.5);
+}
+
+.circuit::before {
+  left: 0;
+  top: -2px;
+}
+
+.circuit::after {
+  right: 0;
+  top: -2px;
+}
+
+/* Moving pulse */
+
+.circuit i {
+  position: absolute;
+
+  top: -1px;
+  left: 0;
+
+  width: 70px;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95),
+    transparent
+  );
+
+  filter: drop-shadow(0 0 5px rgba(112, 214, 255, 0.9));
+
+  animation: circuitRun 2.8s linear infinite;
+}
+
+.circuit b {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  top: -1px;
+  left: 40%;
+
+  background: #70d6ff;
+
+  box-shadow:
+    0 0 7px #70d6ff,
+    0 0 15px rgba(112, 214, 255, 0.7);
+
+  animation: nodePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes circuitRun {
+  from {
+    transform: translateX(-80px);
+  }
+
+  to {
+    transform: translateX(45vw);
+  }
+}
+
+@keyframes nodePulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+/* =========================================================
+   DATA PACKETS
+   ========================================================= */
+
+.data-packets {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.packet {
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #70d6ff;
+
+  box-shadow:
+    0 0 8px #70d6ff,
+    0 0 18px rgba(112, 214, 255, 0.8);
+}
+
+.packet-1 {
+  top: 27%;
+  left: 8%;
+  animation: packetOne 3s linear infinite;
+}
+
+.packet-2 {
+  top: 37%;
+  right: 12%;
+  animation: packetTwo 4s linear infinite;
+}
+
+.packet-3 {
+  top: 70%;
+  left: 10%;
+  animation: packetOne 4.5s linear infinite reverse;
+}
+
+.packet-4 {
+  top: 76%;
+  right: 8%;
+  animation: packetTwo 3.5s linear infinite reverse;
+}
+
+.packet-5 {
+  top: 17%;
+  left: 55%;
+  animation: packetOne 3.8s linear infinite;
+}
+
+.packet-6 {
+  top: 61%;
+  left: 45%;
+  animation: packetTwo 4.2s linear infinite;
+}
+
+@keyframes packetOne {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(35vw);
+  }
+}
+
+@keyframes packetTwo {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-30vw);
+  }
+}
+
+/* =========================================================
+   HUD
+   ========================================================= */
+
+.hud {
+  position: absolute;
+
+  z-index: 4;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.16em;
+
+  color: rgba(255, 255, 255, 0.32);
+
+  text-transform: uppercase;
+}
+
+.hud small {
+  font-size: 7px;
+  letter-spacing: 0.2em;
+
+  color: rgba(255, 255, 255, 0.16);
+}
+
+.hud--tl {
+  top: 34px;
+  left: 38px;
+}
+
+.hud--tr {
+  top: 36px;
+  right: 42px;
+
+  text-align: right;
+}
+
+.hud--bl {
+  bottom: 34px;
+  left: 38px;
+}
+
+.hud--br {
+  bottom: 34px;
+  right: 42px;
+
+  text-align: right;
+}
+
+.hud-line {
+  width: 45px;
+  height: 1px;
+
+  margin-bottom: 4px;
+
+  background: #70d6ff;
+
+  box-shadow: 0 0 7px rgba(112, 214, 255, 0.7);
+}
+
+.hud i {
+  width: 5px;
+  height: 5px;
+
+  margin-left: auto;
+
+  border-radius: 50%;
+
+  background: #38e68b;
+
+  box-shadow: 0 0 8px #38e68b;
+}
+
+/* =========================================================
+   CROSSHAIRS
+   ========================================================= */
+
+.crosshair {
+  position: absolute;
+
+  width: 28px;
+  height: 28px;
+
+  opacity: 0.45;
+}
+
+.crosshair::before,
+.crosshair::after,
+.crosshair span::before,
+.crosshair span::after {
+  content: "";
+
+  position: absolute;
+
+  background: rgba(112, 214, 255, 0.55);
+}
+
+.crosshair::before {
+  width: 1px;
+  height: 100%;
+  left: 50%;
+}
+
+.crosshair::after {
+  width: 100%;
+  height: 1px;
+  top: 50%;
+}
+
+.crosshair span::before {
+  width: 6px;
+  height: 6px;
+
+  border: 1px solid rgba(112, 214, 255, 0.7);
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: transparent;
+}
+
+.crosshair-1 {
+  top: 24%;
+  left: 18%;
+}
+
+.crosshair-2 {
+  top: 30%;
+  right: 17%;
+}
+
+.crosshair-3 {
+  bottom: 24%;
+  left: 23%;
+}
+
+.crosshair-4 {
+  bottom: 20%;
+  right: 19%;
+}
+
+/* =========================================================
+   CODE STREAMS
+   ========================================================= */
+
+.code-stream {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 0.15em;
+
+  color: rgba(112, 214, 255, 0.18);
+
+  pointer-events: none;
+}
+
+.code-stream--left {
+  left: 8%;
+  bottom: 25%;
+}
+
+.code-stream--right {
+  right: 8%;
+  top: 28%;
+  text-align: right;
+}
+
+/* =========================================================
+   CENTER SYSTEM LABEL
+   ========================================================= */
+
+.system-label {
+  position: absolute;
+
+  top: 36%;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 0.25em;
+
+  color: rgba(112, 214, 255, 0.35);
+
+  text-transform: uppercase;
+}
+
+.system-label i {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #70d6ff;
+
+  box-shadow:
+    0 0 8px #70d6ff,
+    0 0 16px #70d6ff;
+
+  animation: nodePulse 1s ease-in-out infinite;
+}
+
+/* =========================================================
+   MAIN MORPH AREA
+   ========================================================= */
+
+.morph-center {
+  position: relative;
+
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================================================
+   WORD
+   ========================================================= */
+
+.morph-word {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 150px;
+
+  min-width: 650px;
+}
+
+.morph-word-stage {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   CHARACTERS
+   ========================================================= */
+
+.morph-char {
+  position: relative;
+
+  display: inline-block;
+
+  font-size: clamp(70px, 9vw, 150px);
+
+  font-weight: 900;
+
+  letter-spacing: 0.025em;
+
+  line-height: 0.9;
+
+  text-transform: uppercase;
+
+  will-change: transform, opacity, filter;
+
+  backface-visibility: hidden;
+}
+
+/* =========================================================
+   CURRENT WORD
+   ========================================================= */
+
+.morph-char--old {
+  color: #ffffff;
+
+  animation: oldIdle 0.8s ease forwards;
+}
+
+/* =========================================================
+   NEXT WORD
+   ========================================================= */
+
+.morph-char--new {
+  position: absolute;
+
+  left: 50%;
+
+  opacity: 0;
+
+  color: #ffffff;
+
+  transform: translateX(calc((var(--i) - var(--total) / 2) * 75px))
+    rotateY(-100deg) rotateZ(10deg) translateY(30px) scale(0.75);
+}
+
+/* =========================================================
+   ROTATING MORPH
+   ========================================================= */
+
+.is-morphing .morph-char--old {
+  animation: oldRotateOut 0.65s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+
+  animation-delay: calc(var(--i) * 0.035s);
+}
+
+.is-morphing .morph-char--new {
+  animation: newRotateIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  animation-delay: calc(var(--i) * 0.035s + 0.08s);
+}
+
+/* =========================================================
+   OLD CHARACTER ROTATION
+   ========================================================= */
+
+@keyframes oldRotateOut {
+  0% {
+    opacity: 1;
+
+    transform: translateY(0) rotateY(0deg) rotateZ(0deg) scale(1);
+  }
+
+  35% {
+    opacity: 1;
+
+    transform: translateY(-10px) rotateY(55deg)
+      rotateZ(calc((var(--i) % 2) * 10deg - 5deg)) scale(0.95);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: translateY(-45px) rotateY(100deg) rotateZ(-15deg) scale(0.65);
+  }
+}
+
+/* =========================================================
+   NEW CHARACTER ROTATION
+   ========================================================= */
+
+@keyframes newRotateIn {
+  0% {
+    opacity: 0;
+
+    transform: translateX(calc((var(--i) - var(--total) / 2) * 75px))
+      rotateY(-100deg) rotateZ(15deg) translateY(45px) scale(0.65);
+  }
+
+  45% {
+    opacity: 1;
+
+    transform: translateX(calc((var(--i) - var(--total) / 2) * 40px))
+      rotateY(-35deg) rotateZ(-5deg) translateY(-6px) scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateX(calc((var(--i) - var(--total) / 2) * 0px))
+      rotateY(0deg) rotateZ(0deg) translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   WORD COLOR STATES
+   ========================================================= */
+
+.morph-center--violet .morph-char {
+  color: #c084fc;
+
+  text-shadow:
+    0 0 12px rgba(192, 132, 252, 0.25),
+    0 0 35px rgba(168, 85, 247, 0.15);
+}
+
+.morph-center--cyan .morph-char {
+  color: #67e8f9;
+
+  text-shadow:
+    0 0 12px rgba(103, 232, 249, 0.3),
+    0 0 35px rgba(34, 211, 238, 0.18);
+}
+
+.morph-center--green .morph-char {
+  color: #86efac;
+
+  text-shadow:
+    0 0 12px rgba(134, 239, 172, 0.25),
+    0 0 35px rgba(34, 197, 94, 0.16);
+}
+
+/* =========================================================
+   UNDERLINE
+   ========================================================= */
+
+.morph-underline {
+  position: relative;
+
+  width: 190px;
+  height: 2px;
+
+  margin-top: 15px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.morph-underline span {
+  position: absolute;
+
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background: currentColor;
+
+  animation: underlineRun 2s linear infinite;
+}
+
+.morph-center--violet .morph-underline {
+  color: #c084fc;
+}
+
+.morph-center--cyan .morph-underline {
+  color: #67e8f9;
+}
+
+.morph-center--green .morph-underline {
+  color: #86efac;
+}
+
+@keyframes underlineRun {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+/* =========================================================
+   META PROCESS BAR
+   ========================================================= */
+
+.morph-meta {
+  width: 600px;
+
+  margin-top: 48px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 14px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 0.18em;
+
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.meta-track {
+  position: relative;
+
+  height: 2px;
+
+  background: rgba(255, 255, 255, 0.09);
+
+  overflow: hidden;
+}
+
+.meta-track span {
+  display: block;
+
+  height: 100%;
+
+  background: currentColor;
+
+  transition: width 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.morph-center--violet .meta-track {
+  color: #c084fc;
+}
+
+.morph-center--cyan .meta-track {
+  color: #67e8f9;
+}
+
+.morph-center--green .meta-track {
+  color: #86efac;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.morph-status {
+  position: absolute;
+
+  bottom: 13%;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 0.2em;
+
+  color: rgba(255, 255, 255, 0.25);
+
+  text-transform: uppercase;
+}
+
+.morph-status i {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #67e8f9;
+
+  box-shadow: 0 0 8px #67e8f9;
+
+  animation: nodePulse 1.2s ease-in-out infinite;
+}
+
+/* =========================================================
+   MEASUREMENT MARKS
+   ========================================================= */
+
+.measurement {
+  position: absolute;
+
+  top: 50%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  transform: translateY(-50%);
+}
+
+.measurement span {
+  display: block;
+
+  width: 20px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.measurement--left {
+  left: 30px;
+}
+
+.measurement--right {
+  right: 30px;
+}
+
+.measurement--right span {
+  margin-left: auto;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .morph-word {
+    min-width: 90vw;
+  }
+
+  .morph-meta {
+    width: 70vw;
+  }
+
+  .circuit-e,
+  .circuit-f,
+  .circuit-g,
+  .circuit-h {
+    display: none;
+  }
+
+  .code-stream {
+    display: none;
+  }
+
+  .hud {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 600px) {
+  .morph-word {
+    height: 100px;
+  }
+
+  .morph-char {
+    font-size: clamp(48px, 15vw, 80px);
+  }
+
+  .morph-meta {
+    width: 75vw;
+
+    margin-top: 30px;
+  }
+
+  .system-label {
+    top: 32%;
+  }
+
+  .hud--tr,
+  .hud--br {
+    right: 20px;
+  }
+
+  .hud--tl,
+  .hud--bl {
+    left: 20px;
+  }
+
+  .crosshair {
+    transform: scale(0.7);
+  }
+
+  .measurement {
+    display: none;
+  }
+
+  .morph-status {
+    bottom: 9%;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .morph-grid,
+  .morph-scan,
+  .circuit i,
+  .circuit b,
+  .packet,
+  .morph-underline span,
+  .morph-status i {
+    animation: none;
+  }
+
+  .morph-char {
+    animation: none !important;
+  }
+}

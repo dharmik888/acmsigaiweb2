@@ -1,457 +1,388 @@
-import React, { useState, useRef } from "react";
-import { SectionHeader } from "../components/ui/SectionHeader.jsx";
+// src/pages/Team.jsx
+import React, { useState, useEffect, useRef } from "react";
+import { SectionHeader } from "../components/ui/SectionHeader";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
-  ACCENT_HEX,
-  getMemberImage,
+  Mail,
+  Crown,
+  UserCheck,
+  FileText,
+  DollarSign,
+  Calendar,
+  Code,
+  Palette,
+  Megaphone,
+  Handshake,
+  Globe,
+  GraduationCap,
+  Briefcase,
+  Users,
+  Terminal,
+} from "lucide-react";
+import {
   facultyMembers,
   coreTeam,
   juniorCoreTeam,
-} from "../data/teamData.js";
+  getMemberImage,
+} from "../data/teamData";
 
-const LinkedInIcon = () => (
-  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+// Assets
+import groupPhoto from "../assets/group_photo_team_banner.jpg";
+
+/* Custom Brand SVG Icons */
+const LinkedinIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
   </svg>
 );
 
-const ArrowUpRightIcon = () => (
-  <svg
-    className="w-4 h-4 stroke-current stroke-2 fill-none"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M7 17L17 7M17 7H7M17 7V17"
-    />
+const GithubIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
   </svg>
 );
 
-// Specific Position Icons
-const PositionIcon = ({ position }) => {
-  const p = position.toLowerCase();
+/* Position Icon Helper */
+const getPositionIcon = (position) => {
+  const pos = (position || "").toLowerCase();
 
-  if (p.includes("chair") || p.includes("sponsor") || p.includes("hod")) {
-    return (
-      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z" />
-      </svg>
-    );
+  if (pos.includes("chairperson") && !pos.includes("vice")) {
+    return <Crown size={14} className="text-black" />;
   }
-  if (p.includes("tech") || p.includes("webmaster")) {
-    return (
-      <svg
-        className="w-3.5 h-3.5 stroke-current stroke-2 fill-none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
-    );
+
+  if (pos.includes("vice chairperson")) {
+    return <UserCheck size={14} className="text-black" />;
   }
-  if (p.includes("creative") || p.includes("design")) {
-    return (
-      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-        <path d="M12 3a9 9 0 0 0 0 18c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16a5 5 0 0 0 5-5c0-4.97-4.03-9-9-9zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
-      </svg>
-    );
+
+  if (pos.includes("faculty sponsor") || pos.includes("hod")) {
+    return <GraduationCap size={14} className="text-black" />;
   }
-  if (p.includes("treasurer") || p.includes("spons")) {
-    return (
-      <svg
-        className="w-3.5 h-3.5 stroke-current stroke-2 fill-none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 1v22m5-18H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-        />
-      </svg>
-    );
+
+  if (pos.includes("faculty") || pos.includes("professor")) {
+    return <Briefcase size={14} className="text-black" />;
   }
-  if (p.includes("event") || p.includes("inhouse")) {
-    return (
-      <svg
-        className="w-3.5 h-3.5 stroke-current stroke-2 fill-none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-        />
-      </svg>
-    );
+
+  if (pos.includes("secretary")) {
+    return <FileText size={14} className="text-black" />;
   }
-  return (
-    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-      <path d="M21 3L3 10.5v3L8 15v5l3.5-3.5L15 18l6-15zM8 13.5l-3-1 11-5.5-8 6.5z" />
-    </svg>
-  );
+
+  if (pos.includes("treasurer")) {
+    return <DollarSign size={14} className="text-black" />;
+  }
+
+  if (pos.includes("event")) {
+    return <Calendar size={14} className="text-black" />;
+  }
+
+  if (pos.includes("creative")) {
+    return <Palette size={14} className="text-black" />;
+  }
+
+  if (pos.includes("pr & spons")) {
+    return <Handshake size={14} className="text-black" />;
+  }
+
+  if (pos.includes("pr")) {
+    return <Megaphone size={14} className="text-black" />;
+  }
+
+  if (pos.includes("spons")) {
+    return <Handshake size={14} className="text-black" />;
+  }
+
+  if (pos.includes("webmaster")) {
+    return <Globe size={14} className="text-black" />;
+  }
+
+  if (pos.includes("inhouse")) {
+    return <Users size={14} className="text-black" />;
+  }
+
+  if (pos.includes("tech")) {
+    return <Code size={14} className="text-black" />;
+  }
+
+  return <Terminal size={14} className="text-black" />;
 };
 
-const FacultyCard = ({ faculty }) => {
-  return (
-    <div
-      className="group relative p-[3px] overflow-hidden rounded-none max-w-5xl mx-auto"
-      style={{ "--border-accent": ACCENT_HEX[faculty.badgeBg] }}
-    >
-      <div className="absolute inset-0 running-border-hover" />
-
-      <div className="relative bg-[#1b2333] p-6 md:p-8 h-full w-full">
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 border-b-2 border-white/25 pb-4">
-          <div className="flex items-center gap-2">
-            <span
-              className={`inline-flex items-center gap-1.5 px-3 py-1 text-xs font-extrabold uppercase border-2 border-black text-black ${faculty.badgeBg}`}
-            >
-              <PositionIcon position={faculty.position} />
-              <span>{faculty.label}</span>
-            </span>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          <div className="lg:col-span-5 flex flex-col">
-            <div className="relative border-4 border-white overflow-hidden bg-[#232c45] h-72 sm:h-80 lg:h-full">
-              <img
-                src={getMemberImage(faculty)}
-                alt={faculty.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ease-out"
-              />
-            </div>
-          </div>
-
-          <div className="lg:col-span-7 flex flex-col justify-center">
-            <div>
-              <h3 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-2 transition-colors duration-300 group-hover:text-retroYellow">
-                {faculty.name}
-              </h3>
-              <span
-                className={`inline-flex items-center gap-2 px-3 py-1.5 mb-4 text-sm md:text-base font-mono font-extrabold uppercase border-2 border-black rounded-md text-black ${faculty.badgeBg}`}
-              >
-                <PositionIcon position={faculty.position} />
-                <span>{faculty.position}</span>
-              </span>
-              <p className="text-sm font-medium leading-relaxed text-gray-200 font-sans transition-colors duration-300 group-hover:text-white">
-                {faculty.description}
-              </p>
-            </div>
-
-            <div className="pt-4 mt-6 border-t-2 border-white/25 flex items-center justify-between gap-4">
-              <a
-                href={faculty.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pop inline-flex items-center gap-2 bg-retroYellow text-black font-extrabold text-sm px-5 py-2.5 border-3 border-black transition-all"
-                aria-label={`LinkedIn profile for ${faculty.name}`}
-              >
-                <LinkedInIcon />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const CoreTeamCard = ({ member }) => {
-  return (
-    <div
-      className="group relative bg-[#1b2333] border-2 border-white/25 hover:border-transparent transition-all duration-300"
-      style={{ "--border-accent": ACCENT_HEX[member.accent] }}
-    >
-      <div className="running-border-hover w-full h-full p-1">
-        <div className="bg-[#1b2333] w-full h-full flex flex-col justify-between overflow-hidden">
-          <div className="bg-[#232c45] border-b-2 border-white/25 p-3 flex items-center justify-between shrink-0">
-            <span
-              className={`inline-flex items-center gap-1.5 text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 border border-black text-black ${member.accent}`}
-            >
-              <PositionIcon position={member.position} />
-              <span>{member.badgeTag}</span>
-            </span>
-
-            <a
-              href={member.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-pop inline-flex items-center justify-center bg-white hover:bg-retroYellow text-black p-1.5 border-2 border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] transition-all"
-              aria-label={`LinkedIn for ${member.name}`}
-            >
-              <LinkedInIcon />
-            </a>
-          </div>
-
-          <div className="p-3">
-            <div className="w-full h-64 border-2 border-white overflow-hidden bg-gray-900 shadow-[3px_3px_0px_0px_rgba(255,255,255,0.15)]">
-              <img
-                src={getMemberImage(member)}
-                alt={member.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </div>
-
-          <div className="px-3 pb-3">
-            <span
-              className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-mono font-extrabold uppercase border-2 border-black rounded-md text-black shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] ${member.accent}`}
-            >
-              <PositionIcon position={member.position} />
-              <span>{member.position}</span>
-            </span>
-          </div>
-
-          <div className="max-h-0 opacity-0 group-hover:max-h-60 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden px-3 pb-3">
-            <h3 className="text-xl font-extrabold text-white tracking-tight leading-tight group-hover:text-{member.accent} transition-colors duration-300 mb-2">
-              {member.name}
-            </h3>
-
-            <div className="bg-[#232c45] border border-white/25 p-2.5">
-              <p className="text-xs font-sans text-gray-200 leading-relaxed">
-                {member.bio}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-function splitIntoColumns(items, columnCount) {
-  const columns = Array.from({ length: columnCount }, () => []);
-  items.forEach((item, i) => columns[i % columnCount].push(item));
-  return columns;
-}
-
-const JuniorCoreCard = ({ member }) => {
-  const [tiltStyle, setTiltStyle] = useState({
-    transform: "translate3d(0,0,0) rotate(0deg)",
-  });
+/* ================= INDIVIDUAL MEMBER CARD ================= */
+function TeamCard({ member, isActive, columnIndex = 0 }) {
   const cardRef = useRef(null);
 
-  const handleMouseMove = (e) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
+  const accentBg = member.accent || member.badgeBg || "bg-retroYellow";
 
-    const moveX = (x / (rect.width / 2)) * 10;
-    const moveY = (y / (rect.height / 2)) * 10;
-    const rotate = (x / (rect.width / 2)) * 4;
+  const displayPosition = member.position || member.label || "MEMBER";
 
-    setTiltStyle({
-      transform: `translate3d(${moveX}px, ${moveY}px, 0) rotate(${rotate}deg)`,
-    });
-  };
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"],
+  });
 
-  const handleMouseLeave = () => {
-    setTiltStyle({ transform: "translate3d(0,0,0) rotate(0deg)" });
-  };
+  const yPos = useTransform(scrollYProgress, [0, 0.5, 1], [30, 0, -20]);
+
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.85, 1],
+    [0.2, 1, 1, 0.4],
+  );
 
   return (
-    <div
+    <motion.div
       ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="group relative p-[2px] overflow-hidden rounded-none shadow-[4px_4px_0px_0px_rgba(255,255,255,0.15)]"
-      style={{ "--border-accent": ACCENT_HEX[member.accent] }}
+      style={{ y: yPos, opacity }}
+      initial={{ opacity: 0, y: 60, scale: 0.92 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{
+        duration: 0.6,
+        delay: columnIndex * 0.15,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="team-row flex flex-col items-center w-full"
+      data-id={member.id || member.name.toLowerCase().replace(/\s+/g, "-")}
     >
-      <div className="absolute inset-0 running-border-hover" />
+      {/* Name + Designation */}
+      <div className="w-full max-w-xs mb-4 min-h-[92px] flex flex-col justify-end">
+        <h3 className={`font-black uppercase tracking-tight text-black leading-none mb-2 ${member.name.length > 18 ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'}`}>
+          {member.name}
+        </h3>
 
-      <div className="relative bg-[#1b2333] p-3.5 flex flex-col h-full w-full">
-        <div className="flex items-center justify-between mb-3 pb-1.5 border-b-2 border-white/25">
-          <span
-            className={`inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-mono font-bold border border-black text-black ${member.accent}`}
-          >
-            <PositionIcon position={member.position} />
-            <span>{member.tag}</span>
-          </span>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.7 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{
+            duration: 0.4,
+            delay: columnIndex * 0.15 + 0.25,
+            ease: "backOut",
+          }}
+          className={`inline-flex items-center gap-1.5 ${accentBg} text-black font-black text-[11px] uppercase border-2 border-black px-3 py-1.5 rounded-full shadow-sm w-fit`}
+        >
+          {getPositionIcon(displayPosition)}
+          <span>{displayPosition}</span>
+        </motion.div>
+      </div>
 
-          <a
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-pop inline-flex items-center justify-center bg-white hover:bg-retroYellow text-black p-1.5 border-2 border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] transition-all"
-            aria-label={`LinkedIn for ${member.name}`}
-          >
-            <LinkedInIcon />
-          </a>
-        </div>
-
-        <div className="relative border-2 border-white overflow-hidden bg-black h-64 sm:h-72 mb-3 shadow-[2px_2px_0px_0px_rgba(255,255,255,0.15)]">
+      {/* Coloured Image Card */}
+      {/* Coloured Image Card */}
+      <motion.div
+        animate={{
+          scale: isActive ? 1.03 : 1,
+          boxShadow: isActive
+            ? "3px 3px 0px 0px #000000"
+            : "2px 2px 0px 0px #000000",
+        }}
+        transition={{ duration: 0.3 }}
+        className={`relative w-full max-w-xs p-3.5 rounded-3xl border-3 border-black ${accentBg} transition-all`}
+      >
+        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border-2 border-black bg-black">
           <img
             src={getMemberImage(member)}
             alt={member.name}
-            style={tiltStyle}
-            className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-all duration-300 ease-out"
+            className="w-full h-full object-cover object-center"
           />
         </div>
-
-        <span
-          className={`inline-flex items-center gap-1 mb-2 px-2 py-0.5 text-[10px] font-mono font-extrabold uppercase border-2 border-black rounded-md text-black shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] w-fit ${member.accent}`}
+      </motion.div>
+      {/* Description + Social Links */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{
+          duration: 0.5,
+          delay: columnIndex * 0.15 + 0.35,
+          ease: "easeOut",
+        }}
+        className="w-full max-w-xs space-y-3 mt-5 text-center"
+      >
+        <p
+          className={`text-black font-bold text-sm leading-relaxed border-l-4 border-black pl-4 py-2 ${accentBg} rounded-r-2xl shadow-sm text-left`}
         >
-          <PositionIcon position={member.position} />
-          <span>{member.position}</span>
-        </span>
+          {member.bio || member.description}
+        </p>
 
-        <h4 className="text-base font-extrabold text-white tracking-tight group-hover:text-retroOrange transition-colors duration-300">
-          {member.name}
-        </h4>
+        <div className="flex items-center justify-center gap-3 pt-2">
+          {member.linkedin && (
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${member.name}'s LinkedIn`}
+              className={`p-2.5 ${accentBg} border-2 border-black rounded-xl shadow-sm hover:bg-black hover:text-white flex items-center justify-center text-black transition-colors`}
+            >
+              <LinkedinIcon size={18} />
+            </a>
+          )}
 
-        <div className="max-h-0 opacity-0 group-hover:max-h-32 group-hover:opacity-100 group-hover:mt-2 transition-all duration-500 ease-in-out overflow-hidden">
-          <p className="text-[11px] font-sans text-gray-300 bg-[#232c45] border border-white/25 p-2">
-            {member.bio}
-          </p>
+          {member.github && (
+            <a
+              href={member.github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${member.name}'s GitHub`}
+              className={`p-2.5 ${accentBg} border-2 border-black rounded-xl shadow-sm hover:bg-black hover:text-white flex items-center justify-center text-black transition-colors`}
+            >
+              <GithubIcon size={18} />
+            </a>
+          )}
+
+          {member.email && (
+            <a
+              href={`mailto:${member.email}`}
+              aria-label={`Email ${member.name}`}
+              className={`p-2.5 ${accentBg} border-2 border-black rounded-xl shadow-sm hover:bg-black hover:text-white flex items-center justify-center text-black transition-colors`}
+            >
+              <Mail size={18} />
+            </a>
+          )}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
-};
+}
 
+/* ================= MAIN TEAM PAGE ================= */
 export default function Team() {
-  const [activeFilter, setActiveFilter] = useState("ALL");
+  const [activeMemberId, setActiveMemberId] = useState("");
 
-  const filteredCore = coreTeam.filter((member) => {
-    if (activeFilter === "ALL") return true;
-    if (activeFilter === "LEAD")
-      return (
-        member.position.includes("Chairperson") ||
-        member.position.includes("Secretary") ||
-        member.position.includes("Treasurer")
-      );
-    if (activeFilter === "TECH")
-      return (
-        member.position.includes("Technical") ||
-        member.position.includes("Webmaster")
-      );
-    if (activeFilter === "CREATIVE")
-      return (
-        member.position.includes("Creative") ||
-        member.position.includes("Event")
-      );
-    if (activeFilter === "OPS")
-      return (
-        member.position.includes("PR") || member.position.includes("Spons")
-      );
-    return true;
-  });
+  useEffect(() => {
+    let rafId;
+
+    const handleScroll = () => {
+      rafId = requestAnimationFrame(() => {
+        const rows = document.querySelectorAll(".team-row");
+
+        if (!rows.length) return;
+
+        const centerY = window.innerHeight / 2;
+        let minDistance = Infinity;
+        let closestId = null;
+
+        rows.forEach((row) => {
+          const rect = row.getBoundingClientRect();
+          const rowCenterY = rect.top + rect.height / 2;
+          const dist = Math.abs(rowCenterY - centerY);
+
+          if (dist < minDistance) {
+            minDistance = dist;
+            closestId = row.dataset.id;
+          }
+        });
+
+        if (closestId) {
+          setActiveMemberId(closestId);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(rafId);
+    };
+  }, []);
 
   return (
-    <div className="bg-paper-grid min-h-screen text-white font-sans overflow-x-hidden selection:bg-retroOrange selection:text-black">
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10 relative">
-        <section className="relative mb-8 lg:mb-10">
-          <div className="relative z-10 flex flex-col items-center text-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full flex flex-col items-center text-center">
-              <SectionHeader
-                title="MEET THE TEAM"
-                subtitle="The minds shaping TCET ACM SIGAI."
-                badgeText="PEOPLE"
-                color="bg-retroBlue"
-              />
+    <div className="pb-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+      <SectionHeader
+        badgeText="THE MINDSHARE"
+        title="MEET THE TEAM"
+        subtitle="A skilled and passionate team of student leaders, faculty advisors, and mentors driving AI innovation at TCET."
+      />
 
-              <div className="section-divider-row flex items-center justify-center gap-3 w-full">
-                <div className="h-0.5 bg-white/20 flex-1 max-w-[80px] sm:max-w-[120px]" />
-                <span
-                  className="inline-flex items-center gap-1.5 font-black text-xs px-4 py-1.5 border-2 border-black rounded-full uppercase tracking-wider select-none shadow-brutal-sm"
-                  style={{
-                    backgroundColor: "#000000",
-                    color: "#ff83b8",
-                  }}
-                >
-                  ★ Faculty Leadership ★
-                </span>
-                <div className="h-0.5 bg-white/20 flex-1 max-w-[80px] sm:max-w-[120px]" />
-              </div>
+      {/* Group Photo Showcase */}
+      <div className="my-8 relative rounded-3xl border-3 border-black bg-retroYellow p-3 sm:p-4 shadow-md overflow-hidden">
+        <div className="relative aspect-[16/9] sm:aspect-[21/9] rounded-2xl border-2 border-black overflow-hidden group">
+          <img
+            src={groupPhoto}
+            alt="TCET ACM SIGAI Team Banner"
+            className="w-full h-full object-cover object-center filter grayscale group-hover:grayscale-0 transition-all duration-700"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+            <div className="text-white space-y-1">
+              <span className="bg-retroOrange text-black font-black text-[10px] sm:text-xs uppercase px-3 py-1 rounded-full border-2 border-black shadow-sm">
+                2025-26
+              </span>
+
+              <h2 className="text-xl sm:text-3xl font-black uppercase tracking-tight text-white drop-shadow-md">
+                TCET ACM SIGAI Core & Jr Core Team
+              </h2>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
 
-        <section className="mb-12 lg:mb-16">
-          <div className="space-y-8">
-            {facultyMembers.map((faculty) => (
-              <FacultyCard key={faculty.id} faculty={faculty} />
+      {/* FACULTY SECTION */}
+      <div className="mb-12">
+        <div className="inline-block bg-black text-white font-black text-sm uppercase px-4 py-1.5 rounded-xl border-2 border-black shadow-sm mb-6">
+          Faculty Mentors & Leaders
+        </div>
+
+        <div className="bg-[#FAF7F2] border-3 border-black rounded-3xl p-6 sm:p-10 shadow-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-14 justify-items-center">
+            {facultyMembers.map((member, index) => (
+              <TeamCard
+                key={member.id}
+                member={member}
+                isActive={activeMemberId === member.id}
+                columnIndex={index % 2}
+              />
             ))}
           </div>
-        </section>
+        </div>
+      </div>
 
-        {/* CORE TEAM SECTION */}
-        <section className="mb-12 lg:mb-16">
-          <div className="section-divider-row flex items-center justify-center gap-3 w-full mb-6">
-            <div className="h-0.5 bg-white/20 flex-1 max-w-[80px] sm:max-w-[120px]" />
-            <span
-              className="inline-flex items-center gap-1.5 font-black text-xs px-4 py-1.5 border-2 border-black rounded-full uppercase tracking-wider select-none shadow-[3px_3px_0px_0px_rgba(255,255,255,0.2)]"
-              style={{
-                backgroundColor: "#fcd34d",
-                color: "#000000",
-              }}
-            >
-              Core Team
-            </span>
-            <div className="h-0.5 bg-white/20 flex-1 max-w-[80px] sm:max-w-[120px]" />
-          </div>
+      {/* CORE TEAM SECTION */}
+      <div className="mb-12">
+        <div className="inline-block bg-black text-white font-black text-sm uppercase px-4 py-1.5 rounded-xl border-2 border-black shadow-sm mb-6">
+          Core Executive Team
+        </div>
 
-          <div className="mb-6 flex flex-wrap items-center gap-2 font-mono text-xs font-bold">
-            <span className="text-gray-400 mr-2">FILTER BY DOMAIN:</span>
-            {[
-              { id: "ALL", label: "ALL MEMBERS" },
-              { id: "LEAD", label: "LEADERSHIP" },
-              { id: "TECH", label: "TECH & WEB" },
-              { id: "CREATIVE", label: "CREATIVE & EVENTS" },
-              { id: "OPS", label: "OPERATIONS & PR" },
-            ].map((btn) => (
-              <button
-                key={btn.id}
-                onClick={() => setActiveFilter(btn.id)}
-                className={`btn-pop px-3 py-1.5 border-2 border-white shadow-[3px_3px_0px_0px_rgba(255,255,255,0.15)] transition-all ${activeFilter === btn.id
-                    ? "bg-retroYellow text-black font-extrabold"
-                    : "bg-[#1b2333] text-white hover:bg-white hover:text-black"
-                  }`}
-              >
-                {btn.label}
-              </button>
+        <div className="bg-[#FAF7F2] border-3 border-black rounded-3xl p-6 sm:p-10 shadow-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-14 justify-items-center">
+            {coreTeam.map((member, index) => (
+              <TeamCard
+                key={member.name}
+                member={member}
+                isActive={
+                  activeMemberId ===
+                  member.name.toLowerCase().replace(/\s+/g, "-")
+                }
+                columnIndex={index % 2}
+              />
             ))}
           </div>
+        </div>
+      </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
-            {splitIntoColumns(filteredCore, 3).map((column, ci) => (
-              <div key={ci} className="space-y-6">
-                {column.map((member) => (
-                  <CoreTeamCard key={member.name} member={member} />
-                ))}
-              </div>
+      {/* JUNIOR CORE SECTION */}
+      <div>
+        <div className="inline-block bg-black text-white font-black text-sm uppercase px-4 py-1.5 rounded-xl border-2 border-black shadow-sm mb-6">
+          Junior Core Team
+        </div>
+
+        <div className="bg-[#FAF7F2] border-3 border-black rounded-3xl p-6 sm:p-10 shadow-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-14 justify-items-center">
+            {juniorCoreTeam.map((member, index) => (
+              <TeamCard
+                key={member.name}
+                member={member}
+                isActive={
+                  activeMemberId ===
+                  member.name.toLowerCase().replace(/\s+/g, "-")
+                }
+                columnIndex={index % 2}
+              />
             ))}
           </div>
-        </section>
-
-        {/* JUNIOR CORE TEAM SECTION */}
-        <section className="mb-10">
-          <div className="section-divider-row flex items-center justify-center gap-3 w-full mb-6">
-            <div className="h-0.5 bg-white/20 flex-1 max-w-[80px] sm:max-w-[120px]" />
-            <span
-              className="inline-flex items-center gap-1.5 font-black text-xs px-4 py-1.5 border-2 border-black rounded-full uppercase tracking-wider select-none shadow-[3px_3px_0px_0px_rgba(255,255,255,0.2)]"
-              style={{
-                backgroundColor: "#70d6ff",
-                color: "#000000",
-              }}
-            >
-              Junior Core Team
-            </span>
-            <div className="h-0.5 bg-white/20 flex-1 max-w-[80px] sm:max-w-[120px]" />
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
-            {juniorCoreTeam.map((member, idx) => (
-              <JuniorCoreCard key={idx} member={member} />
-            ))}
-          </div>
-        </section>
-      </main>
+        </div>
+      </div>
     </div>
   );
 }
