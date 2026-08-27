@@ -9,8 +9,8 @@
 
   overflow: hidden;
 
-  background: #1e2538;
-  color: white;
+  background: #ffffff;
+  color: black;
 
   display: flex;
   align-items: center;
@@ -50,8 +50,8 @@
   inset: -100px;
 
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
 
   background-size: 40px 40px;
 
@@ -214,7 +214,7 @@
 
   white-space: nowrap;
 
-  color: #ffffff;
+  color: #000000;
 
   text-shadow: 0 0 20px rgba(112, 214, 255, 0.04);
 
@@ -435,7 +435,7 @@
 
   overflow: hidden;
 
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.12);
 }
 
 .loader-progress {
@@ -468,7 +468,7 @@
 
   letter-spacing: 0.12em;
 
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(0, 0, 0, 0.38);
 }
 
 /* =========================================
@@ -486,7 +486,7 @@
 
   letter-spacing: 0.15em;
 
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(0, 0, 0, 0.28);
 
   text-transform: uppercase;
 }
