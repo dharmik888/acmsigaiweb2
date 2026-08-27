@@ -307,7 +307,7 @@ export default function Team() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
             <div className="text-white space-y-1">
               <span className="bg-retroOrange text-black font-black text-[10px] sm:text-xs uppercase px-3 py-1 rounded-full border-2 border-black shadow-sm">
-                2025-26
+                2026-27
               </span>
 
               <h2 className="text-xl sm:text-3xl font-black uppercase tracking-tight text-white drop-shadow-md">
