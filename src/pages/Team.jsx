@@ -27,7 +27,7 @@ import {
 } from "../data/teamData";
 
 // Assets
-import groupPhoto from "../assets/group_photo_team_banner.jpg";
+import groupPhoto from "../assets/group_photo_team_banner.webp";
 
 /* Custom Brand SVG Icons */
 const LinkedinIcon = ({ size = 18 }) => (
@@ -241,6 +241,100 @@ function TeamCard({ member, isActive, columnIndex = 0 }) {
   );
 }
 
+/* ================= HOVER TEAM CARD ================= */
+function HoverTeamCard({ member, columnIndex = 0 }) {
+  const cardRef = useRef(null);
+  const accentBg = member.accent || member.badgeBg || "bg-retroYellow";
+  const displayPosition = member.position || member.label || "MEMBER";
+
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"],
+  });
+
+  const yPos = useTransform(scrollYProgress, [0, 0.5, 1], [30, 0, -20]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.85, 1], [0.2, 1, 1, 0.4]);
+
+  return (
+    <motion.div
+      ref={cardRef}
+      style={{ y: yPos, opacity }}
+      initial={{ opacity: 0, y: 60, scale: 0.92 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{
+        duration: 0.6,
+        delay: (columnIndex % 3) * 0.15,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="team-row flex flex-col items-center w-full"
+      data-id={member.id || member.name.toLowerCase().replace(/\s+/g, "-")}
+    >
+      <div
+        className={`relative w-full max-w-xs p-3.5 rounded-3xl border-3 border-black ${accentBg} transition-all duration-300 group overflow-hidden hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1`}
+      >
+        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border-2 border-black bg-black cursor-pointer">
+          <img
+            src={getMemberImage(member)}
+            alt={member.name}
+            className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+          />
+          
+          {/* Hover Overlay */}
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-[2px] flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 className="font-black uppercase tracking-tight text-white text-xl sm:text-2xl mb-2 drop-shadow-md">
+              {member.name}
+            </h3>
+            
+            <div className="inline-flex items-center gap-1.5 bg-white text-black font-black text-[10px] uppercase border-2 border-black px-2.5 py-1 rounded-full shadow-sm w-fit mb-3">
+              {getPositionIcon(displayPosition)}
+              <span>{displayPosition}</span>
+            </div>
+
+            <p className="text-white/90 font-bold text-xs leading-relaxed mb-4 line-clamp-3">
+              {member.bio || member.description}
+            </p>
+
+            <div className="flex items-center gap-2.5">
+              {member.linkedin && (
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${member.name}'s LinkedIn`}
+                  className="p-2 bg-white border-2 border-black rounded-lg hover:bg-retroYellow transition-colors text-black shadow-sm"
+                >
+                  <LinkedinIcon size={16} />
+                </a>
+              )}
+              {member.github && (
+                <a
+                  href={member.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${member.name}'s GitHub`}
+                  className="p-2 bg-white border-2 border-black rounded-lg hover:bg-retroYellow transition-colors text-black shadow-sm"
+                >
+                  <GithubIcon size={16} />
+                </a>
+              )}
+              {member.email && (
+                <a
+                  href={`mailto:${member.email}`}
+                  aria-label={`Email ${member.name}`}
+                  className="p-2 bg-white border-2 border-black rounded-lg hover:bg-retroYellow transition-colors text-black shadow-sm"
+                >
+                  <Mail size={16} />
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ================= MAIN TEAM PAGE ================= */
 export default function Team() {
   const [activeMemberId, setActiveMemberId] = useState("");
@@ -297,11 +391,11 @@ export default function Team() {
 
       {/* Group Photo Showcase */}
       <div className="my-8 relative rounded-3xl border-3 border-black bg-retroYellow p-3 sm:p-4 shadow-md overflow-hidden">
-        <div className="relative aspect-[16/9] sm:aspect-[21/9] rounded-2xl border-2 border-black overflow-hidden group">
+        <div className="relative rounded-2xl border-2 border-black overflow-hidden group">
           <img
             src={groupPhoto}
             alt="TCET ACM SIGAI Team Banner"
-            className="w-full h-full object-cover object-center filter grayscale group-hover:grayscale-0 transition-all duration-700"
+            className="w-full h-auto object-cover object-center filter grayscale group-hover:grayscale-0 transition-all duration-700"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
@@ -311,7 +405,7 @@ export default function Team() {
               </span>
 
               <h2 className="text-xl sm:text-3xl font-black uppercase tracking-tight text-white drop-shadow-md">
-                TCET ACM SIGAI Core & Jr Core Team
+                TCET ACM SIGAI Core Team
               </h2>
             </div>
           </div>
@@ -368,9 +462,9 @@ export default function Team() {
         </div>
 
         <div className="bg-[#FAF7F2] border-3 border-black rounded-3xl p-6 sm:p-10 shadow-md">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-14 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 justify-items-center">
             {juniorCoreTeam.map((member, index) => (
-              <TeamCard
+              <HoverTeamCard
                 key={member.name}
                 member={member}
                 isActive={

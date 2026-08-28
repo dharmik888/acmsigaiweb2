@@ -7,7 +7,7 @@ import {
   FaNewspaper,
   FaBookOpen,
 } from "react-icons/fa6";
-import logo from "../../assets/sigai-logo.png";
+import logo from "../../assets/sigai-logo.webp";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);

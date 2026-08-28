@@ -309,20 +309,21 @@ function FeaturedEventCard({ event, index, isActive }) {
 }
 
 const CAROUSEL_IMAGES = [
-  "/assests/event_1.jpeg",
-  "/assests/event_2.jpeg",
-  "/assests/event_3.jpeg",
-  "/assests/event_4.jpeg",
-  "/assests/event_5.jpeg",
-  "/assests/event_6.jpeg",
-  "/assests/event_7.jpeg",
-  "/assests/event_8.jpeg",
-  "/assests/event_9.jpeg",
-  "/assests/event_10.jpeg",
-  "/assests/event_11.jpeg",
-  "/assests/event_12.jpeg",
-  "/assests/event_13.jpeg",
-  "/assests/event_14.jpeg",
+  "/assests/event_2.webp",
+  "/assests/event_4.webp",
+  "/assests/event_5.webp",
+  "/assests/event_7.webp",
+  "/assests/event_8.webp",
+  "/assests/event_9.webp",
+  "/assests/event_10.webp",
+  "/assests/event_11.webp",
+  "/assests/event_12.webp",
+  "/assests/event_14.webp",
+  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0002.webp",
+  "/assests/new_highlights/AI Crime Lab/IMG_1376.webp",
+  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0006.webp",
+  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0008.webp",
+  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0007.webp",
 ];
 
 function ImageCarousel() {

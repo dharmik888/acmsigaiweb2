@@ -1,31 +1,31 @@
 // src/data/teamData.js
 
 // Default Fallback
-import defaultPlaceholderImg from "../assets/placeholder-user.png";
+import defaultPlaceholderImg from "../assets/placeholder-user.webp";
 
 // Faculty Images
-import drShiwaniImg from "../assets/dr_shiwani_gupta.jpg.jpeg";
-import mrsPranjaliImg from "../assets/mrs_pranjali_sankhe.jpg.jpeg";
+import drShiwaniImg from "../assets/dr_shiwani_gupta.webp";
+import mrsPranjaliImg from "../assets/mrs_pranjali_sankhe.webp";
 
 // Core Team Images
-import pranavImg from "../assets/Pranav.jpg";
-import vipulImg from "../assets/Vipul.jpg";
-import adityaImg from "../assets/Aditya.jpg";
-import mahekImg from "../assets/MahekChaplot.jpg";
-import riyaImg from "../assets/Riya.png";
-import sanjanaImg from "../assets/sanjana.jpg";
-import sitanshuImg from "../assets/Sitanshu.jpg";
-import pranjalImg from "../assets/Pranjal.jpg";
-import harshiniImg from "../assets/harshini.jpg";
-import shubhamImg from "../assets/Shubham.jpg";
+import pranavImg from "../assets/Pranav.webp";
+import vipulImg from "../assets/Vipul.webp";
+import adityaImg from "../assets/Aditya.webp";
+import mahekImg from "../assets/MahekChaplot.webp";
+import riyaImg from "../assets/Riya.webp";
+import sanjanaImg from "../assets/sanjana.webp";
+import sitanshuImg from "../assets/Sitanshu.webp";
+import pranjalImg from "../assets/Pranjal.webp";
+import harshiniImg from "../assets/harshini.webp";
+import shubhamImg from "../assets/Shubham.webp";
 
 // Junior Core Team Images
-import vaishnaviImg from "../assets/Vaishnavi.jpg";
-import preetImg from "../assets/Preet.jpg";
-import anamikaImg from "../assets/anamika.jpg";
-import yashImg from "../assets/yash.jpg";
-import jeniImg from "../assets/JENI.jpg";
-import siddhiImg from "../assets/siddhi.jpg";
+import vaishnaviImg from "../assets/Vaishnavi.webp";
+import preetImg from "../assets/Preet.webp";
+import anamikaImg from "../assets/anamika.webp";
+import yashImg from "../assets/yash.webp";
+import jeniImg from "../assets/JENI.webp";
+import siddhiImg from "../assets/siddhi.webp";
 
 /*
   Accent system — pulled straight from index.css's @theme tokens:

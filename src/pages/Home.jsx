@@ -289,22 +289,11 @@ function useTypewriterCycle(
 
 /* ================= EVENT HIGHLIGHTS CAROUSEL ================= */
 const HOME_CAROUSEL_IMAGES = [
-  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0010.jpg",
-  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0003.jpg",
-  "/assests/new_highlights/AI Crime Lab/IMG_1366.JPG",
-  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0005.jpg",
-  "/assests/new_highlights/AI Crime Lab/IMG_1372.JPG",
-  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0002.jpg",
-  "/assests/new_highlights/AI Crime Lab/IMG_1373.JPG",
-  "/assests/new_highlights/AI Crime Lab/IMG_1376.JPG",
-  "/assests/new_highlights/AI Crime Lab/IMG_1371.JPG",
-  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0006.jpg",
-  "/assests/new_highlights/AI Crime Lab/IMG_1379.JPG",
-  "/assests/new_highlights/AI Crime Lab/IMG_1380.JPG",
-  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0008.jpg",
-  "/assests/new_highlights/AI Crime Lab/IMG_1369.JPG",
-  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0007.jpg",
-  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0000.jpg"
+  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0002.webp",
+  "/assests/new_highlights/AI Crime Lab/IMG_1376.webp",
+  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0006.webp",
+  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0008.webp",
+  "/assests/new_highlights/Technologia 2.0/IMG-20260818-WA0007.webp",
 ];
 
 function HighlightsCarousel() {

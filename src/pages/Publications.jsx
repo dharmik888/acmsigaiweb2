@@ -71,7 +71,7 @@ const sampleMagazines = [
     smallDescription: "",
     bookLink: "https://online.pubhtml5.com/ammcl/bsop/",
     image: {
-      fileName: "Tejas-5-2-Main.jpg",
+      fileName: "Tejas-5-2-Main.webp",
       url: "https://online.pubhtml5.com/ammcl/bsop/files/shot.jpg",
     },
     views: 0,
@@ -84,7 +84,7 @@ const sampleMagazines = [
     smallDescription: "",
     bookLink: "https://online.pubhtml5.com/fmpgh/fjuo/",
     image: {
-      fileName: "Tejas-5-1-Main.jpg",
+      fileName: "Tejas-5-1-Main.webp",
       url: "https://i.ibb.co/mCWvTLqX/Tejas-5-1-Main.jpg",
     },
     views: 0,
@@ -96,7 +96,7 @@ const sampleMagazines = [
     smallDescription: "",
     bookLink: "https://online.pubhtml5.com/rylr/mdds/",
     image: {
-      fileName: "TejasVolume42.jpg",
+      fileName: "TejasVolume42.webp",
       url: "https://res.cloudinary.com/df9us90ur/image/upload/v1748405489/TejasVolume42.jpg",
     },
     views: 0,
@@ -108,7 +108,7 @@ const sampleMagazines = [
     smallDescription: "",
     bookLink: "https://online.pubhtml5.com/eqdgd/rjrs/",
     image: {
-      fileName: "TejadVol41.jpg",
+      fileName: "TejadVol41.webp",
       url: "https://res.cloudinary.com/df9us90ur/image/upload/v1729399795/TejasVol4.1.jpg",
     },
     views: 0,
@@ -120,7 +120,7 @@ const sampleMagazines = [
     smallDescription: "",
     bookLink: "https://pubhtml5.com/hiwar/bcxj/",
     image: {
-      fileName: "TejadVol32.jpg",
+      fileName: "TejadVol32.webp",
       url: "https://res.cloudinary.com/df9us90ur/image/upload/v1729399795/TejasVol3.2.jpg",
     },
     views: 0,
@@ -132,7 +132,7 @@ const sampleMagazines = [
     smallDescription: "",
     bookLink: "https://pubhtml5.com/hiwar/vfrp/",
     image: {
-      fileName: "TejadVol31.jpg",
+      fileName: "TejadVol31.webp",
       url: "https://res.cloudinary.com/df9us90ur/image/upload/v1728923748/TejasVol3.1.avif",
     },
     views: 0,
@@ -144,7 +144,7 @@ const sampleMagazines = [
     smallDescription: "",
     bookLink: "https://pubhtml5.com/hiwar/uqpn/",
     image: {
-      fileName: "TejadVol2.jpg",
+      fileName: "TejadVol2.webp",
       url: "https://res.cloudinary.com/df9us90ur/image/upload/v1728923716/TejasVol2.avif",
     },
     views: 0,
@@ -156,7 +156,7 @@ const sampleMagazines = [
     smallDescription: "",
     bookLink: "https://online.pubhtml5.com/hiwar/abef/",
     image: {
-      fileName: "TejadVol1.jpg",
+      fileName: "TejadVol1.webp",
       url: "https://res.cloudinary.com/df9us90ur/image/upload/v1728923642/TejasVol1.avif",
     },
     views: 0,

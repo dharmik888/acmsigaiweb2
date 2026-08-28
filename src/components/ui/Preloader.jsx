@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Preloader.css";
-import sigaiLogo from "../../assets/sigai-logo.png";
+import sigaiLogo from "../../assets/sigai-logo.webp";
 
 export default function Preloader({ onComplete }) {
   const [progress, setProgress] = useState(0);

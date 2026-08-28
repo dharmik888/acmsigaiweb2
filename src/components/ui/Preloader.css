@@ -68,8 +68,7 @@
   }
 
   to {
-    transform: perspective(700px) rotateX(8deg) scale(1.1)
-      translate3d(-40px, -40px, 0);
+    transform: perspective(700px) rotateX(8deg) scale(1.1) translate3d(-40px, -40px, 0);
   }
 }
 
@@ -90,13 +89,11 @@
 
   height: 1px;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(112, 214, 255, 0.2),
-    rgba(112, 214, 255, 0.8),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(112, 214, 255, 0.2),
+      rgba(112, 214, 255, 0.8),
+      transparent);
 
   box-shadow: 0 0 8px rgba(112, 214, 255, 0.35);
 
@@ -291,7 +288,7 @@
    center slot.
 */
 
-.brand-logo-slot--visible ~ .brand-right {
+.brand-logo-slot--visible~.brand-right {
   margin-left: 28px;
 }
 
@@ -322,8 +319,7 @@
     transform 1s cubic-bezier(0.16, 1, 0.3, 1),
     opacity 0.6s ease;
 
-  filter: drop-shadow(0 0 12px rgba(112, 214, 255, 0.25))
-    drop-shadow(0 0 30px rgba(112, 214, 255, 0.1));
+  filter: drop-shadow(0 0 12px rgba(112, 214, 255, 0.25)) drop-shadow(0 0 30px rgba(112, 214, 255, 0.1));
 }
 
 .brand-logo-slot--visible .brand-logo {
@@ -368,6 +364,7 @@
 }
 
 @keyframes logoPulse {
+
   0%,
   100% {
     opacity: 0.25;
@@ -532,7 +529,7 @@
     margin-right: 15px;
   }
 
-  .brand-logo-slot--visible ~ .brand-right {
+  .brand-logo-slot--visible~.brand-right {
     margin-left: 15px;
   }
 
@@ -550,6 +547,7 @@
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   .preloader-grid,
   .trace,
   .brand-logo-slot--visible::after {
