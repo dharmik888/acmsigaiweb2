@@ -6,6 +6,7 @@ import defaultPlaceholderImg from "../assets/placeholder-user.webp";
 // Faculty Images
 import drShiwaniImg from "../assets/dr_shiwani_gupta.webp";
 import mrsPranjaliImg from "../assets/mrs_pranjali_sankhe.webp";
+import mrKunalImg from "../assets/mr_kunal_pandey.webp";
 
 // Core Team Images
 import pranavImg from "../assets/Pranav.webp";
@@ -57,6 +58,17 @@ export const facultyMembers = [
     bio: "“Guiding ideas with purpose, discipline, and a vision for progress.”",
     linkedin: "https://www.linkedin.com/in/pranjali-sankhe-5421aa160/",
     img: mrsPranjaliImg,
+  },
+  {
+    id: "mr-kunal-pandey",
+    name: "Mr. Kunal Pandey",
+    position: "Assistant Professor",
+    badgeTag: "FACULTY MENTOR",
+    accent: "bg-retroLime",
+    accentBorder: "border-retroLime",
+    bio: "“Bridging the gap between theoretical knowledge and practical AI implementation.”",
+    linkedin: "https://www.linkedin.com/in/kunal-pandey-582228314/",
+    img: mrKunalImg,
   },
 ];
 

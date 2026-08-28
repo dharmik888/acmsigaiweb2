@@ -419,7 +419,7 @@ export default function Team() {
         </div>
 
         <div className="bg-[#FAF7F2] border-3 border-black rounded-3xl p-6 sm:p-10 shadow-md">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-14 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 justify-items-center">
             {facultyMembers.map((member, index) => (
               <TeamCard
                 key={member.id}
