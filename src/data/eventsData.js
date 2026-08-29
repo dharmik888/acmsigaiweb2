@@ -211,18 +211,34 @@ export const eventsData = [
     "type": "Industrial Visit",
     "status": "Completed",
     "shortDescription": "Industrial visit to TCS Olympus offering students exposure to AI applications, career paths, and the TCS-TCET Center of Excellence.",
-    "description": "This industrial visit to TCS Olympus gave AI&ML students direct exposure to enterprise-level AI applications and high-density IT infrastructure. Participants engaged in interactive technical sessions on cloud solutions and AI adoption, while learning about career paths and the TCS-TCET Center of Excellence.",
-    "venue": "TCS Olympus, Thane West",
+    "description": "The AI&ML Department of TCET organized an industrial visit to TCS Olympus to provide students with exposure to real-world applications of AI, Generative AI, and Agentic AI and insights into industry practices and career opportunities. Time: 2:00 PM – 5:00 PM. Outcome: The visit bridged academic learning with industry practices, giving students valuable exposure to AI applications, professional career pathways, corporate innovation, and industry expectations.",
+    "venue": "Tata Consultancy Services (TCS) Olympus, Hiranandani Estate, Thane West",
     "mode": "Offline",
     "speakers": [
-      "Mr. Amit Batra",
-      "Mr. Rishi Arya",
-      "Ms. Sneha Wadekar"
+      "Ms. Sneha Wadekar – Regional Head, Academic Alliances, TCS",
+      "Mr. Amit Batra – PACE Team, TCS",
+      "Mr. Rishi Arya – TCS"
     ],
-    "organizers": [],
+    "organizers": [
+      {
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD, AI&ML"
+      },
+      {
+        "name": "Dr. Vivek R. Bhartiya",
+        "role": "Professor, AI&ML"
+      }
+    ],
     "collaborators": [],
-    "highlights": [],
-    "participants": null,
+    "highlights": [
+      "Insights into AI, Generative AI & Agentic AI",
+      "Understanding TCS career pathways and continuous learning",
+      "Exposure to corporate culture and industry practices",
+      "Introduction to the TCS–TCET Center of Excellence",
+      "Guidance and encouragement for TCS CodeVita",
+      "Interactive sessions with TCS professionals"
+    ],
+    "participants": "37 AI&ML Students",
     "winners": [],
     "image": null,
     "gallery": [],
@@ -233,23 +249,36 @@ export const eventsData = [
   {
     "id": 102,
     "slug": "technologia-2025",
-    "title": "Technologia",
-    "date": null,
+    "title": "TECHNOLOGIA-I",
+    "date": "18th July 2025",
     "academicYear": "2025-26",
     "type": "Competition",
     "status": "Completed",
-    "shortDescription": "A multi-chapter technical event featuring a coding competition, a prompt-based AI challenge, and a mock technical interview session.",
-    "description": "Technologia was a multi-chapter technical event aimed at enhancing problem-solving and interview skills. Chapter 1 featured a multi-round coding competition, while Chapter 2 focused on prompt engineering, semantic compression, and AI interactions. Chapter 3 provided students with realistic mock technical interviews covering Python, logic, and data structures to prepare them for real-world scenarios.",
-    "venue": "Lab 216, Labs 307 & 308, Zoom (Online)",
-    "mode": "Hybrid",
-    "speakers": [
-      "Mr. Keval Gada",
-      "Mr. Manjul Singh"
+    "shortDescription": "A coding-based technical competition organized to strengthen students’ programming, debugging, problem-solving, and logical thinking skills.",
+    "description": "Technologia-I was a coding-based technical competition organized by the TCET-ACM SIGAI Students’ Chapter to strengthen students’ programming, debugging, problem-solving, and logical thinking skills. EVENT ROUNDS: • Round 1 – Code Analysis: Participants analyzed code in Java, Python, and C++ and matched outputs using hash-table values and decoded filenames. • Round 2 – Debugging: Participants identified and corrected errors in code to reveal a hidden phone number. • Round 3 – Logic Puzzles: Participants solved logic-based puzzles designed to test their analytical and problem-solving abilities. Time: 4:00 PM – 5:30 PM. Outcome: The event provided students with hands-on coding experience while strengthening their programming, debugging, logical reasoning, confidence, and technical problem-solving skills.",
+    "venue": "Lab 216, TCET",
+    "mode": "Offline",
+    "speakers": [],
+    "organizers": [
+      {
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD, AI&ML"
+      },
+      {
+        "name": "Mrs. Pranjali Sankhe",
+        "role": "Faculty In-charge, AI&ML"
+      }
     ],
-    "organizers": [],
     "collaborators": [],
-    "highlights": [],
-    "participants": null,
+    "highlights": [
+      "Multi-round competitive coding challenge",
+      "Hands-on programming in Java, Python & C++",
+      "Debugging and code-analysis challenges",
+      "Logical and analytical problem-solving",
+      "Participation from students across multiple departments",
+      "Certificates provided to participants and winners selected based on successful and timely completion of all rounds"
+    ],
+    "participants": "88 Students",
     "winners": [],
     "image": null,
     "gallery": [],
@@ -260,22 +289,38 @@ export const eventsData = [
   {
     "id": 103,
     "slug": "hands-on-workshop-recommendation-engines-2025",
-    "title": "Hands-On Workshop On Recommendation Engines",
+    "title": "HANDS-ON WORKSHOP ON RECOMMENDATION ENGINES",
     "date": "5th September 2025",
     "academicYear": "2025-26",
     "type": "Workshop",
     "status": "Completed",
-    "shortDescription": "An interactive workshop led by a Netflix Data Engineer covering collaborative filtering, content-based methods, and hybrid recommendation models.",
-    "description": "This hands-on workshop, led by Netflix Data Engineer Mr. Varun Amulla, guided participants through the fundamentals of recommendation engines. The session covered collaborative filtering, content-based methods, and hybrid models. Attendees gained practical experience through live coding exercises, learning how to build and optimize recommendation systems for real-world applications.",
-    "venue": "Zoom Meeting (Online)",
+    "shortDescription": "A hands-on workshop on Recommendation Engines providing practical exposure to AI-driven personalization and its real-world applications.",
+    "description": "The TCET-ACM SIGAI Students’ Chapter organized a hands-on workshop on Recommendation Engines to provide students with practical exposure to AI-driven personalization, recommendation systems, and their real-world applications. KEY TOPICS: Recommendation Engine Fundamentals, Collaborative Filtering, Content-Based Filtering, Hybrid Recommendation Systems, User- and Item-Based Approaches, Data Sparsity & Cold-Start Problems, Model Evaluation using Precision, Recall & F1 Score, and Real-world applications of recommendation systems. Time: 3:00 PM – 5:00 PM. Outcome: Participants gained practical knowledge of building and evaluating recommendation engines, implementing collaborative and content-based filtering, and exploring hybrid approaches. The workshop strengthened problem-solving skills and provided valuable exposure to real-world AI applications.",
+    "venue": "Zoom",
     "mode": "Online",
     "speakers": [
-      "Mr. Varun Amulla (Netflix)"
+      "Mr. Varun Amulla – Data Engineer (Machine Learning & Personalization), Netflix"
     ],
-    "organizers": [],
+    "organizers": [
+      {
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD, AI&ML"
+      },
+      {
+        "name": "Mrs. Pranjali Sankhe",
+        "role": "Faculty In-charge, AI&ML"
+      }
+    ],
     "collaborators": [],
-    "highlights": [],
-    "participants": null,
+    "highlights": [
+      "Live coding and model-building exercises",
+      "Hands-on implementation using sample datasets",
+      "Real-world recommendation system examples",
+      "Discussion on scalability and optimization",
+      "Career guidance for AI/ML and software engineering",
+      "Interactive Q&A with the speaker"
+    ],
+    "participants": "175",
     "winners": [],
     "image": null,
     "gallery": [],
@@ -286,20 +331,38 @@ export const eventsData = [
   {
     "id": 104,
     "slug": "national-level-seminar-2025",
-    "title": "National Level Seminar",
-    "date": null,
+    "title": "National Level Seminar: Accelerator & Incubation",
+    "date": "8th August 2025",
     "academicYear": "2025-26",
     "type": "Seminar",
     "status": "Completed",
     "shortDescription": "A national-level seminar focused on entrepreneurship, breaking down practical truths and common misconceptions.",
-    "description": "This national-level seminar aimed to expose students to practical entrepreneurial truths and break down common misconceptions. Participants gained valuable insights into the reality of starting and running a business, focusing on real-world challenges rather than theoretical concepts.",
-    "venue": null,
-    "mode": null,
-    "speakers": [],
-    "organizers": [],
+    "description": "The TCET-ACM SIGAI Students’ Chapter organized a National Level Seminar on “Accelerator & Incubation” to provide students with practical insights into entrepreneurship, startup ecosystems, accelerators, and incubators through real-world experiences. Time: 6:00 PM – 8:30 PM. Outcome: The seminar provided participants with practical knowledge of entrepreneurship and startup ecosystems while encouraging innovation, professional curiosity, and readiness for real-world entrepreneurial challenges.",
+    "venue": "Zoom",
+    "mode": "Online",
+    "speakers": [
+      "Mr. Harshit Samdani – Founder, Small Pie"
+    ],
+    "organizers": [
+      {
+        "name": "Dr. Shiwani Gupta",
+        "role": "Head of Department, AI&ML"
+      },
+      {
+        "name": "Mrs. Pranjali Sankhe",
+        "role": "Faculty In-charge, AI&ML"
+      }
+    ],
     "collaborators": [],
-    "highlights": [],
-    "participants": null,
+    "highlights": [
+      "Understanding accelerators and incubators",
+      "Entrepreneurial mindset and startup challenges",
+      "Journey from idea stage to scaling a startup",
+      "Practical insights into building and managing a startup",
+      "Networking, skill-building and finding the right mentors",
+      "Interactive Q&A with the speaker"
+    ],
+    "participants": "191",
     "winners": [],
     "image": null,
     "gallery": [],
@@ -412,37 +475,127 @@ export const eventsData = [
     "featured": false
   },
   {
+    "id": 110,
+    "slug": "technologia-ii-2025",
+    "title": "TECHNOLOGIA-II: Prompt Wars",
+    "date": "29th July 2025",
+    "academicYear": "2025-26",
+    "type": "Competition",
+    "status": "Completed",
+    "shortDescription": "A prompt-based AI competition giving students hands-on experience with generative AI and creative problem-solving.",
+    "description": "Technologia-II was a prompt-based AI competition organized by the TCET-ACM SIGAI Students’ Chapter to give students hands-on experience with generative AI, prompt engineering, logical reasoning, and creative problem-solving. EVENT ROUNDS: • Round 1 – Reverse Prompt Engineering: Participants viewed AI-generated images and reconstructed the prompts most likely used to generate them. • Round 2 – Prompt Compression: Participants converted detailed prompts into shorter, precise prompts while retaining the original intent. • Round 3 – Prompt Recall: Participants viewed a paragraph-length prompt for 10 seconds and then reconstructed it from memory. Time: 3:30 PM – 5:00 PM. Outcome: The event strengthened students’ prompt engineering, AI interaction, creative thinking, semantic clarity, memory recall, and problem-solving skills while bridging the gap between theoretical AI concepts and practical application.",
+    "venue": "Labs 307 & 308, TCET",
+    "mode": "Offline",
+    "speakers": [],
+    "organizers": [
+      {
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD, AI&ML"
+      },
+      {
+        "name": "Mrs. Pranjali Sankhe",
+        "role": "Faculty In-charge, AI&ML"
+      }
+    ],
+    "collaborators": [],
+    "highlights": [
+      "Hands-on experience with Generative AI tools",
+      "Practical prompt engineering challenges",
+      "Reverse-engineering AI-generated outputs",
+      "Prompt clarity and semantic compression",
+      "Memory, logical reasoning and creative thinking challenges",
+      "Winners selected based on total scores and advanced to Technologia-III"
+    ],
+    "participants": "50 Students",
+    "winners": [],
+    "image": null,
+    "gallery": [],
+    "registrationLink": null,
+    "source": "Report 2025-26",
+    "featured": false
+  },
+  {
+    "id": 111,
+    "slug": "technologia-iii-2025",
+    "title": "TECHNOLOGIA-III: The Final Call",
+    "date": "2nd August 2025",
+    "academicYear": "2025-26",
+    "type": "Competition",
+    "status": "Completed",
+    "shortDescription": "A live technical interview showdown for shortlisted students focusing on technical knowledge and communication.",
+    "description": "Technologia-III was the final round of the Technologia series, organized by the TCET-ACM SIGAI Students’ Chapter as a live technical interview challenge. It provided shortlisted students with a real-world interview experience focused on technical knowledge, communication, logical reasoning, and confidence. INTERVIEW FORMAT: • One-on-one live technical interviews • Individual Zoom breakout rooms • Technical, logical and behavioural questions • Topics included Python functions, logic gates, number systems, arrays and teamwork scenarios • Participants were evaluated individually by industry professionals. Time: 6:00 PM – 9:00 PM. Outcome: The event strengthened participants’ technical knowledge, communication, articulation, confidence and problem-solving abilities while providing practical exposure to real-world technical interview environments.",
+    "venue": "Zoom",
+    "mode": "Online",
+    "speakers": [
+      "Mr. Keval Gada – Senior Business Analyst, LTI Mindtree",
+      "Mr. Manjot Singh – Data Scientist, JPMorgan Chase & Co."
+    ],
+    "organizers": [
+      {
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD, AI&ML"
+      },
+      {
+        "name": "Mrs. Pranjali Sankhe",
+        "role": "Faculty In-charge, AI&ML"
+      }
+    ],
+    "collaborators": [],
+    "highlights": [
+      "Real-world technical interview experience",
+      "Interaction with industry professionals",
+      "Technical and logical problem-solving",
+      "Communication and articulation under pressure",
+      "Behavioural and teamwork-based questions",
+      "Preparation for placements, internships and professional interviews"
+    ],
+    "participants": "10 Shortlisted Students",
+    "winners": [],
+    "image": null,
+    "gallery": [],
+    "registrationLink": null,
+    "source": "Report 2025-26",
+    "featured": false
+  },
+  {
     "id": 1,
     "slug": "national-level-kaggle-competition",
-    "title": "National Level Kaggle Competition: Battle of the Brains",
-    "date": "10th-12th April 2025",
+    "title": "Kaggle Competition: Battle of the Brains",
+    "date": "10th - 12th April 2025",
     "academicYear": "2024-25",
     "type": "Competition",
     "status": "Completed",
-    "shortDescription": "National-level Kaggle machine learning competition solving predictive modelling and data science challenges.",
-    "description": "TCET ACM-SIGAI organized the National Level Kaggle Competition 'Battle of the Brains,' challenging participants to solve complex real-world predictive modeling problems. Held over three days on Kaggle, teams engineered advanced ML pipelines, performed deep exploratory data analysis, and tuned hyperparameters against a live public leaderboard. The event attracted top data science talent from across multiple national colleges.",
-    "venue": "Kaggle Platform (Online)",
+    "shortDescription": "A national-level Kaggle competition providing students with hands-on experience solving a real-world cybersecurity prediction problem.",
+    "description": "A national-level Kaggle competition providing students with hands-on experience solving a real-world cybersecurity prediction problem using machine learning. The competition encouraged practical ML implementation, competitive learning, peer learning and end-to-end model development and evaluation. OBJECTIVES: Apply ML to a real-world system-threat prediction challenge; provide hands-on Kaggle experience; encourage competitive and peer learning; provide end-to-end model-building and evaluation experience; introduce cybersecurity predictive-modeling challenges; motivate participation in future data-science and ML competitions. OUTCOMES: Improved data-science skills; hands-on experience with a real-world cybersecurity problem; better familiarity with Kaggle; improved ML skills; collaboration across diverse backgrounds; practical starting point for students beginning or advancing in data science.",
+    "venue": "Kaggle Online Platform",
     "mode": "Online",
     "speakers": [],
     "organizers": [
       {
-        "name": "ACM SIGAI TCET",
-        "role": "Organizer"
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD AI&ML and Faculty Sponsor"
       },
       {
-        "name": "AI&ML Department TCET",
-        "role": "Host"
+        "name": "Mrs. Pranjali Sankhe",
+        "role": "Faculty In-Charge"
+      },
+      {
+        "name": "Student Core Committee",
+        "role": "TCET ACM-SIGAI"
       }
     ],
     "collaborators": [
       "Kaggle Community"
     ],
     "highlights": [
-      "Multi-day national machine learning leaderboard challenge",
-      "Real-world tabular and multimodal dataset modeling",
-      "Live automated submission scoring and leaderboard dynamics"
+      "Competition Problem: System Threat Predictor (Prediction of cybersecurity intrusions)",
+      "Data Used: Network indicators, user behaviour metrics, patterns associated with cyber threats",
+      "Classical ML Models: Logistic Regression, Random Forest, SVM, XGBoost",
+      "Deep Learning Models: DNNs, LSTMs",
+      "Practical ML implementation, logic-building, and introduction to Kaggle",
+      "Continuous ML learning, collaboration, and exchange of problem-solving approaches"
     ],
-    "participants": "120+",
+    "participants": "73 Students",
     "winners": [],
     "image": "https://res.cloudinary.com/df9us90ur/image/upload/v1741794628/KaggleSmallImage.jpg",
     "gallery": [],
@@ -453,33 +606,42 @@ export const eventsData = [
   {
     "id": 2,
     "slug": "local-iv-at-tcs",
-    "title": "Local IV at TCS",
+    "title": "Local Industrial Visit to Tata Consultancy Services (TCS) Olympus",
     "date": "19th March 2025",
     "academicYear": "2024-25",
     "type": "Industrial Visit",
     "status": "Completed",
-    "shortDescription": "Industrial visit to Tata Consultancy Services (TCS Olympus) exploring enterprise IT architectures and agile operations.",
-    "description": "TCET ACM-SIGAI and the AI&ML Department organized an official industrial visit to Tata Consultancy Services Olympus at Thane. Students toured enterprise software innovation labs, attended briefings by senior TCS architects on cloud migration and automated QA, and observed enterprise agile project management in action. The visit provided practical insights into industry-scale delivery and corporate technology careers.",
-    "venue": "Tata Consultancy Services Olympus, Thane West",
+    "shortDescription": "An industrial visit providing AI&ML students with exposure to real-world applications of artificial intelligence and machine learning in business and industry.",
+    "description": "An industrial visit providing AI&ML students with exposure to real-world applications of artificial intelligence and machine learning in business and industry. The visit focused on industry practices, corporate culture, AI/ML applications, career opportunities and the skills required for technology careers. OBJECTIVES: Understand real-world AI applications in business; identify key skills and qualifications for AI/IT careers; observe the TCS work environment and corporate culture; understand operational processes; discuss real-world case studies and corporate problem-solving. Time: 2:00 PM – 4:00 PM. OUTCOMES: Real-world AI/ML deployment knowledge; industry-specific terminology; implementation methodologies; hiring-process exposure; understanding of career growth; workplace expectations; corporate innovation exposure; understanding of career scope at TCS.",
+    "venue": "Tata Consultancy Services Olympus, Bungalow, Hiranandani Estate, Thane West, Thane – 400607",
     "mode": "Offline",
     "speakers": [
-      "TCS Enterprise Technical Team"
+      "Dr. Shiwani Gupta – Head of Department, AI&ML",
+      "Mrs. Jagruti Jadhav – I/C Deputy Head of Department, AI&ML"
     ],
     "organizers": [
       {
-        "name": "ACM SIGAI TCET",
-        "role": "Organizer"
+        "name": "Dr. Vivek R. Bhartiya",
+        "role": "Professor"
+      },
+      {
+        "name": "Mrs. Jagruti Jadhav",
+        "role": "Assistant Professor & I/C Deputy HOD"
       }
     ],
     "collaborators": [
       "Tata Consultancy Services"
     ],
     "highlights": [
-      "Tour of high-density enterprise IT infrastructure and collaborative spaces",
-      "Interactive technical session on enterprise cloud solutions and AI adoption",
-      "Guidance on industry competencies and campus placement preparation"
+      "Industry demonstrations connecting classroom learning with real implementations",
+      "Technical presentations on industry problem solving using AI/ML",
+      "Career guidance on competencies and recruitment",
+      "Q&A with TCS experts",
+      "Campus tour showing corporate infrastructure and technological innovation",
+      "AI/ML Concepts Covered: Regression, Classification, RNN, SVM, One-Hot Encoding, Anomaly Detection",
+      "Industry Applications: Healthcare, Agriculture, Supply Chain Management"
     ],
-    "participants": "45",
+    "participants": "23 Students (SY & TY)",
     "winners": [],
     "image": "https://res.cloudinary.com/df9us90ur/image/upload/v1741794562/TCSIVSmallImage.jpg",
     "gallery": [],
@@ -490,32 +652,42 @@ export const eventsData = [
   {
     "id": 3,
     "slug": "mastering-research-writing",
-    "title": "Mastering Research Writing: Essential Tools for Effective Presentations",
+    "title": "Research Paper Workshop",
     "date": "15th March 2025",
     "academicYear": "2024-25",
     "type": "Workshop",
     "status": "Completed",
-    "shortDescription": "Hands-on academic workshop on literature review methods, LaTeX formatting, and high-impact research presentation.",
-    "description": "TCET ACM-SIGAI conducted a comprehensive workshop on academic research writing and technical dissemination. The session guided students through literature review methodologies, citation management with Zotero/Mendeley, LaTeX paper structuring, and ethical AI utilization in research drafting. Faculty experts shared critical insights on targeting reputable IEEE, Springer, and ACM conferences and journals.",
-    "venue": "Seminar Hall / Lab, TCET",
-    "mode": "Offline",
+    "shortDescription": "A hands-on workshop focused on academic writing, research documentation, citation management and AI-powered research tools.",
+    "description": "A hands-on workshop focused on academic writing, research documentation, citation management and AI-powered research tools. The workshop helped students understand how to structure research papers and use modern tools to make research and writing more efficient. OBJECTIVES: Structured research writing; academic documentation; hands-on Overleaf and LaTeX; Zotero; AI-powered research tools; research methodologies; academic publishing best practices; AI tools for writing efficiency and literature review. Time: 4:00 PM – 6:00 PM. OUTCOMES: Hands-on Overleaf, LaTeX and Zotero experience; better structured research writing; improved citation management; exposure to AI-powered research tools; motivation toward publications; increased confidence in theses, reports and research papers.",
+    "venue": "Zoom Workplace",
+    "mode": "Online",
     "speakers": [
-      "Dr. Rekha Sharma",
-      "Dr. Shiwani Gupta"
+      "Ms. Reeba Khan – Guest Speaker, Research & Academic Writing Expert"
     ],
     "organizers": [
       {
-        "name": "ACM SIGAI TCET",
-        "role": "Organizer"
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD AI&ML"
+      },
+      {
+        "name": "Mrs. Pranjali Sankhe",
+        "role": "Faculty In-Charge"
+      },
+      {
+        "name": "Organizing Core Committee",
+        "role": "TCET ACM-SIGAI"
       }
     ],
     "collaborators": [],
     "highlights": [
-      "Hands-on LaTeX formatting for IEEE/ACM publication standards",
-      "Systematic literature review formulation and citation workflows",
-      "Review criteria used by international journal and conference referees"
+      "Research writing using the sandwich analogy for introduction, body and conclusion",
+      "Overleaf and LaTeX for research-paper formatting, sectioning, citations, and abstracts",
+      "Zotero for APA/IEEE citations, reference folders, tags and integration with LaTeX",
+      "AI research tools including QuillBot, Grammarly, SciSpace, Elicit, Scite, and Paperpal",
+      "Real-time Q&A, hands-on activities, live feedback, and troubleshooting",
+      "Motivation toward theses, research papers, technical reports and publications"
     ],
-    "participants": "68",
+    "participants": "96 Students",
     "winners": [],
     "image": "https://res.cloudinary.com/df9us90ur/image/upload/v1741794593/ResearchPaperSmallImage.jpg",
     "gallery": [],
@@ -526,32 +698,47 @@ export const eventsData = [
   {
     "id": 4,
     "slug": "codehathon2-0",
-    "title": "CodeHathon2.0 - DSA Coding Competition",
+    "title": "CodeHathon 2.0 – The Ultimate Coding Showdown",
     "date": "7th March 2025",
     "academicYear": "2024-25",
     "type": "Competition",
     "status": "Completed",
-    "shortDescription": "Timed data structures and algorithms coding competition testing speed, memory efficiency, and problem-solving.",
-    "description": "CodeHathon 2.0 was hosted by TCET ACM-SIGAI on HackerRank as an intensive competitive programming contest for undergraduate engineers. The competition featured algorithmic challenges spanning dynamic programming, graphs, trees, and time complexity optimization. Over 100 participants competed against a real-time automated scoring test harness to test their programming prowess.",
-    "venue": "HackerRank Platform (Online)",
+    "shortDescription": "A high-intensity competitive programming event designed to test students' problem-solving, logical reasoning, and algorithmic thinking skills.",
+    "description": "A high-intensity competitive programming event designed to test students' problem-solving, logical reasoning, algorithmic thinking, coding and debugging skills. Participants competed under strict time constraints while solving coding challenges of varying complexity. OBJECTIVES: Test and enhance problem-solving and coding skills; apply programming knowledge to real-world challenges; foster competitive coding culture; encourage national and international coding-contest participation; provide a platform to showcase technical expertise and learn from peers. Time: 8:00 PM – 9:00 PM. OUTCOMES: Improved problem-solving; better logical reasoning; stronger algorithmic thinking; motivation to participate in more coding contests; peer interaction and knowledge exchange; recognition of high-performing students; improved programming, debugging and algorithm-design skills.",
+    "venue": "HackerRank Website",
     "mode": "Online",
     "speakers": [],
     "organizers": [
       {
-        "name": "ACM SIGAI TCET",
-        "role": "Organizer"
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD AI&ML"
+      },
+      {
+        "name": "Mrs. Pranjali Sankhe",
+        "role": "Faculty In-Charge, AI&ML"
+      },
+      {
+        "name": "Student Core Committee",
+        "role": "TCET ACM-SIGAI"
       }
     ],
     "collaborators": [
       "HackerRank"
     ],
     "highlights": [
-      "Automated evaluation across edge cases, time limits, and memory bounds",
-      "Curated problem sets covering core Data Structures & Algorithms",
-      "Real-time competitive leaderboard rankings"
+      "Multiple coding challenges, logical reasoning, and algorithmic efficiency",
+      "Debugging proficiency and problems of varying complexity",
+      "Strict time constraints with a real-time leaderboard",
+      "Real-world algorithmic problem solving and strategic thinking",
+      "Preparation for coding contests, hackathons, and technical interviews",
+      "Winners: 1st Place – Aditya Jaiswal, 2nd Place – Chetan Yadav",
+      "Recognition: Certificates of participation awarded for dedication and perseverance"
     ],
-    "participants": "104",
-    "winners": [],
+    "participants": "50 Students (Second-year)",
+    "winners": [
+      "1st Place – Aditya Jaiswal",
+      "2nd Place – Chetan Yadav"
+    ],
     "image": "https://res.cloudinary.com/df9us90ur/image/upload/v1741794519/CodeHathon20SmallImage.jpg",
     "gallery": [],
     "registrationLink": "",
@@ -604,31 +791,42 @@ export const eventsData = [
   {
     "id": 6,
     "slug": "smart-investing-financial-literacy",
-    "title": "Smart Investing & Financial Literacy!",
-    "date": "13th February 2025",
+    "title": "Smart Investing & Financial Literacy Seminar",
+    "date": "29th & 30th January 2025",
     "academicYear": "2024-25",
     "type": "Seminar",
     "status": "Completed",
-    "shortDescription": "Expert seminar on personal wealth building, equity markets, mutual funds, and early career financial planning.",
-    "description": "TCET ACM-SIGAI hosted a specialized financial literacy workshop tailored for engineering undergraduates. The session addressed fundamental wealth creation principles, power of compounding, SIPs, asset allocation strategies, and risk mitigation in financial markets. Students engaged in practical case studies on budgeting early career earnings and navigating tax-advantaged instruments.",
+    "shortDescription": "A session introducing students to financial markets, investment strategies, financial planning, risk management, and wealth-building techniques.",
+    "description": "A session introducing students to financial markets, investment strategies, financial planning, risk management, wealth-building techniques and responsible investing. OBJECTIVES: Understand financial markets and investment strategies; learn financial planning and risk management; understand wealth-building techniques; learn asset allocation, diversification and compounding; explore mutual funds, stocks, ETFs and sovereign gold bonds; understand SEBI regulations, investor protection and due diligence; encourage financial literacy and informed long-term financial decisions. Time: 10:30 AM – 11:30 PM. OUTCOMES: Understanding of financial markets, investment strategies and risk assessment; knowledge of goal setting and asset allocation; risk-reward evaluation for wealth management; awareness of due diligence and investor protection; understanding of financial instruments and their risks and benefits; insights into market dynamics, stock selection and investment evaluation; encouragement toward disciplined saving and strategic long-term investing.",
     "venue": "Seminar Hall 4, TCET",
     "mode": "Offline",
     "speakers": [
-      "Mr. Vatsal Patel (Financial Consultant & Analyst)"
+      "Ms. Shweta Nema – Financial Educator, NISM-Certified Trainer"
     ],
     "organizers": [
       {
-        "name": "ACM SIGAI TCET",
-        "role": "Organizer"
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD AI&ML"
+      },
+      {
+        "name": "Ms. Pranjali Sankhe",
+        "role": "ACM-SIGAI Faculty In-Charge"
+      },
+      {
+        "name": "Core Members",
+        "role": "ACM-SIGAI & AI&ML Department"
       }
     ],
     "collaborators": [],
     "highlights": [
-      "Demystifying stock market fundamentals, mutual funds, and ETFs",
-      "Real-world financial roadmap for early-career engineers",
-      "Interactive Q&A on cryptocurrency risks, inflation, and emergency funds"
+      "Financial markets and investment strategies",
+      "Risk management, financial planning and goal setting",
+      "Wealth-building techniques, asset allocation, diversification, and compounding",
+      "Mutual funds, ETFs, stocks, sovereign gold bonds",
+      "SEBI regulations, investor protection, due diligence",
+      "Long-term financial security"
     ],
-    "participants": "85",
+    "participants": "48 Students (Second-year)",
     "winners": [],
     "image": "https://res.cloudinary.com/df9us90ur/image/upload/v1741794447/smallInvesting13Feb.jpg",
     "gallery": [],
@@ -639,37 +837,50 @@ export const eventsData = [
   {
     "id": 7,
     "slug": "empowering-young-minds-aiml",
-    "title": "Empowering Young Minds with AI & ML at Gundecha School!",
-    "date": "29th-30th January 2025",
+    "title": "AI Awareness Session for Grade 8 Students",
+    "date": "29th & 30th January 2025",
     "academicYear": "2024-25",
-    "type": "Event",
+    "type": "Outreach Activity",
     "status": "Completed",
-    "shortDescription": "Community outreach initiative introducing 8th-grade school students to artificial intelligence, robotics, and coding.",
-    "description": "TCET ACM-SIGAI student ambassadors conducted an interactive educational outreach at Gundecha Education Academy for Grade 8 students. Through live demonstrations of computer vision games, voice recognition demos, and simplified logic puzzles, the team sparked early interest in STEM and AI careers. The initiative was praised by school leadership for its engaging and accessible pedagogical approach.",
-    "venue": "Gundecha Education Academy, Kandivali East",
+    "shortDescription": "An AI and ML awareness session designed to introduce Grade 8 students to AI, Machine Learning, programming, and real-world applications.",
+    "description": "An AI and ML awareness session designed to introduce Grade 8 students to Artificial Intelligence, Machine Learning, automation, programming and real-world AI applications through interactive sessions, presentations and age-appropriate activities. OBJECTIVES: Introduce AI and ML fundamentals; explain automation and its growing role in modern industries; introduce basic programming using Python, C and Java; demonstrate AI applications in healthcare, finance and robotics; demonstrate everyday ML applications such as recommendation systems and speech recognition; encourage questioning, critical thinking and exploration beyond conventional learning. Time: 10:00 AM – 12:00 PM. OUTCOMES: Practical knowledge about AI and its applications; exposure to emerging technologies and trends; better understanding of AI's role across industries; awareness of AI's potential impact on future careers.",
+    "venue": "Gundecha Education Academy, Kandivali East, Mumbai",
     "mode": "Offline",
     "speakers": [
-      "ACM SIGAI Student Core Team Mentors"
+      "Dr. Shiwani Gupta – Head of Department, AI&ML",
+      "Ms. Pranjali Sankhe – Faculty In-Charge, ACM SIGAI"
     ],
     "organizers": [
       {
-        "name": "TCET ACM SIGAI",
-        "role": "Organizer"
+        "name": "Dr. Shiwani Gupta",
+        "role": "Head of Department, AI&ML"
       },
       {
-        "name": "Dr. Shiwani Gupta",
-        "role": "Faculty Mentor"
+        "name": "Ms. Pranjali Sankhe",
+        "role": "Faculty In-Charge, ACM SIGAI"
+      },
+      {
+        "name": "Mr. Abhijeet Jadhav",
+        "role": "Assistant Professor"
+      },
+      {
+        "name": "Student Team",
+        "role": "Mudassir, Ishan, Reva, Niyati, Sagar, Diya"
       }
     ],
     "collaborators": [
       "Gundecha Education Academy"
     ],
     "highlights": [
-      "Interactive AI vision and voice synthesis demonstrations",
-      "Hands-on logic building and visual block-programming workshops",
-      "Ethics and safe usage of generative AI tools for young students"
+      "Fundamental AI and ML concepts",
+      "Growing role of automation",
+      "Introduction to Python, C and Java",
+      "AI applications in healthcare, finance and robotics",
+      "ML applications such as recommendation systems and speech recognition",
+      "Interactive discussions and questions",
+      "Encouragement toward AI/ML career paths"
     ],
-    "participants": "140+ School Students",
+    "participants": "156 Grade 8 Students",
     "winners": [],
     "image": "https://res.cloudinary.com/df9us90ur/image/upload/v1741794420/AIMLawarenessSmall.jpg",
     "gallery": [],
@@ -680,31 +891,44 @@ export const eventsData = [
   {
     "id": 8,
     "slug": "national-level-seminar-future-ai",
-    "title": "National Level Seminar \u2013 Future of AI with LLMs and LSTMs",
+    "title": "LLM vs LSTM's: Understanding and Applying AI Models",
     "date": "18th January 2025",
     "academicYear": "2024-25",
     "type": "Seminar",
     "status": "Completed",
-    "shortDescription": "Technical webinar contrasting Recurrent Neural Networks/LSTMs with modern Transformer and Large Language Model architectures.",
-    "description": "TCET ACM-SIGAI hosted a national technical seminar titled 'LLM vs LSTMs: Understanding and Applying AI Models' led by AI practitioner Mr. Kushal Parekh. The session provided a mathematical and architectural comparison between sequential LSTM networks and multi-head attention transformer mechanisms. Over 160 participants explored fine-tuning strategies, retrieval augmented generation (RAG), and open-source model optimization.",
-    "venue": "Zoom Platform (Online)",
+    "shortDescription": "A national-level seminar focused on understanding and applying Large Language Models (LLMs) and Long Short-Term Memory Networks (LSTMs).",
+    "description": "A national-level seminar focused on understanding and applying Large Language Models (LLMs) and Long Short-Term Memory Networks (LSTMs). The session explored their differences, practical applications, strengths, limitations and use cases, while also discussing AI's impact across healthcare, finance and education. OBJECTIVES: Explore the differences and practical applications of LLMs and LSTMs; highlight AI's transformative impact across healthcare, finance and education; discuss ethical AI development, data privacy and responsible AI usage. Time: 6:00 PM – 8:00 PM. OUTCOMES: Better understanding of LLMs and LSTMs; ability to differentiate between the two architectures; understanding of strengths, limitations and use cases; awareness of ethical AI, privacy, accountability and fairness; exposure to sentiment analysis and stock-price prediction; practical understanding of the ML lifecycle through the LSTM activity; interest in explainable AI and multimodal learning.",
+    "venue": "Zoom Workplace",
     "mode": "Online",
     "speakers": [
-      "Mr. Kushal Parekh (AI Engineer & Researcher)"
+      "Mr. Shanti Kumar Vemulapalli – IT Job Coach & CEO, VSKumar Enterprises"
     ],
     "organizers": [
       {
-        "name": "ACM SIGAI TCET",
-        "role": "Organizer"
+        "name": "Dr. Shiwani Gupta",
+        "role": "Head of Department, AI&ML"
+      },
+      {
+        "name": "Mrs. Pranjali Sankhe",
+        "role": "Faculty In-Charge, TCET ACM-SIGAI"
+      },
+      {
+        "name": "ACM-SIGAI Student Chapter",
+        "role": "Core Committee of 11 members"
       }
     ],
     "collaborators": [],
     "highlights": [
-      "Mathematical breakdown of recurrent gates vs attention mechanisms",
-      "Practical comparison of training cost, context window, and inference latency",
-      "Live demonstration of prompt engineering and local LLM fine-tuning"
+      "Comparative analysis of LLMs and LSTMs",
+      "Strengths, limitations and use cases",
+      "Ethical AI including bias, privacy, accountability and responsible AI",
+      "LLM applications in sentiment analysis and language translation",
+      "LSTM applications in time-series analysis and stock-price prediction",
+      "Hands-on LSTM model development for stock-price prediction",
+      "Industry case studies covering predictive analytics, process efficiency and creative AI applications",
+      "Interactive Q&A and future AI topics including explainable AI and multimodal learning"
     ],
-    "participants": "167",
+    "participants": "168 students",
     "winners": [],
     "image": "https://res.cloudinary.com/df9us90ur/image/upload/v1741794471/SmallLSTMVsllm18Jan.jpg",
     "gallery": [],
@@ -748,33 +972,40 @@ export const eventsData = [
   {
     "id": 10,
     "slug": "seminar-prompt-engineering-rag",
-    "title": "Seminar on Prompt Engineering and RAG Technology",
+    "title": "Prompt Engineering and RAG Technology",
     "date": "30th September 2024",
     "academicYear": "2024-25",
     "type": "Seminar",
     "status": "Completed",
-    "shortDescription": "Expert industry seminar on prompt optimization, vector embeddings, and Retrieval-Augmented Generation architectures.",
-    "description": "The AI&ML Department and TCET ACM-SIGAI hosted an advanced technical seminar on Prompt Engineering and RAG Technology featuring Mr. Surajkumar Singh from LTI Mindtree. The session demystified vector databases, semantic search embeddings, context chunking strategies, and enterprise RAG architecture for reducing hallucinations in business applications.",
-    "venue": "Seminar Hall / Lab 307, TCET",
+    "shortDescription": "A technical seminar focused on Prompt Engineering and Retrieval-Augmented Generation (RAG), and their modern AI applications.",
+    "description": "A technical seminar focused on Prompt Engineering and Retrieval-Augmented Generation (RAG), covering their integration, modern AI applications, industry relevance and implementation challenges. OBJECTIVES: Understand Prompt Engineering; explore RAG technology; learn how Prompt Engineering and RAG can be integrated; gain insights into industry applications of AI; provide students with a real-world perspective on AI advancements; engage students through an interactive Q&A session. Time: 12:15 PM – 2:15 PM. OUTCOMES: Comprehensive understanding of Prompt Engineering and RAG; awareness of their significance in modern AI; understanding of current industry trends; practical knowledge of implementing RAG within AI systems; awareness of AI-related career pathways; increased engagement through Q&A; networking with an industry professional; motivation to develop hands-on projects; awareness of implementation challenges; motivation for continued AI learning.",
+    "venue": "Room No. 722, TCET",
     "mode": "Offline",
     "speakers": [
-      "Mr. Surajkumar Singh (Senior AI Consultant, LTI Mindtree)"
+      "Mr. Surajkumar Singh – Industry Professional, LTI Mindtree"
     ],
     "organizers": [
       {
-        "name": "ACM SIGAI TCET",
-        "role": "Organizer"
+        "name": "Mr. Kunal Pandey",
+        "role": "Assistant Professor, AI&ML"
+      },
+      {
+        "name": "Mrs. Pranjali Sankhe",
+        "role": "Assistant Professor, AI&ML"
       }
     ],
     "collaborators": [
       "LTI Mindtree"
     ],
     "highlights": [
-      "Enterprise RAG architecture blueprint from document ingestion to response generation",
-      "Vector embeddings, similarity search with FAISS/Pinecone, and reranking",
-      "Techniques for mitigating hallucination and securing prompt injection vectors"
+      "Introduction to Prompt Engineering and its significance in AI",
+      "Integration of RAG with Prompt Engineering for better information retrieval",
+      "Real-world RAG applications across industries",
+      "Implementation challenges and solutions",
+      "Interactive Q&A and direct interaction with the industry speaker",
+      "Discussion of real-world AI applications and emerging advancements"
     ],
-    "participants": "75",
+    "participants": "43 Students (Third-year)",
     "winners": [],
     "image": "https://res.cloudinary.com/df9us90ur/image/upload/v1730825770/RAGeventimage.jpg",
     "gallery": [],
@@ -897,31 +1128,42 @@ export const eventsData = [
   {
     "id": 14,
     "slug": "mastering-personal-finance",
-    "title": "Mastering Personal Finance",
+    "title": "Maximizing Your Money: Power of Personal Finance to Achieve Your Goals on Time",
     "date": "9th August 2024",
     "academicYear": "2024-25",
     "type": "Seminar",
     "status": "Completed",
-    "shortDescription": "Financial planning and wealth management lecture for undergraduate engineering students.",
-    "description": "TCET ACM SIGAI organized a session titled 'Maximizing Your Money: Power of Personal Finance to Achieve Your Goals on Time' for second-year AI&ML students. Led by Mr. Harshit Samdani, a financial consultant and TCET alumnus, the session provided actionable strategies on budgeting, disciplined investing, mutual funds, and long-term goal setting.",
-    "venue": "Seminar Hall, TCET",
+    "shortDescription": "A finance-focused session for second-year students introducing practical personal-finance concepts, budgeting, and long-term financial management.",
+    "description": "A finance-focused session designed specifically for second-year AI&ML students. The session introduced practical personal-finance concepts including budgeting, saving, investing, financial planning and long-term financial management. OBJECTIVES: Educate students about effective money management and personal finance; provide strategies for managing finances after securing a job; offer practical insights into budgeting, saving and investing to achieve financial goals; simplify complex financial concepts and make them accessible and relevant to students' future careers. Time: 3:30 PM – 4:30 PM. OUTCOMES: Students gained practical knowledge of personal-finance management, including budgeting, expense tracking and financial goal setting; gained insights into investment options; developed a clearer understanding of financial stability and effective money management; became more aware of emergency funds and their role in financial security; learned about SMART goals for financial planning.",
+    "venue": "Lecture Hall-722, TCET, Kandivli",
     "mode": "Offline",
     "speakers": [
-      "Mr. Harshit Samdani (Financial Consultant & TCET Alumnus)"
+      "Mr. Harshit Samdani – 2010 Alumnus and Seasoned Professional in Financial Markets"
     ],
     "organizers": [
       {
-        "name": "ACM SIGAI TCET",
-        "role": "Organizer"
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD AI&ML and Faculty Sponsor"
+      },
+      {
+        "name": "Mrs. Pranjali Sankhe",
+        "role": "Faculty In-Charge"
+      },
+      {
+        "name": "Student Core Committee",
+        "role": "ACM-SIGAI (11 Members)"
       }
     ],
     "collaborators": [],
     "highlights": [
-      "Practical budgeting frameworks and personal cash flow management",
-      "Understanding compound interest, index funds, and equity diversification",
-      "Common financial pitfalls to avoid in early engineering careers"
+      "Practical personal-finance concepts including budgeting, saving, and investing",
+      "Short-term and long-term financial planning and goal setting",
+      "Asset allocation, equity investments, and risk management",
+      "Real-world financial strategies and personalized financial advice",
+      "Case studies based on algorithmic trading and financial management",
+      "Interactive presentation and open-ended Q&A"
     ],
-    "participants": "51",
+    "participants": "51 Students (Second-year)",
     "winners": [],
     "image": "https://res.cloudinary.com/ds8oawwu2/image/upload/v1726990712/FIN_S_zfzoqm.jpg",
     "gallery": [],
@@ -1346,6 +1588,167 @@ export const eventsData = [
     "gallery": [],
     "registrationLink": "",
     "source": "Report 2023-24",
+    "featured": false
+  },
+  {
+    "id": 113,
+    "slug": "ai-awareness-grade7-8-thakur-public",
+    "title": "AI Awareness Session for Grade 7 and Grade 8 Students of Thakur Public School",
+    "date": "26th June 2024",
+    "academicYear": "2024-25",
+    "type": "Outreach Activity",
+    "status": "Completed",
+    "shortDescription": "An AI awareness session conducted for Grade 7 and Grade 8 students, introducing them to Artificial Intelligence, Machine Learning, and programming.",
+    "description": "An AI awareness session conducted for Grade 7 and Grade 8 students, introducing them to Artificial Intelligence, Machine Learning, programming and the growing applications of AI across different fields. The session also provided students with an overview of career opportunities, higher studies and job prospects in AI. OBJECTIVES: Introduction to AI and its wide range of applications; highlight the rapid growth of AI over the past few decades; provide an overview of the global AI landscape; introduce career prospects, higher studies and job opportunities in AI; conduct an interactive session with feedback, Q&A and concept quizzes. Time: 1:30 PM – 2:30 PM. OUTCOMES: Students gained practical knowledge about AI and its applications; exposure to emerging AI technologies and trends; deeper understanding of AI's role across industries; awareness of AI's potential impact on their future careers.",
+    "venue": "Thakur Public School, Kandivali East",
+    "mode": "Offline",
+    "speakers": [
+      "Dr. Shiwani Gupta – Head of Department, AI&ML",
+      "Ms. Pranjali Sankhe – Faculty Incharge, ACM SIGAI",
+      "Mrs. Shilpa Mathur – SuperAI Club Faculty Incharge"
+    ],
+    "organizers": [
+      {
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD"
+      },
+      {
+        "name": "Ms. Jagruti Jadhav",
+        "role": "Deputy HOD"
+      },
+      {
+        "name": "Ms. Pranjali Sankhe",
+        "role": "ACM SIGAI Faculty Incharge"
+      },
+      {
+        "name": "Ms. Shilpa Mathur",
+        "role": "Super AI Club Faculty Incharge"
+      },
+      {
+        "name": "Mr. Abhijeet Jadhav",
+        "role": "Assistant Professor"
+      },
+      {
+        "name": "Student Team",
+        "role": "Third-year AI&ML Students (26 members)"
+      }
+    ],
+    "collaborators": [
+      "IIC",
+      "Super-AI Club"
+    ],
+    "highlights": [
+      "Topics Covered: Artificial Intelligence, Machine Learning, AI subdomains, coding, and programming",
+      "Discussion of AI job opportunities, higher studies, and career prospects",
+      "Real-life examples from alumni and interactive Q&A sessions",
+      "Concept quizzes, feedback discussions, and enthusiastic student participation",
+      "Students expressed strong interest in pursuing careers in AI"
+    ],
+    "participants": "455 Students (Grade 7 & 8)",
+    "winners": [],
+    "image": null,
+    "gallery": [],
+    "registrationLink": "",
+    "source": "Report 2024-25",
+    "featured": false
+  },
+  {
+    "id": 114,
+    "slug": "how-world-is-changing-llms",
+    "title": "How World is Changing Because of LLMs?",
+    "date": "31st August 2024",
+    "academicYear": "2024-25",
+    "type": "Seminar",
+    "status": "Completed",
+    "shortDescription": "A national-level seminar exploring the practical applications and transformative impact of Large Language Models across various fields.",
+    "description": "A national-level seminar focused on the practical applications and transformative impact of Large Language Models. The session explored how LLMs can be applied to job searching, software engineering, data analytics, content creation and everyday tasks. OBJECTIVES: Familiarize participants with practical applications of LLMs in everyday tasks; showcase how LLMs can transform job searching, software engineering and data analytics; encourage interaction and engagement through live demonstrations of LLM capabilities. Time: 8:30 PM – 10:00 PM. OUTCOMES: Participants gained practical knowledge of LLM applications in job searching, software engineering and data analytics; learned how Jobscan and Resume Master can improve job searches and resumes; understood how LLMs can simplify data cleaning, insight generation and code refactoring; learned about AI-assisted data management using SQL and Tableau; explored InterviewsbyAI for interview preparation; understood everyday LLM applications including content creation, audio/video summarization and email drafting; developed greater interest in AI technologies and their integration into academic and professional work.",
+    "venue": "Zoom Workplace",
+    "mode": "Online",
+    "speakers": [
+      "Mr. Sumit Gupta – Senior Business Intelligence Engineer, Notion & TCET Alumnus"
+    ],
+    "organizers": [
+      {
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD AI&ML and Faculty Sponsor"
+      },
+      {
+        "name": "Mrs. Pranjali Sankhe",
+        "role": "Faculty In-Charge"
+      },
+      {
+        "name": "Student Core Committee",
+        "role": "ACM-SIGAI (11 Members)"
+      }
+    ],
+    "collaborators": [],
+    "highlights": [
+      "Practical applications of LLMs in job searching, data analytics and software engineering",
+      "Jobscan for resume building and job-search optimization",
+      "LLM applications for code refactoring and AI-generated insights in data analytics",
+      "Interactive song-identification activity and real-world examples from data analytics",
+      "Data cleaning and insight generation using Perplexity AI, plus active Q&A",
+      "Tools covered: Jobscan, Resume Master, Perplexity AI, InterviewsbyAI, SQL, Tableau"
+    ],
+    "participants": "96 Students (TCET and others)",
+    "winners": [],
+    "image": null,
+    "gallery": [],
+    "registrationLink": "",
+    "source": "Report 2024-25",
+    "featured": true
+  },
+  {
+    "id": 115,
+    "slug": "industrial-visit-tcs-yantra-park-sept-2024",
+    "title": "Industrial Visit at TCS",
+    "date": "27th September 2024",
+    "academicYear": "2024-25",
+    "type": "Industrial Visit",
+    "status": "Completed",
+    "shortDescription": "An industrial visit providing students with exposure to Tata Values, TCS technological capabilities, AI and Machine Learning work, and career opportunities.",
+    "description": "An industrial visit providing students with exposure to Tata Values, TCS technological capabilities across different technologies and domains, AI and Machine Learning work at TCS, career opportunities, internships and corporate social responsibility. OBJECTIVES: Gain insight into Tata Values; understand TCS capabilities across technologies and domains; learn about ongoing AI and Machine Learning work at TCS; understand career and internship opportunities; gain insight into creative, recreational and social activities undertaken by TCS associates in alignment with Tata Values and the culture of giving back to society. Time: 11:00 AM – 1:00 PM. OUTCOMES: Increased knowledge and awareness by connecting learning with real-world issues, trends and opportunities; networking and collaboration with industry professionals; opportunities for mentorship related to projects and research.",
+    "venue": "TCS Yantra Park, Yantra Park Campus",
+    "mode": "Offline",
+    "speakers": [
+      "Namrata, Neeta Khare, Maitree and the HOPE Team – Working Professionals at TCS"
+    ],
+    "organizers": [
+      {
+        "name": "Dr. Vivek Bharatiya",
+        "role": "Professor, AI&ML"
+      },
+      {
+        "name": "Dr. Shiwani Gupta",
+        "role": "HOD, AI&ML"
+      },
+      {
+        "name": "Mr. Kunal Pandey",
+        "role": "Assistant Professor, AI&ML"
+      },
+      {
+        "name": "Mr. Jignesh Patel",
+        "role": "Assistant Professor, AI&DS"
+      }
+    ],
+    "collaborators": [
+      "Tata Consultancy Services"
+    ],
+    "highlights": [
+      "Interactive session on Tata Values and corporate citizenship",
+      "TCS technological capabilities with a focus on AI and Machine Learning",
+      "Presentations covering different domains and real-world problem-solving using AI/ML",
+      "Career pathways and internship opportunities at TCS",
+      "Insights into creative, recreational and social activities",
+      "Team approach and leadership development",
+      "Active Q&A participation and professional networking"
+    ],
+    "participants": "30 Students (TT from AI&DS)",
+    "winners": [],
+    "image": null,
+    "gallery": [],
+    "registrationLink": "",
+    "source": "Report 2024-25",
     "featured": false
   }
 ];

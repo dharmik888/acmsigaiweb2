@@ -143,12 +143,12 @@ const PILLARS = [
 const FOCUS_AREAS = [
   {
     icon: Brain,
-    title: "AI Research",
-    tag: "DOMAIN",
+    title: "ACM Bytes",
+    tag: "COMING SOON",
     color: "bg-retroSky",
     charmType: "brain",
-    text: "Publishing research papers and exploring deep learning architectures.",
-    link: "/publications",
+    text: "Updates and news related to Artificial Intelligence.",
+    link: "#",
   },
   {
     icon: Code2,

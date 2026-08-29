@@ -81,10 +81,10 @@ export default function Footer() {
                   <Mail size={18} strokeWidth={2.5} />
                 </div>
                 <a
-                  href="mailto:acmsigai10@gmail.com"
+                  href="mailto:tcetacmsigai@gmail.com"
                   className="hover:text-retroOrange hover:underline decoration-2 underline-offset-4 transition-colors break-all"
                 >
-                  acmsigai10@gmail.com
+                  tcetacmsigai@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -92,10 +92,10 @@ export default function Footer() {
                   <Phone size={18} strokeWidth={2.5} />
                 </div>
                 <a
-                  href="tel:+919326590260"
+                  href="tel:+917710829523"
                   className="hover:text-retroOrange hover:underline decoration-2 underline-offset-4 transition-colors"
                 >
-                  +91 93265 90260
+                  +91 77108 29523
                 </a>
               </li>
             </ul>

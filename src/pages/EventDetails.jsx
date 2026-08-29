@@ -93,54 +93,104 @@ export default function EventDetails() {
             <div
               className={`${event.image ? "md:col-span-7" : "md:col-span-12"} space-y-4`}
             >
-              <span className="font-mono text-xs font-bold text-retroGreySlate uppercase tracking-wider block">
-                // OVERVIEW
-              </span>
+              <div className="inline-block font-black text-xs md:text-sm uppercase tracking-widest bg-retroYellow text-black border-3 border-black px-4 py-2 shadow-brutal-sm mb-2">
+                OVERVIEW
+              </div>
               <p className="text-base font-bold text-black/80 leading-relaxed whitespace-pre-wrap">
                 {event.description || event.shortDescription}
               </p>
             </div>
           </div>
 
-          <div className="pt-6 border-t-3 border-black">
-            <span className="font-mono text-xs font-bold text-retroGreySlate uppercase tracking-wider block mb-4">
-              // LOGISTICS & METRICS
-            </span>
+          <div className="pt-8 border-t-3 border-black space-y-12">
+            <div>
+              <div className="inline-block font-black text-xs md:text-sm uppercase tracking-widest bg-retroLime text-black border-3 border-black px-4 py-2 shadow-brutal-sm mb-6">
+                LOGISTICS & METRICS
+              </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-              {event.venue && event.venue !== "N/A" && (
-                <div className="p-4 rounded-2xl border-3 border-black bg-retroSky/40 shadow-brutal space-y-1">
-                  <span className="font-mono text-[10px] font-bold text-black/70 uppercase block">
-                    Venue
-                  </span>
-                  <span className="font-black text-sm text-black uppercase block">
-                    {event.venue}
-                  </span>
-                </div>
-              )}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
+                {event.venue && event.venue !== "N/A" && (
+                  <div className="space-y-1 border-l-3 border-retroLime pl-4">
+                    <span className="font-bold text-black/60 uppercase text-[10px] tracking-wider block">
+                      Venue
+                    </span>
+                    <span className="font-black text-black uppercase block">
+                      {event.venue}
+                    </span>
+                  </div>
+                )}
 
-              {event.mode && (
-                <div className="p-4 rounded-2xl border-3 border-black bg-white shadow-brutal space-y-1">
-                  <span className="font-mono text-[10px] font-bold text-black/70 uppercase block">
-                    Mode
-                  </span>
-                  <span className="font-black text-sm text-black uppercase block">
-                    {event.mode}
-                  </span>
-                </div>
-              )}
+                {event.mode && (
+                  <div className="space-y-1 border-l-3 border-retroLime pl-4">
+                    <span className="font-bold text-black/60 uppercase text-[10px] tracking-wider block">
+                      Mode
+                    </span>
+                    <span className="font-black text-black uppercase block">
+                      {event.mode}
+                    </span>
+                  </div>
+                )}
 
-              {event.participants && (
-                <div className="p-4 rounded-2xl border-3 border-black bg-retroLime/40 shadow-brutal space-y-1">
-                  <span className="font-mono text-[10px] font-bold text-black/70 uppercase block">
-                    Attendance
-                  </span>
-                  <span className="font-black text-sm text-black uppercase block">
-                    {event.participants}
-                  </span>
-                </div>
-              )}
+                {event.participants && (
+                  <div className="space-y-1 border-l-3 border-retroLime pl-4">
+                    <span className="font-bold text-black/60 uppercase text-[10px] tracking-wider block">
+                      Attendance
+                    </span>
+                    <span className="font-black text-black uppercase block">
+                      {event.participants}
+                    </span>
+                  </div>
+                )}
+              </div>
             </div>
+
+            {event.highlights && event.highlights.length > 0 && (
+              <div>
+                <div className="inline-block font-black text-xs md:text-sm uppercase tracking-widest bg-retroSky text-black border-3 border-black px-4 py-2 shadow-brutal-sm mb-6">
+                  KEY HIGHLIGHTS
+                </div>
+                <ul className="list-disc pl-5 space-y-2 text-sm font-bold text-black/80">
+                  {event.highlights.map((h, i) => (
+                    <li key={i}>{h}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {(event.speakers?.length > 0 || event.organizers?.length > 0) && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                {event.speakers?.length > 0 && (
+                  <div>
+                    <div className="inline-block font-black text-xs md:text-sm uppercase tracking-widest bg-retroOrange text-black border-3 border-black px-4 py-2 shadow-brutal-sm mb-6">
+                      SPEAKERS & RESOURCE PERSONS
+                    </div>
+                    <ul className="space-y-3 border-l-3 border-retroOrange pl-4">
+                      {event.speakers.map((s, i) => (
+                        <li key={i} className="font-black text-black/80 text-sm">
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {event.organizers?.length > 0 && (
+                  <div>
+                    <div className="inline-block font-black text-xs md:text-sm uppercase tracking-widest bg-retroCitrus text-black border-3 border-black px-4 py-2 shadow-brutal-sm mb-6">
+                      ORGANIZERS & COORDINATORS
+                    </div>
+                    <ul className="space-y-4 border-l-3 border-retroCitrus pl-4">
+                      {event.organizers.map((org, i) => (
+                        <li key={i} className="space-y-0.5">
+                          <span className="font-black text-sm text-black block">{org.name}</span>
+                          <span className="font-bold text-[11px] text-black/60 uppercase block">{org.role}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </article>
