@@ -119,12 +119,12 @@ export const PeekingRobot = () => {
           {/* Face Container */}
           <div className="w-20 h-14 bg-retroOrange border-3 border-black rounded-2xl shadow-brutal flex flex-col items-center justify-center relative overflow-hidden px-2">
             <div className="w-full h-8 bg-black rounded-xl border border-black/40 flex items-center justify-around px-2">
-              <div className="w-3.5 h-3.5 bg-retroYellow rounded-full border border-black flex items-center justify-center group-hover:scale-125 transition-transform">
-                <div className="w-1 h-1 bg-black rounded-full translate-x-0.5 -translate-y-0.5" />
+              <div className="w-4 h-4 bg-white rounded-full border-2 border-black flex items-center justify-center group-hover:scale-125 transition-transform overflow-hidden">
+                <div className="w-2 h-2 bg-black rounded-full translate-x-0.5 -translate-y-0.5" />
               </div>
               <div className="w-1 h-1 bg-retroPink rounded-full opacity-80" />
-              <div className="w-3.5 h-3.5 bg-retroYellow rounded-full border border-black flex items-center justify-center group-hover:scale-125 transition-transform">
-                <div className="w-1 h-1 bg-black rounded-full translate-x-0.5 -translate-y-0.5" />
+              <div className="w-4 h-4 bg-white rounded-full border-2 border-black flex items-center justify-center group-hover:scale-125 transition-transform overflow-hidden">
+                <div className="w-2 h-2 bg-black rounded-full translate-x-0.5 -translate-y-0.5" />
               </div>
             </div>
 
