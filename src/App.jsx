@@ -8,6 +8,7 @@ import Team from "./pages/Team";
 import Blogs from "./pages/Blogs";
 import Publications from "./pages/Publications";
 import EventDetails from "./pages/EventDetails.jsx";
+import AcmBytes from "./pages/AcmBytes.jsx";
 import Footer from "./components/layouts/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/publications" element={<Publications />} />
+            <Route path="/acm-bytes" element={<AcmBytes />} />
           </Routes>
         </main>
 

@@ -6,6 +6,7 @@ import {
   FaUsers,
   FaNewspaper,
   FaBookOpen,
+  FaBolt,
 } from "react-icons/fa6";
 import logo from "../../assets/sigai-logo.webp";
 
@@ -30,6 +31,7 @@ export function Navbar() {
     { name: "EVENTS", path: "/events", icon: FaCalendarDays },
     { name: "TEAM", path: "/team", icon: FaUsers },
     { name: "BLOGS", path: "/blogs", icon: FaNewspaper },
+    { name: "ACM BYTES", path: "/acm-bytes", icon: FaBolt },
     { name: "PUBLICATIONS", path: "/publications", icon: FaBookOpen },
   ];
 

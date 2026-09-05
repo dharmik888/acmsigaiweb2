@@ -5,7 +5,7 @@ import {
   FaNewspaper,
   FaCalendarDays,
   FaUsers,
-  FaAddressCard,
+  FaBolt,
 } from "react-icons/fa6";
 
 const NAV_ITEMS = [
@@ -13,7 +13,7 @@ const NAV_ITEMS = [
   { label: "Blogs", path: "/blogs", icon: FaNewspaper },
   { label: "Events", path: "/events", icon: FaCalendarDays },
   { label: "Team", path: "/team", icon: FaUsers },
-  { label: "About", path: "/about", icon: FaAddressCard },
+  { label: "ACM Bytes", path: "/acm-bytes", icon: FaBolt },
 ];
 
 export default function FloatingBottomNav({ isVisible }) {

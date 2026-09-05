@@ -11,18 +11,52 @@ export const eventsData = [
     "semester": "ODD",
     "type": "Event",
     "status": "Completed",
-    "shortDescription": "Deepfake Investigation workshop under the AI Crime Lab initiative.",
-    "description": "An offline session focusing on Deepfake Investigation, educating students on identifying and mitigating the impacts of deepfakes.",
-    "venue": "TBA",
+    "shortDescription": "A hands-on investigative event where students became AI detectives, solving deepfake mysteries through real-world forensic challenges.",
+    "description": "AI Crime Lab: Deepfake Investigation was an immersive, hands-on event organized by ACM SIGAI TCET that challenged students to step into the shoes of AI forensic detectives. Participants were presented with a series of realistic deepfake scenarios — manipulated videos, synthetic audio, and AI-generated images — and had to use a combination of analytical reasoning, digital forensic tools, and their knowledge of AI to identify tampered media and trace the trail of evidence.\n\nThe event was structured as a multi-round investigation challenge. In the first round, teams were briefed on the fundamentals of deepfake technology — how Generative Adversarial Networks (GANs) and diffusion models are used to create convincing fake media. Subsequent rounds escalated in complexity, with teams analyzing real deepfake samples and presenting their findings to a panel of judges.\n\nBeyond just technical skill, the event emphasized media literacy and digital ethics — discussing the real-world implications of deepfakes on elections, journalism, privacy, and personal identity. Participants left with a sharper eye for AI-manipulated content and a deeper understanding of the societal responsibilities that come with AI development.",
+    "venue": "TCET Campus, Kandivali (East), Mumbai",
     "mode": "Offline",
     "speakers": [],
-    "organizers": [],
+    "organizers": [
+      {
+        "name": "ACM SIGAI TCET Core Committee",
+        "role": "Event Organization & Management"
+      },
+      {
+        "name": "AI&ML Department, TCET",
+        "role": "Academic Support & Coordination"
+      }
+    ],
     "collaborators": [],
-    "highlights": [],
-    "participants": "ST, TT",
+    "highlights": [
+      "Multi-round deepfake detection challenge with escalating difficulty",
+      "Hands-on analysis of real AI-generated images, videos, and audio",
+      "Introduction to GAN-based deepfake creation and detection techniques",
+      "Discussion on the ethical and societal implications of deepfake technology",
+      "Media literacy workshop — spotting manipulation in news and social media",
+      "Live demonstration of deepfake forensic tools",
+      "Team-based investigation format fostering collaboration and critical thinking",
+      "Certificate of participation awarded to all participants"
+    ],
+    "participants": "SE & TE AI&ML Students",
     "winners": [],
     "image": "/event_images/ai_crime_lab_2026.webp",
-    "gallery": [],
+    "gallery": [
+      "/assests/new_highlights/AI Crime Lab/IMG_1376.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1365.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1367.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1368.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1369.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1370.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1371.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1373.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1375.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1377.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1378.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1379.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1380.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1416.webp",
+      "/assests/new_highlights/AI Crime Lab/IMG_1417.webp"
+    ],
     "registrationLink": null,
     "source": "Odd Sem 2026-27 Planner",
     "featured": true
