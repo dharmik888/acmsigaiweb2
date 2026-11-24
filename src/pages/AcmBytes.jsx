@@ -6,7 +6,51 @@ import {
   FaFilter,
   FaRegClock,
   FaRss,
+  FaRobot,
+  FaDna,
+  FaMasksTheater,
+  FaServer,
+  FaFilm,
+  FaBoltLightning,
+  FaSpider,
+  FaWind,
+  FaScaleBalanced,
+  FaImage,
+  FaBookOpen,
+  FaUserSecret,
 } from "react-icons/fa6";
+
+const BYTE_ICONS = {
+  FaRobot,
+  FaDna,
+  FaMasksTheater,
+  FaServer,
+  FaFilm,
+  FaBoltLightning,
+  FaSpider,
+  FaWind,
+  FaScaleBalanced,
+  FaImage,
+  FaBookOpen,
+  FaUserSecret,
+  "byte-1": FaRobot,
+  "byte-2": FaDna,
+  "byte-3": FaMasksTheater,
+  "byte-4": FaServer,
+  "byte-5": FaFilm,
+  "byte-6": FaBoltLightning,
+  "byte-7": FaSpider,
+  "byte-8": FaWind,
+  "byte-9": FaScaleBalanced,
+  "byte-10": FaImage,
+  "byte-11": FaBookOpen,
+  "byte-12": FaUserSecret,
+};
+
+function ByteIcon({ byte, className = "text-xl" }) {
+  const IconComponent = (byte && BYTE_ICONS[byte.icon]) || (byte && BYTE_ICONS[byte.id]) || FaBolt;
+  return <IconComponent className={className} />;
+}
 import { SectionHeader } from "../components/ui/SectionHeader";
 import {
   acmBytesData,
@@ -27,7 +71,7 @@ function ByteCard({ byte, onClick }) {
       <div
         className={`${byte.color} px-4 py-3 border-b-[2px] border-black flex items-center justify-between`}
       >
-        <span className="text-2xl">{byte.emoji}</span>
+        <span className="w-9 h-9 bg-white/80 border-2 border-black rounded-xl text-black flex items-center justify-center shadow-brutal-sm"><ByteIcon byte={byte} className="text-base text-black" /></span>
         <span className="font-mono text-[10px] bg-black text-white px-2 py-0.5 rounded-md border border-black">
           {byte.readTime}
         </span>
@@ -95,7 +139,7 @@ function ByteDetail({ byte, onClose }) {
         <div
           className={`${byte.color} px-6 sm:px-10 py-6 border-b-[2.5px] border-black flex flex-wrap items-center gap-4`}
         >
-          <span className="text-5xl">{byte.emoji}</span>
+          <span className="w-16 h-16 bg-white/90 border-3 border-black rounded-2xl text-black flex items-center justify-center shadow-brutal"><ByteIcon byte={byte} className="text-3xl text-black" /></span>
           <div className="flex-1 min-w-0">
             <span
               className={`inline-block text-[10px] font-black uppercase px-2.5 py-1 rounded-md border-[1.5px] border-black mb-2 ${
@@ -179,7 +223,7 @@ export default function AcmBytes() {
       {/* ── HEADER ── */}
       <section>
         <SectionHeader
-          badgeText="⚡ QUICK READS"
+          badgeText="QUICK READS"
           title="ACM BYTES."
           subtitle="Bite-sized AI news, concepts & updates — curated by ACM SIGAI TCET. Stay sharp, one byte at a time."
         />
@@ -259,7 +303,7 @@ export default function AcmBytes() {
       {/* ── BYTES GRID ── */}
       {filteredBytes.length === 0 ? (
         <div className="text-center py-16 bg-white border-[2.5px] border-black rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-          <p className="text-4xl mb-3">🔍</p>
+          <div className="flex justify-center mb-3"><FaMagnifyingGlass className="text-4xl text-black/40" /></div>
           <p className="text-black font-black uppercase text-sm mb-3">
             No bytes found.
           </p>

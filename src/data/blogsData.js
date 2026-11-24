@@ -68,8 +68,8 @@ export const blogsData = [
       <h3 className="text-lg font-black uppercase mt-6 mb-2">Cancer diagnosis and neurological disorders</h3>
       <p>One of the most notable applications is in cancer diagnosis and neurological disorders. AI powered imaging tools can detect tiny tumors, early lesions, or degenerative changes in tissues before symptoms appear. For instance, deep learning models trained on thousands of MRI scans can highlight early-stage Alzheimer's disease or predict the risk of stroke by analyzing structural and functional brain patterns. In India, innovative start-ups like Niramai and Qure.ai are using AI based thermal imaging and radiology analysis to provide affordable, non-invasive breast cancer and lung disease screening. These solutions bring high-quality diagnostics to remote or underserved areas, bridging gaps in access and equity.</p>
     `,
-    image: "https://i.ibb.co/KxRLz14w/Blogs-1.webp",
-    img: "https://i.ibb.co/KxRLz14w/Blogs-1.webp",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+    img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
     slug: "technosustain-ai-for-early-disease-detection",
   },
   {
@@ -92,8 +92,8 @@ export const blogsData = [
       <h3 className="text-lg font-black uppercase mt-6 mb-2">AI-Driven Predictive Analytics for Disease Prevention</h3>
       <p>Predictive analytics powered by AI algorithms enables the early identification of individuals at risk for chronic diseases such as diabetes, cardiovascular disorders, and cancer. By analyzing vast datasets comprising electronic health records, genetic information, lifestyle factors, and environmental conditions, AI models can forecast disease onset with remarkable accuracy. Early prediction facilitates timely interventions, reducing the burden on healthcare facilities and cutting down costs incurred by advanced-stage treatments. This proactive approach aligns with sustainability goals by improving population health while minimizing wastage of medical resources.</p>
     `,
-    image: "https://i.ibb.co/ksWT3Tvn/AI-Biotech.jpg",
-    img: "https://i.ibb.co/ksWT3Tvn/AI-Biotech.jpg",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
+    img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
     slug: "ai-for-sustainable-healthcare-innovations-in-predictive-analytics-and-personalized-medicine",
   },
 ];

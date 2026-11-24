@@ -144,6 +144,48 @@ export default function EventDetails() {
               </div>
             </div>
 
+            {event.games && event.games.length > 0 && (
+              <div className="space-y-6">
+                <div className="inline-block font-black text-xs md:text-sm uppercase tracking-widest bg-retroYellow text-black border-3 border-black px-4 py-2 shadow-brutal-sm">
+                  GAMES & ATTRACTIONS
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {event.games.map((game, i) => (
+                    <div
+                      key={i}
+                      className="bg-white border-3 border-black rounded-2xl p-5 shadow-brutal-sm space-y-4 flex flex-col justify-between hover:shadow-brutal transition-all"
+                    >
+                      <div className="space-y-3">
+                        <div className="flex flex-wrap items-center gap-2">
+                          {game.category && (
+                            <span className="bg-retroSky text-black font-black text-[10px] uppercase border-2 border-black px-2 py-0.5 rounded-full">
+                              {game.category}
+                            </span>
+                          )}
+                          {game.mode && (
+                            <span className="bg-retroLime text-black font-bold text-[10px] uppercase border-2 border-black px-2 py-0.5 rounded-full">
+                              {game.mode}
+                            </span>
+                          )}
+                          {game.collaborators && (
+                            <span className="font-mono text-[10px] font-bold text-black/60 bg-black/5 px-2 py-0.5 rounded border border-black/20">
+                              {game.collaborators}
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="font-black text-lg text-black uppercase">
+                          {game.name}
+                        </h3>
+                        <p className="text-xs font-bold text-black/75 leading-relaxed">
+                          {game.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
               {event.highlights && event.highlights.length > 0 && (
                 <div>

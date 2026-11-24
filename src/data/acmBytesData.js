@@ -6,7 +6,7 @@ export const acmBytesData = [
     id: "byte-1",
     title: "GPT-4o Can Now See, Hear & Speak in Real Time",
     category: "LLMs & Agents",
-    emoji: "🤖",
+    icon: "FaRobot",
     date: "May 2024",
     readTime: "1 min",
     summary:
@@ -18,7 +18,7 @@ export const acmBytesData = [
     id: "byte-2",
     title: "Google DeepMind's AlphaFold 3 Predicts All Molecules of Life",
     category: "Research",
-    emoji: "🧬",
+    icon: "FaDna",
     date: "May 2024",
     readTime: "2 min",
     summary:
@@ -30,7 +30,7 @@ export const acmBytesData = [
     id: "byte-3",
     title: "Deepfakes Are Now Indistinguishable to the Human Eye — Study Finds",
     category: "Ethics & Safety",
-    emoji: "🎭",
+    icon: "FaMasksTheater",
     date: "March 2024",
     readTime: "1 min",
     summary:
@@ -42,7 +42,7 @@ export const acmBytesData = [
     id: "byte-4",
     title: "India's AIRAWAT: Among Asia's Top AI Supercomputers",
     category: "Infrastructure",
-    emoji: "🇮🇳",
+    icon: "FaServer",
     date: "2024",
     readTime: "1 min",
     summary:
@@ -54,7 +54,7 @@ export const acmBytesData = [
     id: "byte-5",
     title: "Sora: OpenAI's Text-to-Video Model Can Generate 60-Second Clips",
     category: "Generative AI",
-    emoji: "🎬",
+    icon: "FaFilm",
     date: "February 2024",
     readTime: "1 min",
     summary:
@@ -66,7 +66,7 @@ export const acmBytesData = [
     id: "byte-6",
     title: "Claude 3 Opus Beats GPT-4 on Key Benchmarks",
     category: "LLMs & Agents",
-    emoji: "⚡",
+    icon: "FaBoltLightning",
     date: "March 2024",
     readTime: "1 min",
     summary:
@@ -78,7 +78,7 @@ export const acmBytesData = [
     id: "byte-7",
     title: "AI Agents Are Now Browsing the Web & Writing Code Autonomously",
     category: "LLMs & Agents",
-    emoji: "🕷️",
+    icon: "FaSpider",
     date: "2024",
     readTime: "2 min",
     summary:
@@ -90,7 +90,7 @@ export const acmBytesData = [
     id: "byte-8",
     title: "Mistral 7B: Small Model, Big Performance",
     category: "Open Source AI",
-    emoji: "🌬️",
+    icon: "FaWind",
     date: "October 2023",
     readTime: "1 min",
     summary:
@@ -102,7 +102,7 @@ export const acmBytesData = [
     id: "byte-9",
     title: "The EU AI Act: World's First Comprehensive AI Law",
     category: "Ethics & Safety",
-    emoji: "⚖️",
+    icon: "FaScaleBalanced",
     date: "March 2024",
     readTime: "2 min",
     summary:
@@ -114,7 +114,7 @@ export const acmBytesData = [
     id: "byte-10",
     title: "Diffusion Models 101: How Stable Diffusion Creates Images",
     category: "Computer Vision",
-    emoji: "🖼️",
+    icon: "FaImage",
     date: "2023",
     readTime: "3 min",
     summary:
@@ -126,7 +126,7 @@ export const acmBytesData = [
     id: "byte-11",
     title: "Retrieval-Augmented Generation (RAG) in 60 Seconds",
     category: "LLMs & Agents",
-    emoji: "📚",
+    icon: "FaBookOpen",
     date: "2024",
     readTime: "1 min",
     summary:
@@ -138,7 +138,7 @@ export const acmBytesData = [
     id: "byte-12",
     title: "TCET ACM SIGAI Hosts AI Crime Lab: India's First Deepfake Detection Event",
     category: "SIGAI Updates",
-    emoji: "🔍",
+    icon: "FaUserSecret",
     date: "July 2026",
     readTime: "1 min",
     summary:

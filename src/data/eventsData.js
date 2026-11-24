@@ -342,32 +342,7 @@ export const eventsData = [
     source: "Report 2026-27",
     featured: false,
   },
-  {
-    id: 305,
-    slug: "industrial-visit-2026",
-    title: "Industrial Visit",
-    date: "11th September 2026",
-    academicYear: "2026-27",
-    semester: "ODD",
-    type: "Industrial Visit",
-    status: "Completed",
-    shortDescription: "An offline industrial visit.",
-    description:
-      "An offline industrial visit organized for ST, TT, and BT students.",
-    venue: "TBA",
-    mode: "Offline",
-    speakers: [],
-    organizers: [],
-    collaborators: [],
-    highlights: [],
-    participants: "ST, TT, BT",
-    winners: [],
-    image: null,
-    gallery: [],
-    registrationLink: null,
-    source: "Odd Sem 2026-27 Planner",
-    featured: false,
-  },
+
   {
     id: 306,
     slug: "zephyr-annual-fest-2026",
@@ -377,21 +352,78 @@ export const eventsData = [
     semester: "ODD",
     type: "Event",
     status: "Completed",
-    shortDescription: "The annual technical fest, Zephyr.",
+    shortDescription:
+      "TCET ACM-SIGAI's annual flagship fest featuring competitive games and challenges: Mystery Maze, Takeshi's Castle, Box Cricket, Free Fire (TDM), and AI Crime Lab.",
     description:
-      "Zephyr 2026 was TCET ACM-SIGAI's signature annual flagship festival featuring a vibrant array of technical competitions, gaming arenas, logic hunts, and hardware design challenges. The 3-day festival brought together hundreds of engineering students across Mumbai for high-energy technical show-offs, competitive esports, and collaborative networking.",
-    venue: "TBA",
+      "Zephyr 2026 was TCET ACM-SIGAI's signature annual flagship festival featuring a vibrant array of technical competitions, gaming arenas, logic hunts, and sports challenges organized across the TCET campus. The 3-day festival brought together hundreds of engineering students across Mumbai for high-energy technical show-offs, competitive esports, and collaborative networking.",
+    venue: "TCET Campus, Kandivali East",
     mode: "Offline",
     speakers: [],
-    organizers: [],
-    collaborators: [],
-    highlights: [],
-    participants: "ST, TT",
+    organizers: [
+      {
+        name: "ACM SIGAI TCET Core Committee",
+        role: "Event Organization & Management",
+      },
+    ],
+    collaborators: [
+      "ASCE TCET",
+      "OWASP TCET",
+    ],
+    highlights: [
+      "Box Cricket: High-energy box arena cricket tournament organized in collaboration with ASCE & OWASP",
+      "Mystery Maze: 4-player labyrinth escape room adventure featuring 5 challenging puzzle stages",
+      "Takeshi's Castle: 3-level physical obstacle course game inspired by the classic show testing agility and balance",
+      "Free Fire (TDM): Competitive offline mobile esports showdown featuring high-stakes Team Deathmatch rounds",
+      "AI Crime Lab: Forensic mystery-solving challenge distinguishing authentic from AI-fabricated evidence",
+    ],
+    games: [
+      {
+        name: "Box Cricket",
+        category: "Sports",
+        mode: "Offline",
+        collaborators: "ASCE + OWASP + SIGAI",
+        description:
+          "A high energy adaptation of cricket played in a compact box arena, making every ball and every shot crucial. Teams face off in fast-paced overs.",
+      },
+      {
+        name: "Mystery Maze",
+        category: "Puzzle / Escape Room",
+        mode: "Offline",
+        collaborators: "SIGAI - TCET",
+        description:
+          "In Mystery Maze, four participants embark on a thrilling adventure through a complex labyrinth with five challenging stages.",
+      },
+      {
+        name: "Takeshi's Castle",
+        category: "Obstacle Course",
+        mode: "Offline",
+        collaborators: "SIGAI - TCET",
+        description:
+          "This Takeshi's Castle inspired 3-level game includes levels from the real show where players combine agility, balance, and teamwork.",
+      },
+      {
+        name: "Free Fire (TDM)",
+        category: "Gaming",
+        mode: "Offline",
+        collaborators: "SIGAI - TCET",
+        description:
+          "Intense offline mobile esports tournament with tactical 4v4 Team Deathmatch rounds.",
+      },
+      {
+        name: "AI Crime Lab",
+        category: "Tech",
+        mode: "Offline",
+        collaborators: "SIGAI - TCET",
+        description:
+          "Forensic mystery-solving challenge analyzing digital evidence, code, and AI-fabricated media.",
+      },
+    ],
+    participants: "300+ Students (Across Departments)",
     winners: [],
     image: "/event_images/zephyr2026.png",
     gallery: [],
     registrationLink: null,
-    source: "Odd Sem 2026-27 Planner",
+    source: "Zephyr 2026 (zephyr-tech.in/events)",
     featured: true,
   },
 
